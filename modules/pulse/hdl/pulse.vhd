@@ -49,7 +49,7 @@ port (
     dout                : out std_logic_vector(48 DOWNTO 0);
     full                : out std_logic;
     empty               : out std_logic;
-    data_count          : out std_logic_vector(10 downto 0)
+    data_count          : out std_logic_vector(8 downto 0)
 );
 end component;
 
@@ -112,7 +112,7 @@ signal waiting_for_delay        : std_logic := '1';
 
 signal pulse_queued_din         : std_logic_vector(48 downto 0);
 signal pulse_queued_dout        : std_logic_vector(48 downto 0);
-signal pulse_queued_data_count  : std_logic_vector(10 downto 0);
+signal pulse_queued_data_count  : std_logic_vector(8 downto 0);
 
 
 -- Unsigned integer signals
