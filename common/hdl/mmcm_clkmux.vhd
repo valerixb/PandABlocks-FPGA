@@ -29,12 +29,12 @@ signal sma_pll_reset        : std_logic;
 signal sma_pll_locked       : std_logic;
 signal sma_clkfbout         : std_logic;
 signal sma_clkfbout_buf     : std_logic;
---signal sma_clk_out1         : std_logic;
---signal enable_sma_clk     : std_logic;
+signal sma_clk_out1         : std_logic;
+signal enable_sma_clk     : std_logic;
 signal enable_mgt_clk     : std_logic;
 signal fclk_clk             : std_logic;
---signal secondary_mux_out    : std_logic;
---signal primary_mux_sel      : std_logic;
+signal secondary_mux_out    : std_logic;
+signal primary_mux_sel      : std_logic;
 
 
 begin
@@ -83,8 +83,7 @@ plle2_adv_inst : PLLE2_ADV
         -- Output clocks
         (
         CLKFBOUT            => sma_clkfbout,
-        --CLKOUT0             => sma_clk_out1,
-        CLKOUT0             => open,
+        CLKOUT0             => sma_clk_out1,
         CLKOUT1             => open,
         CLKOUT2             => open,
         CLKOUT3             => open,
@@ -130,35 +129,33 @@ clkf_buf : BUFG
 -- output form the secondary clock mux
 -- MUX sel checks for PLL lock and MGT link-up
 
---enable_sma_clk <= sma_pll_locked and clk_sel_i(0);
+enable_sma_clk <= sma_pll_locked and clk_sel_i(0);
 enable_mgt_clk <= linkup_i and clk_sel_i(1);
---primary_mux_sel <= enable_sma_clk or enable_mgt_clk;
+primary_mux_sel <= enable_sma_clk or enable_mgt_clk;
 
 primary_clkmux: BUFGMUX
     port map (
         O => fclk_clk,
         I0 => fclk_clk0_ps_i,
-        --I1 => secondary_mux_out,
-        I1 => rxoutclk_i,
-        --S => primary_mux_sel
-        S => enable_mgt_clk
+        I1 => secondary_mux_out,
+        S => primary_mux_sel
+
 );
 
 -- Secondary mux switches between external sma clock and mgt recovered clock.
 -- Secondary MUX select checks for MGT link-up.
 
---secondary_clkmux : BUFGMUX
---    port map (
---        O => secondary_mux_out,
---        I0 => sma_clk_out1,
---        I1 => rxoutclk_i,
---        S => enable_mgt_clk
---);
+secondary_clkmux : BUFGMUX
+    port map (
+        O => secondary_mux_out,
+        I0 => sma_clk_out1,
+        I1 => rxoutclk_i,
+        S => enable_mgt_clk
+);
 
 -- Assign outputs
 
---clk_sel_stat_o <= enable_mgt_clk & enable_sma_clk;
-clk_sel_stat_o <= enable_mgt_clk & '0';
+clk_sel_stat_o <= enable_mgt_clk & enable_sma_clk;
 fclk_clk0_o <= fclk_clk;
 sma_pll_locked_o <= sma_pll_locked;
 
