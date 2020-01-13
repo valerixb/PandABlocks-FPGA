@@ -35,18 +35,19 @@ port (
     -- Block Parameters
     BITS            : in  std_logic_vector(7 downto 0);
     CLK_PERIOD      : in  std_logic_vector(31 downto 0);
-    FRAME_PERIOD    : in  std_logic_vector(31 downto 0);
     -- Block Inputs and Outputs
     ssi_sck_o       : out std_logic;
     ssi_dat_i       : in  std_logic;
     posn_o          : out std_logic_vector(31 downto 0);
+
+    frame_pulse_i  : in  std_logic;
+
     posn_valid_o    : out std_logic
 );
 end entity;
 
 architecture rtl of ssi_master is
 
-signal frame_pulse          : std_logic;
 signal serial_clock         : std_logic;
 signal serial_clock_prev    : std_logic;
 signal shift_enable         : std_logic;
@@ -63,13 +64,13 @@ begin
 ssi_sck_o <= serial_clock;
 
 -- Generate Internal SSI Frame from system clock
-frame_presc : entity work.prescaler
-port map (
-    clk_i       => clk_i,
-    reset_i     => reset_i,
-    PERIOD      => FRAME_PERIOD,
-    pulse_o     => frame_pulse
-);
+--frame_presc : entity work.prescaler
+--port map (
+--    clk_i       => clk_i,
+--    reset_i     => reset_i,
+--    PERIOD      => FRAME_PERIOD,
+--    pulse_o     => frame_pulse
+--);
 
 clock_train_inst : entity work.ssi_clock_gen
 generic map (
@@ -80,7 +81,7 @@ port map (
     reset_i         => reset_i,
     N               => BITS,
     CLK_PERIOD      => CLK_PERIOD,
-    start_i         => frame_pulse,
+    start_i         => frame_pulse_i,
     clock_pulse_o   => serial_clock,
     active_o        => shift_enable,
     busy_o          => open

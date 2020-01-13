@@ -23,20 +23,20 @@ port (
     reset_i         : in  std_logic;
     -- Configuration interface
     BITS            : in  std_logic_vector(7 downto 0);
-    link_up_o       : out std_logic;
+    link_up_i       : in  std_logic;
     error_o         : out std_logic;
     -- Physical SSI interface
     ssi_sck_i       : in  std_logic;
     ssi_dat_i       : in  std_logic;
+
+    ssi_frame_o     : out std_logic;
+
     -- Block outputs
     posn_o          : out std_logic_vector(31 downto 0)
 );
 end ssi_sniffer;
 
 architecture rtl of ssi_sniffer is
-
--- Ticks in terms of internal serial clock period.
-constant SYNCPERIOD         : natural := 125 * 5; -- 5usec
 
 -- Number of all bits per SSI frame
 signal uBITS                : unsigned(7 downto 0);
@@ -47,7 +47,6 @@ signal serial_data_prev     : std_logic;
 signal serial_data_rise     : std_logic;
 signal serial_clock         : std_logic;
 signal serial_clock_prev    : std_logic;
-signal link_up              : std_logic;
 signal data                 : std_logic_vector(posn_o'length-1 downto 0);
 signal data_valid           : std_logic;
 signal ssi_frame            : std_logic;
@@ -66,7 +65,7 @@ begin
 uBITS <= unsigned(BITS);
 
 -- Internal reset when link is down
-reset <= reset_i or not link_up;
+reset <= reset_i or not link_up_i;
 
 serial_clock <= ssi_sck_i;
 serial_data <= ssi_dat_i;
@@ -83,21 +82,6 @@ end process;
 serial_clock_fall <= not serial_clock and serial_clock_prev;
 serial_clock_rise <= serial_clock and not serial_clock_prev;
 serial_data_rise <= serial_data and not serial_data_prev;
-
---------------------------------------------------------------------------
--- Detect link if clock is asserted for > 5us.
---------------------------------------------------------------------------
-link_detect_inst : entity work.serial_link_detect
-generic map (
-    SYNCPERIOD          => SYNCPERIOD
-)
-port map (
-    clk_i               => clk_i,
-    reset_i             => reset_i,
-    clock_i             => serial_clock,
-    active_i            => ssi_frame,
-    link_up_o           => link_up
-);
 
 --------------------------------------------------------------------------
 -- Serial Receive State Machine
@@ -181,7 +165,7 @@ end process;
 --   link_down
 --   Encoder CRC error
 --------------------------------------------------------------------------
-link_up_o <= link_up;
 error_o <= '0'; -- n/a
+ssi_frame_o <= ssi_frame;
 
 end rtl;

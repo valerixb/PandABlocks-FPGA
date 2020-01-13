@@ -14,10 +14,12 @@ port(
     link_up_o    : out std_logic;
     health_o     : out  std_logic_vector(31 downto 0);
     CLK_PERIOD   : in  std_logic_vector(31 downto 0);
-    FRAME_PERIOD : in  std_logic_vector(31 downto 0);
     biss_sck_o   : out std_logic;
     biss_dat_i   : in  std_logic;
     posn_o       : out std_logic_vector(31 downto 0);
+    reset_biss_clk_o : out std_logic;
+    enable_cnt_o : out std_logic;
+    frame_pulse_i: in  std_logic;
     posn_valid_o : out std_logic
 );
 end biss_master;
@@ -52,26 +54,26 @@ signal reset_crc             : std_logic;
 signal biss_clk_reset        : std_logic;
 signal reset_biss_clk        : std_logic;
 
-signal frame_pulse           : std_logic;
 signal biss_sck              : std_logic;
 
 signal biss_sck_prev         : std_logic;
 signal biss_sck_rising_edge  : std_logic;
 signal biss_sck_falling_edge : std_logic;
 
-signal data_enable_i         : std_logic;
-signal nEnW_enable_i         : std_logic;
-signal crc_enable_i          : std_logic;
-signal enable_cnt_i          : std_logic;
+signal data_enable           : std_logic;
+signal nEnW_enable           : std_logic;
+signal crc_enable          : std_logic;
+signal enable_cnt          : std_logic;
 signal calc_enable_i         : std_logic;
 
-signal data_o                : std_logic_vector(31 downto 0);
-signal nEnW_o                : std_logic_vector(1 downto 0);
-signal crc_o                 : std_logic_vector(5 downto 0);
+signal data                  : std_logic_vector(31 downto 0);
+signal nEnW                : std_logic_vector(1 downto 0);
+signal crc                 : std_logic_vector(5 downto 0);
+
 signal crc_calc_o            : std_logic_vector(5 downto 0);
 
-signal data_valid_o          : std_logic;
-signal crc_valid_o           : std_logic;
+signal data_valid           : std_logic;
+signal crc_valid            : std_logic;
 
 signal link_up              : std_logic;
 signal link_up_crc_nEbit          : std_logic;
@@ -116,10 +118,10 @@ begin
         if reset_i='1' then
             crc_reset <= '0';
             biss_clk_reset <= '0';
-            crc_enable_i <= '0';
-            enable_cnt_i <= '0';
-            data_enable_i <= '0';
-            nEnW_enable_i <= '0';
+            crc_enable <= '0';
+            enable_cnt <= '0';
+            data_enable <= '0';
+            nEnW_enable <= '0';
             start_timeout <= (others=>'0');
             data_cnt <= (others => '0');
             timeout_cnt <= (others => '0');
@@ -134,10 +136,10 @@ begin
                 when STATE_SYNCH =>
                     crc_reset <= '0';
                     biss_clk_reset <= '0';
-                    crc_enable_i <= '0';
-                    enable_cnt_i <= '0';
-                    data_enable_i <= '0';
-                    nEnW_enable_i <= '0';
+                    crc_enable <= '0';
+                    enable_cnt <= '0';
+                    data_enable <= '0';
+                    nEnW_enable <= '0';
                     start_timeout <= (others=>'0');
                     if start_line_delay_cnt= '1' then
                         line_delay_cnt <= line_delay_cnt + 1;
@@ -199,9 +201,9 @@ begin
                     if (biss_sck_rising_edge = '1') then
                         if (biss_dat_i = '0') then
                             crc_reset <= '0';
-                            enable_cnt_i <= '1';
+                            enable_cnt <= '1';
                             -- Enable data going to the data shifter
-                            data_enable_i <= '1';
+                            data_enable <= '1';
                             SM_DATA <= STATE_DATA;
                         else--no ZERO return to STATE_SYNCH 
                             SM_DATA <= STATE_SYNCH;
@@ -219,8 +221,8 @@ begin
                         -- Disable the data going to the data shifter
                         -- Enable the data going to the nEnW shifter
                         if (data_cnt = uBITS-1) then
-                            data_enable_i <= '0';
-                            nEnW_enable_i <= '1';
+                            data_enable <= '0';
+                            nEnW_enable <= '1';
                         end if;
                         -- DATA finished
                         if (data_cnt = uBITS) then
@@ -236,8 +238,8 @@ begin
                         -- Disbale the data going to the nEnW shifter
                         -- Enable the data going to the CRC shifter
                         if (data_cnt = (uBITS + USTATUS_BITS-1)) then
-                            nEnW_enable_i <= '0';
-                            crc_enable_i <= '1';
+                            nEnW_enable <= '0';
+                            crc_enable <= '1';
                         end if;
                         -- nEnW finished
                         if (data_cnt = (uBITS + uSTATUS_BITS)) then
@@ -251,7 +253,7 @@ begin
                     if (biss_sck_rising_edge = '1') then
                         data_cnt <= data_cnt +1;
                         if (data_cnt = (uBITS + uSTATUS_BITS + uCRC_BITS)-1) then
-                            crc_enable_i <= '0';
+                            crc_enable <= '0';
                             SM_DATA <= STATE_TIMEOUT;
                         end if;
                     end if;
@@ -260,7 +262,7 @@ begin
                 --         40us   maximum
                 when STATE_TIMEOUT =>
                     line_delay_cnt <= (others=>'0');
-                    enable_cnt_i <= '0';
+                    enable_cnt <= '0';
                     timeout_cnt <= timeout_cnt +1;
                     if (timeout_cnt = c_timeout) then
                         SM_DATA <= STATE_SYNCH;
@@ -286,44 +288,44 @@ begin
             if link_up = '0' then--timeout error
                posn_valid_o <= '0';
                health_biss_master<=TO_SVECTOR(2,32);
-            elsif (crc_valid_o = '1') then--crc calc strobe
-               if (crc_o /= crc_calc_o) then--crc error
+            elsif (crc_valid = '1') then--crc calc strobe
+               if (crc /= crc_calc_o) then--crc error
                   health_biss_master<=TO_SVECTOR(3,32);
                   posn_valid_o <= '0';
                   link_up_crc_nEbit<='0';
-               elsif nEnW_o(1) = '0' then--Error received nEnW error bit
+               elsif nEnW(1) = '0' then--Error received nEnW error bit
                   health_biss_master<=TO_SVECTOR(4,32);
                   posn_valid_o <= '0';
                   link_up_crc_nEbit<='0';
                else--OK
                   posn_valid_o <= '1';
-                  FOR I IN data_o'range LOOP
+                  FOR I IN data'range LOOP
                       -- Sign bit or not depending on BITS parameter.
                       if (I < intBITS) then
-                          posn_o(I) <= data_o(I);
+                          posn_o(I) <= data(I);
                       else
-                          posn_o(I) <= data_o(intBITS-1);
+                          posn_o(I) <= data(intBITS-1);
                       end if;
                   END LOOP;
                   link_up_crc_nEbit<='1';
                   health_biss_master<=(others=>'0');
                end if;
-            else--no crc check update crc_valid_o = '0'
+            else--no crc check update crc_valid = '0'
                 posn_valid_o <= '0';
             end if;
 -- synthesis translate_off
-            if (crc_valid_o = '1') then
-                if (crc_o /= crc_calc_o) then
-                    report " CRC received is " & integer'image(to_integer(unsigned(crc_o))) & " CRC calculated is " & integer'image(to_integer(unsigned(crc_calc_o))) severity error;
+            if (crc_valid = '1') then
+                if (crc /= crc_calc_o) then
+                    report " CRC received is " & integer'image(to_integer(unsigned(crc))) & " CRC calculated is " & integer'image(to_integer(unsigned(crc_calc_o))) severity error;
                 end if;
                 -- Warning received
-                if (nEnW_o = "10") then
+                if (nEnW = "10") then
                     report " Warning received nEnW = 10 " severity note;
                 -- Error received
-                elsif (nEnW_o = "01") then
+                elsif (nEnW = "01") then
                     report " Error received nEnW = 01 " severity note;
                 -- Warning and Error received
-                elsif (nEnW_o = "00") then
+                elsif (nEnW = "00") then
                     report " Error and Warning received nEnW = 00 " severity note;
                 end if;
             end if;
@@ -335,13 +337,13 @@ end process;
 
 -- Generate Internal BiSS Frame from system clock
 -- BiSS FRAME = SYNCH1, SYNCH2, ACK, START, ZERO(CDS), DATA, nEnW and CRC
-frame_presc : entity work.prescaler
-port map (
-    clk_i       => clk_i,
-    reset_i     => reset_i,
-    PERIOD      => FRAME_PERIOD,
-    pulse_o     => frame_pulse
-);
+--frame_presc : entity work.prescaler
+--port map (
+--    clk_i       => clk_i,
+--    reset_i     => reset_i,
+--    PERIOD      => FRAME_PERIOD,
+--    pulse_o     => frame_pulse
+--);
 
 reset_biss_clk <= reset_i or biss_clk_reset;
 -- BiSS Clock Gen the same as the ssi Clock Gen except the
@@ -356,15 +358,15 @@ port map (
     reset_i         => reset_biss_clk,
     N               => DATA_BITS,
     CLK_PERIOD      => CLK_PERIOD,
-    start_i         => frame_pulse,
-    enable_cnt_i    => enable_cnt_i,
+    start_i         => frame_pulse_i,
+    enable_cnt_i    => enable_cnt,
     clock_pulse_o   => biss_sck,
     active_o        => open,
     busy_o          => open
 );
 
 
-calc_enable_i <= (data_enable_i or nEnW_enable_i) and biss_sck_rising_edge;
+calc_enable_i <= (data_enable or nEnW_enable) and biss_sck_rising_edge;
 reset_crc <= reset_i or crc_reset;
 -- calculate the actual crc value
 biss_crc_inst: entity work.biss_crc
@@ -380,31 +382,31 @@ port map(
 -- Capture the data value
 shifter_data_in_inst : entity work.shifter_in
 generic map (
-    DW              => (data_o'length)
+    DW              => (data'length)
 )
 port map (
     clk_i           => clk_i,
     reset_i         => reset_i,
-    enable_i        => data_enable_i,
+    enable_i        => data_enable,
     clock_i         => biss_sck_rising_edge,
     data_i          => biss_dat_i,
-    data_o          => data_o,
-    data_valid_o    => data_valid_o
+    data_o          => data,
+    data_valid_o    => data_valid
 );
 
 
 -- Capture the nEnW value
 shifter_nEnW_in_inst : entity work.shifter_in
 generic map (
-    DW              => (nEnW_o'length)
+    DW              => (nEnW'length)
 )
 port map (
     clk_i           => clk_i,
     reset_i         => reset_i,
-    enable_i        => nEnW_enable_i,
+    enable_i        => nEnW_enable,
     clock_i         => biss_sck_rising_edge,
     data_i          => biss_dat_i,
-    data_o          => nEnW_o,
+    data_o          => nEnW,
     data_valid_o    => open
 );
 
@@ -412,16 +414,16 @@ port map (
 -- Capture the CRC value
 shifter_CRC_in_inst : entity work.shifter_in
 generic map (
-    DW              => (crc_o'length)
+    DW              => (crc'length)
 )
 port map (
     clk_i           => clk_i,
     reset_i         => reset_i,
-    enable_i        => crc_enable_i,
+    enable_i        => crc_enable,
     clock_i         => biss_sck_rising_edge,
     data_i          => biss_dat_i,
-    data_o          => crc_o,
-    data_valid_o    => crc_valid_o
+    data_o          => crc,
+    data_valid_o    => crc_valid
 );
 
 

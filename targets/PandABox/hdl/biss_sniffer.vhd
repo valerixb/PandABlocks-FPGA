@@ -23,9 +23,12 @@ port (
     reset_i         : in  std_logic;
     -- Configuration interface
     BITS            : in  std_logic_vector(7 downto 0);
-    link_up_o       : out std_logic;
+    link_up_i       : in  std_logic;
     health_o        : out  std_logic_vector(31 downto 0);
     error_o         : out std_logic;
+
+    biss_frame_o    : out std_logic;
+
     -- Physical SSI interface
     ssi_sck_i       : in  std_logic;
     ssi_dat_i       : in  std_logic;
@@ -36,8 +39,6 @@ end biss_sniffer;
 
 architecture rtl of biss_sniffer is
 
--- Ticks in terms of internal serial clock period.
-constant SYNCPERIOD         : natural := 125 * 5; -- 5usec
 type biss_fsm_t is (IDLE, ACK, START, WAIT_ZERO, DATA_RANGE, TIMEOUT);
 
 -- Number of all bits per BiSS Frame
@@ -65,7 +66,6 @@ signal serial_clock_rise    : std_logic;
 signal serial_data          : std_logic;
 signal serial_data_prev     : std_logic;
 signal serial_data_rise     : std_logic;
-signal link_up              : std_logic;
 
 signal crc_reset            : std_logic;
 signal crc_bitstrb          : std_logic;
@@ -97,26 +97,12 @@ begin
 end process;
 
 -- Internal reset when link is down
-reset <= reset_i or not link_up;
+reset <= reset_i or not link_up_i;
 
 -- Data latch happens on rising edge of incoming clock
 serial_clock_rise <= serial_clock and not serial_clock_prev;
 serial_data_rise <= serial_data and not serial_data_prev;
 
---------------------------------------------------------------------------
--- Detect link if clock is asserted for > 5us.
---------------------------------------------------------------------------
-link_detect_inst : entity work.serial_link_detect
-generic map (
-    SYNCPERIOD          => SYNCPERIOD
-)
-port map (
-    clk_i               => clk_i,
-    reset_i             => reset_i,
-    clock_i             => serial_clock,
-    active_i            => biss_frame,
-    link_up_o           => link_up
-);
 
 --------------------------------------------------------------------------
 -- Biss-C profile BP3 receive State Machine
@@ -290,7 +276,7 @@ begin
         if reset_i='1' then
             health_biss_sniffer<=TO_SVECTOR(2,32);--default timeout error
         else
-            if link_up = '0' then--timeout error
+            if link_up_i = '0' then--timeout error
                health_biss_sniffer<=TO_SVECTOR(2,32);
             elsif (crc_strobe = '1') then--crc calc strobe
                if (crc /= crc_calc) then--crc error
@@ -318,7 +304,7 @@ end process;
 --   link_down
 --   Encoder CRC error
 --------------------------------------------------------------------------
-link_up_o <= link_up;
+biss_frame_o <= biss_frame;
 health_o <= health_biss_sniffer;
 error_o <= crc_strobe when (crc /= crc_calc or nError(1) = '0') else '0';
 

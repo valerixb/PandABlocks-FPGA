@@ -73,6 +73,8 @@ constant c_ABZ_PASSTHROUGH  : std_logic_vector(2 downto 0) := std_logic_vector(t
 constant c_DATA_PASSTHROUGH : std_logic_vector(2 downto 0) := std_logic_vector(to_unsigned(5,3));
 constant c_BISS             : std_logic_vector(2 downto 0) := std_logic_vector(to_unsigned(2,3));
 constant c_enDat            : std_logic_vector(2 downto 0) := std_logic_vector(to_unsigned(3,3));
+-- Ticks in terms of internal serial clock period.
+constant SYNCPERIOD         : natural := 125 * 5; -- 5usec
 
 signal quad_a               : std_logic;
 signal quad_b               : std_logic;
@@ -128,6 +130,12 @@ signal CLK_OUT              : std_logic;
 signal CLK_IN               : std_logic;
 
 signal Bs0_t                : std_logic;
+
+signal frame_pulse  : std_logic;
+signal link_active  : std_logic;
+signal link_up  : std_logic;
+signal ssi_frame : std_logic;
+signal biss_frame : std_logic;
 
 begin
 
@@ -283,10 +291,10 @@ port map (
     reset_i         => reset_i,
     BITS            => INENC_BITS_i,
     CLK_PERIOD      => CLK_PERIOD_i,
-    FRAME_PERIOD    => FRAME_PERIOD_i,
     ssi_sck_o       => clk_out_encoder_ssi,
     ssi_dat_i       => DATA_IN,
     posn_o          => posn_ssi,
+    frame_pulse_i   => frame_pulse,
     posn_valid_o    => open
 );
 
@@ -296,8 +304,9 @@ port map (
     clk_i           => clk_i,
     reset_i         => reset_i,
     BITS            => INENC_BITS_i,
-    link_up_o       => linkup_ssi,
+    link_up_i       => linkup_ssi,
     error_o         => open,
+    ssi_frame_o     => ssi_frame,
     ssi_sck_i       => CLK_IN,
     ssi_dat_i       => DATA_IN,
     posn_o          => posn_ssi_sniffer
@@ -315,10 +324,10 @@ port map (
     link_up_o       => linkup_biss_master,
     health_o        => health_biss_master,
     CLK_PERIOD      => CLK_PERIOD_i,
-    FRAME_PERIOD    => FRAME_PERIOD_i,
     biss_sck_o      => clk_out_encoder_biss,
     biss_dat_i      => DATA_IN,
     posn_o          => posn_biss,
+    frame_pulse_i   => frame_pulse,
     posn_valid_o    => open
 );
 
@@ -328,12 +337,40 @@ port map (
     clk_i           => clk_i,
     reset_i         => reset_i,
     BITS            => INENC_BITS_i,
-    link_up_o       => linkup_biss_sniffer,
+    link_up_i       => linkup_biss_sniffer,
     health_o        => health_biss_sniffer,
+    biss_frame_o    => biss_frame,
     error_o         => open,
     ssi_sck_i       => CLK_IN,
     ssi_dat_i       => DATA_IN,
     posn_o          => posn_biss_sniffer
+);
+
+frame_presc : entity work.prescaler
+port map (
+    clk_i       => clk_i,
+    reset_i     => reset_i,
+    PERIOD      => FRAME_PERIOD_i,
+    pulse_o     => frame_pulse
+);
+
+--------------------------------------------------------------------------
+-- Detect link if clock is asserted for > 5us.
+--------------------------------------------------------------------------
+link_active <= biss_frame when (INENC_PROTOCOL_i = "010") else ssi_frame;
+linkup_biss_sniffer <= link_up when (INENC_PROTOCOL_i = "010") else '0';
+linkup_ssi <= link_up when (INENC_PROTOCOL_i /= "010") else '0';
+
+link_detect_inst : entity work.serial_link_detect
+generic map (
+    SYNCPERIOD          => SYNCPERIOD
+)
+port map (
+    clk_i               => clk_i,
+    reset_i             => reset_i,
+    clock_i             => CLK_IN,
+    active_i            => link_active,
+    link_up_o           => link_up
 );
 
 --------------------------------------------------------------------------
