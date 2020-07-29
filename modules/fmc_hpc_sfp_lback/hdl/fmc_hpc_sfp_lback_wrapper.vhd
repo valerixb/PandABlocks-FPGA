@@ -378,7 +378,6 @@ I2C_BUSY(31 downto 1) 			<= ZEROS(31);
 I2C_END_TRANSFER(31 downto 1)	<= ZEROS(31);
 I2C_ERROR_STATUS(31 downto 2)	<= ZEROS(30);
 
-SEL_RATE(31 downto 1) <= ZEROS(31);
 FREQUENCY_VALUE <= ZEROS(32);
 APPLY_FREQ <= '0';
 ---------------------------------------------------------------------------
