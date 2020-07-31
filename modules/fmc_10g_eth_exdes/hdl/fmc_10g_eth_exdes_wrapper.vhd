@@ -383,6 +383,8 @@ I2C_BUSY(31 downto 1) 			<= ZEROS(31);
 I2C_END_TRANSFER(31 downto 1)	<= ZEROS(31);
 I2C_ERROR_STATUS(31 downto 2)	<= ZEROS(30);
 
+SIM_SPEEDUP_CONTROL    => (others=>'0');
+
 FREQUENCY_VALUE <= ZEROS(32);
 APPLY_FREQ <= '0';
 ---------------------------------------------------------------------------
@@ -420,7 +422,6 @@ port map (
     ENABLE_PAT_GEN         => ENABLE_PAT_GEN,
     ENABLE_PAT_CHECK       => ENABLE_PAT_CHECK,
     ADDRESS_SWAP_ENABLE    => ADDRESS_SWAP_ENABLE,
-    SIM_SPEEDUP_CONTROL    => SIM_SPEEDUP_CONTROL,
     ENABLE_CUSTOM_PREAMBLE => ENABLE_CUSTOM_PREAMBLE,
     --status outputs of example design
     FRAME_ERROR            => FRAME_ERROR,
