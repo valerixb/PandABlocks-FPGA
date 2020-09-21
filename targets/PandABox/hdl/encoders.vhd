@@ -237,11 +237,9 @@ begin
         -- BITS not begin used
         bits_not_used <= 31 - (unsigned(INENC_BITS_i(4 downto 0))-1);
         lp_test: for i in 31 downto 0 loop
-           -- Discard bits not being used and MSB and LSB and append zeros on to top bits
+           -- Discard bits not being used and MSB and LSB and extend sign
            if (i > 31 - bits_not_used - unsigned(MSB_DISCARD_i) - unsigned(LSB_DISCARD_i)) then
-               --posn_o(i) <= '0';
-               -- sign extension
-               posn_o(i) <= posn(31 - to_integer(bits_not_used - unsigned(MSB_DISCARD_i)));
+               posn_o(i) <= posn(31 - to_integer(bits_not_used + unsigned(MSB_DISCARD_i)));
            -- Add the LSB_DISCARD on to posn index count and start there
            else
                posn_o(i) <= posn(i + to_integer(unsigned(LSB_DISCARD_i)));

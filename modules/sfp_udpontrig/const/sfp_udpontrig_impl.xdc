@@ -14,6 +14,12 @@ set_false_path -to [get_pins -hier -filter {name =~ softblocks_inst/{{ block.nam
 set_false_path -to [get_pins -hier -filter {name =~ softblocks_inst/{{ block.name }}_inst/SFP_UDP_Complete_i/eth_phy_i/tx_elastic_buffer_inst/reclock_wr_addrgray*/data_sync*/D}]
 
 set_false_path -to [get_pins -hier -filter {name =~ softblocks_inst/{{ block.name }}_inst/SFP_UDP_Complete_i/eth_phy_i/*/*reset_sync*/PRE }]
+#<<<<<<< HEAD
 set_false_path -to [get_pins -hier -filter {name =~ softblocks_inst/{{ block.name }}_inst/SFP_UDP_Complete_i/core_resets_i/pma_reset_pipe_reg*/PRE}]
 set_false_path -to [get_pins -hier -filter {name =~ softblocks_inst/{{ block.name }}_inst/SFP_UDP_Complete_i/core_resets_i/pma_reset_pipe*[0]/D}]
 
+#=======
+#
+#set_false_path -to [get_pins -hier -filter {name =~ softblocks_inst/{{ block.name }}_inst/SFP_UDP_Complete_i/core_resets_i/pma_reset_pipe_reg*/PRE}]
+#set_false_path -to [get_pins -hier -filter {name =~ softblocks_inst/{{ block.name }}_inst/SFP_UDP_Complete_i/core_resets_i/pma_reset_pipe*[0]/D}]
+#>>>>>>> new-vivado
