@@ -20,7 +20,7 @@ set script_folder [_tcl::get_script_folder]
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2019.2
+set scripts_vivado_version 2018.3
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -191,9 +191,7 @@ proc create_root_design { parentCell } {
 
   # Create interface ports
   set DDR [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR ]
-
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
-
   set M00_AXI [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M00_AXI ]
   set_property -dict [ list \
    CONFIG.ADDR_WIDTH {32} \
@@ -203,7 +201,6 @@ proc create_root_design { parentCell } {
    CONFIG.NUM_WRITE_OUTSTANDING {8} \
    CONFIG.PROTOCOL {AXI4LITE} \
    ] $M00_AXI
-
   set S_AXI_HP0 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI_HP0 ]
   set_property -dict [ list \
    CONFIG.ADDR_WIDTH {32} \
@@ -236,7 +233,6 @@ proc create_root_design { parentCell } {
    CONFIG.WUSER_BITS_PER_BYTE {0} \
    CONFIG.WUSER_WIDTH {0} \
    ] $S_AXI_HP0
-
   set S_AXI_HP1 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI_HP1 ]
   set_property -dict [ list \
    CONFIG.ADDR_WIDTH {32} \
@@ -270,7 +266,6 @@ proc create_root_design { parentCell } {
    CONFIG.WUSER_WIDTH {0} \
    ] $S_AXI_HP1
 
-
   # Create ports
   set FCLK_CLK0 [ create_bd_port -dir O -type clk FCLK_CLK0 ]
   set FCLK_RESET0_N [ create_bd_port -dir O -from 0 -to 0 -type rst FCLK_RESET0_N ]
@@ -278,9 +273,10 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.PortWidth {1} \
  ] $IRQ_F2P
-  set PL_CLK [ create_bd_port -dir I -type clk -freq_hz 125000000 PL_CLK ]
+  set PL_CLK [ create_bd_port -dir I -type clk PL_CLK ]
   set_property -dict [ list \
    CONFIG.ASSOCIATED_BUSIF {S_AXI_HP0:S_AXI_HP1:M00_AXI} \
+   CONFIG.FREQ_HZ {125000000} \
  ] $PL_CLK
 
   # Create instance: proc_sys_reset_0, and set properties
@@ -1098,7 +1094,6 @@ proc create_root_design { parentCell } {
   set read_dma_interface [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 read_dma_interface ]
   set_property -dict [ list \
    CONFIG.NUM_MI {1} \
-   #CONFIG.SYNCHRONIZATION_STAGES {2} \
  ] $read_dma_interface
 
   # Create instance: register_interface, and set properties
@@ -1106,7 +1101,6 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.NUM_MI {1} \
    CONFIG.S00_HAS_REGSLICE {1} \
-   #CONFIG.SYNCHRONIZATION_STAGES {2} \
  ] $register_interface
 
   # Create instance: write_dma_converter, and set properties
@@ -1122,8 +1116,6 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net S00_AXI_1 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins register_interface/S00_AXI]
   connect_bd_intf_net -intf_net S00_AXI_2 [get_bd_intf_ports S_AXI_HP1] [get_bd_intf_pins read_dma_interface/S00_AXI]
   connect_bd_intf_net -intf_net S_AXI_HP0_1 [get_bd_intf_ports S_AXI_HP0] [get_bd_intf_pins write_dma_converter/S_AXI]
-  #connect_bd_intf_net -intf_net axi_dwidth_converter_0_M_AXI [get_bd_intf_pins processing_system7_0/S_AXI_HP0] [get_bd_intf_pins write_dma_converter/M_AXI]
-  #connect_bd_intf_net -intf_net axi_interconnect_1_M00_AXI [get_bd_intf_pins processing_system7_0/S_AXI_HP1] [get_bd_intf_pins read_dma_interface/M00_AXI]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net read_dma_interface_M00_AXI [get_bd_intf_pins processing_system7_0/S_AXI_HP1] [get_bd_intf_pins read_dma_interface/M00_AXI]
@@ -1147,7 +1139,6 @@ proc create_root_design { parentCell } {
   # Restore current instance
   current_bd_instance $oldCurInst
 
-  validate_bd_design
   save_bd_design
 }
 # End of create_root_design()
@@ -1156,6 +1147,9 @@ proc create_root_design { parentCell } {
 ##################################################################
 # MAIN FLOW
 ##################################################################
+
+
+common::send_msg_id "BD_TCL-2000" "CRITICAL WARNING" "This Tcl script was generated from a block design that is out-of-date/locked. It is possible that design <$design_name> may result in errors during construction."
 
 create_root_design ""
 
