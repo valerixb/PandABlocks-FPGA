@@ -73,12 +73,12 @@ plle2_adv_inst : PLLE2_ADV
         (BANDWIDTH           => "OPTIMIZED",
         COMPENSATION         => "ZHOLD",
         DIVCLK_DIVIDE        => 1,
-        CLKFBOUT_MULT        => 7,
+        CLKFBOUT_MULT        => 21,
         CLKFBOUT_PHASE       => 0.000,
         CLKOUT0_DIVIDE       => 7,
         CLKOUT0_PHASE        => 0.000,
         CLKOUT0_DUTY_CYCLE   => 0.500,
-        CLKIN1_PERIOD        => 8.005)
+        CLKIN1_PERIOD        => 26.013)
     port map
         -- Output clocks
         (

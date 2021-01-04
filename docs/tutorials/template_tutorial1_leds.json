@@ -1039,22 +1039,6 @@
       "repeats": 0,
       "outputs": "expanded"
     },
-<<<<<<< HEAD
-=======
-    "POSENC": {
-      "label": "Quadrature and step/direction encoder",
-      "inputs": "expanded",
-      "enable": "ZERO",
-      "enableDelay": 0,
-      "inp": "ZERO",
-      "parameters": "expanded",
-      "period": 0.0,
-      "periodUnits": "s",
-      "protocol": "Quadrature",
-      "outputs": "expanded",
-      "readbacks": "expanded"
-    },
->>>>>>> new-vivado
     "PULSE1": {
       "label": "One-shot pulse delay and stretch 1",
       "inputs": "expanded",
@@ -1119,25 +1103,6 @@
       "outputs": "expanded",
       "readbacks": "expanded"
     },
-<<<<<<< HEAD
-=======
-    "QDEC": {
-      "label": "Quadrature decoder",
-      "parameters": "expanded",
-      "linkupIncr": false,
-      "inputs": "expanded",
-      "a": "ZERO",
-      "aDelay": 0,
-      "b": "ZERO",
-      "bDelay": 0,
-      "z": "ZERO",
-      "zDelay": 0,
-      "rstOnZ": false,
-      "setp": 0,
-      "readbacks": "expanded",
-      "outputs": "expanded"
-    },
->>>>>>> new-vivado
     "SEQ1": {
       "label": "Sequencer 1",
       "inputs": "expanded",

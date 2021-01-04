@@ -87,7 +87,6 @@ begin
         elsif gate_prev = '1' and (gate_i = '0' or trig_i = '1') then
             diff_sum := diff_sum + signed(value_i) - start_val;
         end if;
---<<<<<<< HEAD
 
         -- Output the result
         if (trig_i = '1') then
@@ -98,20 +97,6 @@ begin
         -- Latch the current value to start_val on rising gate or on capture
         if (gate_prev = '0' and gate_i = '1') or (trig_i = '1' and gate_i = '1') then
             start_val <= signed(value_i);
---=======
---        -- Zero diff_sum and set diff output on capture
---        if (trig_i = '1') then
---            if (gate_i = '1' or gate_prev = '1') then
---                -- Diff output is current diff + diff_sum if capture and (falling or high gate)
---                diff_o <= std_logic_vector(diff_sum + signed(value_i) - start_val);
---            else
---                diff_o <= std_logic_vector(diff_sum);
---            end if;
---            diff_sum <= (others => '0');
---        -- Add in current diff to diff_sum if falling gate
---        elsif (gate_prev = '1' and gate_i = '0') then
---            diff_sum <= diff_sum + signed(value_i) - start_val;
--->>>>>>> new-vivado
         end if;
 
         gate_prev <= gate_i;

@@ -5,8 +5,6 @@
 --
 --  Author      : Dr. Isa Uzun (isa.uzun@diamond.ac.uk)
 --
---  modified on aug 29, 2020 by Valerio Bassetti, MaxIV Lab, Unversity of Lund 
---  (valerio.bassetti@maxiv.lu.se)
 --------------------------------------------------------------------------------
 --
 --  Description : Serial Interface Synchronous Recevier core.

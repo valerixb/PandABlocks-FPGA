@@ -5,7 +5,6 @@
 --
 --      MaxIV Laboratory, Lund, Sweden
 --
---  Author      : Valerio Bassetti (valerio.bassetti@maxiv.lu.se)
 --------------------------------------------------------------------------------
 --
 --  Description : Gray to binary converter block

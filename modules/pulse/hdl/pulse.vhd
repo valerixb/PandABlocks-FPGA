@@ -162,7 +162,6 @@ begin
         -- Second clock tick, calc the minimum distance between rising edges
         step_times_pulses <= resize(step_i * pulses_i, 48);
 
--- <<<<<<< HEAD
         -- Take 48-bit time as combination of two for:
         width_vector(31 downto 0) := WIDTH_L;
         width_vector(47 downto 32) := WIDTH_H(15 downto 0);
@@ -197,43 +196,6 @@ begin
         else
             pulses_i <= unsigned(PULSES);
         end if;
--- =======
--- pipeline_regs : process(clk_i)
--- begin
---  if rising_edge(clk_i) then
---    -- If 0 < DELAY < 6, it should be set to 6
---    --delay_i <=  (unsigned(DELAY)) when (unsigned(DELAY) > 5) else to_unsigned(6, 48);
---    if unsigned(DELAY) > 5 then
---      delay_i <= unsigned(DELAY);
---    else
---      delay_i <= to_unsigned(6, 48);
---    end if;
---
---    --gap_i <=    step_i - width_i when ((signed(step_i) - signed(width_i)) > 2) else to_unsigned(2, 48);
---    if (signed(step_i) - signed(width_i)) > 2 then
---      gap_i <= step_i - width_i;
---    else
---      gap_i <= to_unsigned(2, 48);
---    end if;
---
---    -- Make sure that if we recieve a pulse and the PULSE variable is accidentally set to zero we don't punish a hapless user
---    --pulses_i <= unsigned(PULSES) when (unsigned(PULSES) /= 0) else to_unsigned(1, 32);
---    if unsigned(PULSES) /= 0 then
---      pulses_i <= unsigned(PULSES);
---    else
---      pulses_i <= to_unsigned(1, 32);
---    end if;
---
---    --step_i <=   unsigned(STEP) when (unsigned(STEP) > unsigned(WIDTH) or unsigned(STEP) = 0) else
---    --            unsigned(STEP) + width_i + 1;
---    if unsigned(STEP) > unsigned(WIDTH) or unsigned(STEP) = 0 then
---      step_i <= unsigned(STEP);
---    else
---      step_i <= unsigned(STEP) + width_i + 1;
---    end if;
---  end if;
---end process;
--->>>>>>> new-vivado
 
     end if;
 end process;

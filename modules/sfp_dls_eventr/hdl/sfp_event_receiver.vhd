@@ -7,7 +7,7 @@ use unisim.vcomponents.all;
 
 
 entity sfp_event_receiver is
-    port (GTREFCLK        : in  std_logic;
+    port (GTREFCLK          : in  std_logic;
           event_reset_i     : in  std_logic;
           event_clk_i       : in  std_logic;
           rxp_i             : in  std_logic;
