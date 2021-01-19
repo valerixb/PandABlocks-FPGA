@@ -33,7 +33,7 @@ port (
     clk_i           : in  std_logic;
     reset_i         : in  std_logic;
     -- Block Parameters
-    ENCODING        : in  std_logic_vector(0 downto 0);
+    ENCODING        : in  std_logic_vector(1 downto 0);
     BITS            : in  std_logic_vector(7 downto 0);
     CLK_PERIOD      : in  std_logic_vector(31 downto 0);
     FRAME_PERIOD    : in  std_logic_vector(31 downto 0);
