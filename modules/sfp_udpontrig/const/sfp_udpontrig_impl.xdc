@@ -16,4 +16,3 @@ set_false_path -to [get_pins -hier -filter {name =~ softblocks_inst/{{ block.nam
 set_false_path -to [get_pins -hier -filter {name =~ softblocks_inst/{{ block.name }}_inst/SFP_UDP_Complete_i/eth_phy_i/*/*reset_sync*/PRE }]
 set_false_path -to [get_pins -hier -filter {name =~ softblocks_inst/{{ block.name }}_inst/SFP_UDP_Complete_i/core_resets_i/pma_reset_pipe_reg*/PRE}]
 set_false_path -to [get_pins -hier -filter {name =~ softblocks_inst/{{ block.name }}_inst/SFP_UDP_Complete_i/core_resets_i/pma_reset_pipe*[0]/D}]
-

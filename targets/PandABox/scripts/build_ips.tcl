@@ -299,7 +299,7 @@ generate_target all [get_files  $BUILD_DIR/event_receiver_mgt/event_receiver_mgt
 synth_ip [get_ips event_receiver_mgt]
 
 #
-# Create SFP event receiver mgt
+# Create SFP sync
 create_ip -vlnv [get_ipdefs -filter {NAME == gtwizard}] \
 -module_name sfp_panda_sync -dir $BUILD_DIR/
 

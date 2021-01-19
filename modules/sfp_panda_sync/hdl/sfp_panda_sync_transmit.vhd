@@ -159,7 +159,8 @@ txdata_o <= txdata;
 ps_data_out: process(txoutclk_i)
 begin
     if rising_edge(txoutclk_i) then
-                
+      
+--      if reset_i = '0' then        
         case SM_DATA is
                     
             -- 16 bits plus the k character or just zeros
@@ -196,6 +197,12 @@ begin
                 SM_DATA <= STATE_BITIN;
                         
         end case;                             
+--      else 
+--        SM_DATA <= STATE_BITIN;
+--        txdata <= (others => '0');
+--        start_in <= '0';
+--        txcharisk_o <= (others => '0');
+--      end if;
     end if;
 end process ps_data_out;    
         
