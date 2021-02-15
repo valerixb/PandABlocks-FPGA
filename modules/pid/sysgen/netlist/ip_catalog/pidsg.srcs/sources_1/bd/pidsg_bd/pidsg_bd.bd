@@ -1,0 +1,312 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xE1C4ABE748E6C16E",
+      "design_src": "SYSGEN",
+      "device": "xc7z030sbg485-1",
+      "gen_directory": "../../../../pidsg.gen/sources_1/bd/pidsg_bd",
+      "name": "pidsg_bd",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2020.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "pidsg_1": ""
+    },
+    "ports": {
+      "aiw_g": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "pidsg_bd_clk",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "clr": {
+        "type": "data",
+        "direction": "I",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "command_in": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "control_out": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {float {sigwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 24}}}}}}",
+            "value_src": "const_prop"
+          }
+        }
+      },
+      "g1d": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "g2d": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "gi": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "inv_command": {
+        "type": "data",
+        "direction": "I",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "inv_meas": {
+        "type": "data",
+        "direction": "I",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "kp": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "meas_in": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "pv_deriv": {
+        "type": "data",
+        "direction": "I",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "sat_limit": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "thr_in": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "pidsg_1": {
+        "vlnv": "MaxIV:Panda_SysGen:pidsg:1.0",
+        "xci_name": "pidsg_bd_pidsg_1_0",
+        "xci_path": "ip\\pidsg_bd_pidsg_1_0\\pidsg_bd_pidsg_1_0.xci",
+        "inst_hier_path": "pidsg_1"
+      }
+    },
+    "nets": {
+      "aiw_g_1": {
+        "ports": [
+          "aiw_g",
+          "pidsg_1/aiw_g"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "pidsg_1/clk"
+        ]
+      },
+      "clr_1": {
+        "ports": [
+          "clr",
+          "pidsg_1/clr"
+        ]
+      },
+      "command_in_1": {
+        "ports": [
+          "command_in",
+          "pidsg_1/command_in"
+        ]
+      },
+      "pidsg_1_control_out": {
+        "ports": [
+          "pidsg_1/control_out",
+          "control_out"
+        ]
+      },
+      "g1d_1": {
+        "ports": [
+          "g1d",
+          "pidsg_1/g1d"
+        ]
+      },
+      "g2d_1": {
+        "ports": [
+          "g2d",
+          "pidsg_1/g2d"
+        ]
+      },
+      "gi_1": {
+        "ports": [
+          "gi",
+          "pidsg_1/gi"
+        ]
+      },
+      "inv_command_1": {
+        "ports": [
+          "inv_command",
+          "pidsg_1/inv_command"
+        ]
+      },
+      "inv_meas_1": {
+        "ports": [
+          "inv_meas",
+          "pidsg_1/inv_meas"
+        ]
+      },
+      "kp_1": {
+        "ports": [
+          "kp",
+          "pidsg_1/kp"
+        ]
+      },
+      "meas_in_1": {
+        "ports": [
+          "meas_in",
+          "pidsg_1/meas_in"
+        ]
+      },
+      "pv_deriv_1": {
+        "ports": [
+          "pv_deriv",
+          "pidsg_1/pv_deriv"
+        ]
+      },
+      "sat_limit_1": {
+        "ports": [
+          "sat_limit",
+          "pidsg_1/sat_limit"
+        ]
+      },
+      "thr_in_1": {
+        "ports": [
+          "thr_in",
+          "pidsg_1/thr_in"
+        ]
+      }
+    }
+  }
+}
