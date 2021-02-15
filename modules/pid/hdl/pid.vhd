@@ -21,19 +21,21 @@ port (
     clk_i               : in  std_logic;
     ENABLE_i            : in  std_logic;
     -- Block Input and Outputs
-    command_in_i        : in  std_logic_vector(31 downto 0);
-    measure_in_i        : in  std_logic_vector(31 downto 0);
-    --gain_P              : in  std_logic_vector(31 downto 0);
-    control_out_o       : out std_logic_vector(31 downto 0)
+    cmd_i               : in  std_logic_vector(31 downto 0); -- sfix32_En31
+    meas_i              : in  std_logic_vector(31 downto 0); -- sfix32_En31
+    kp                  : in  std_logic_vector(31 downto 0); -- sfix32_En24
+    out_o               : out std_logic_vector(31 downto 0)  -- sfix32_En31
 	);
 end pid;
 
 architecture rtl of pid is
 
-    signal desired                 : signed(31 downto 0);
-    signal measured                : signed(31 downto 0);
-    signal err_temp                : signed(32 downto 0);
-    signal err                     : signed(31 downto 0);
+    signal desired                 : signed(31 downto 0); -- sfix32_En31
+    signal measured                : signed(31 downto 0); -- sfix32_En31
+    signal err_temp                : signed(32 downto 0); -- sfix33_En31
+    signal err                     : signed(31 downto 0); -- sfix32_En31
+    signal prop_temp               : signed(63 downto 0); -- sfix64_En55
+    signal prop                    : signed(31 downto 0); -- sfix32_En31
 
 begin
 
@@ -44,13 +46,17 @@ begin
             measured          <= (others=>'0');
             err_temp          <= (others=>'0');
             err               <= (others=>'0');
+            prop_temp         <= (others=>'0');
+            prop              <= (others=>'0');
         elsif rising_edge(clk_i) then
             --if ce = '1' then
-				desired       <= signed(command_in_i);
-				measured      <= signed(measure_in_i);
+				desired       <= signed(cmd_i);
+				measured      <= signed(meas_i);
 				err_temp      <= resize(desired,33) - resize(measured,33);
-				err           <= err_temp(31 downto 0); 
-				control_out_o <= std_logic_vector(err);
+				err           <= err_temp(31 downto 0);
+				prop_temp     <= err * signed( kp );
+				prop          <= prop_temp(55 downto 24);
+				out_o         <= std_logic_vector(prop);
             --end if; -- if ce
         end if;  -- if rising_edge(clk)
     end process main_process;
