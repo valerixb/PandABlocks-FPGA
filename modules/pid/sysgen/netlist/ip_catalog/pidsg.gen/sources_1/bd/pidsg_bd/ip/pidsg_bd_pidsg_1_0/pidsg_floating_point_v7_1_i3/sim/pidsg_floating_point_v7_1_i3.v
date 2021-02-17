@@ -56,8 +56,6 @@
 module pidsg_floating_point_v7_1_i3 (
   s_axis_a_tvalid,
   s_axis_a_tdata,
-  s_axis_b_tvalid,
-  s_axis_b_tdata,
   m_axis_result_tvalid,
   m_axis_result_tdata
 );
@@ -67,16 +65,11 @@ input wire s_axis_a_tvalid;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXIS_A, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS_A TDATA" *)
 input wire [31 : 0] s_axis_a_tdata;
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS_B TVALID" *)
-input wire s_axis_b_tvalid;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXIS_B, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef, INSERT_VIP 0" *)
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS_B TDATA" *)
-input wire [31 : 0] s_axis_b_tdata;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS_RESULT TVALID" *)
 output wire m_axis_result_tvalid;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXIS_RESULT, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXIS_RESULT, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 100000000, PHASE 0.000, LAYERED_METADATA undef, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS_RESULT TDATA" *)
-output wire [7 : 0] m_axis_result_tdata;
+output wire [31 : 0] m_axis_result_tdata;
 
   floating_point_v7_1_11 #(
     .C_XDEVICEFAMILY("zynq"),
@@ -86,9 +79,9 @@ output wire [7 : 0] m_axis_result_tdata;
     .C_HAS_MULTIPLY(0),
     .C_HAS_DIVIDE(0),
     .C_HAS_SQRT(0),
-    .C_HAS_COMPARE(1),
+    .C_HAS_COMPARE(0),
     .C_HAS_FIX_TO_FLT(0),
-    .C_HAS_FLT_TO_FIX(0),
+    .C_HAS_FLT_TO_FIX(1),
     .C_HAS_FLT_TO_FLT(0),
     .C_HAS_RECIP(0),
     .C_HAS_RECIP_SQRT(0),
@@ -111,9 +104,9 @@ output wire [7 : 0] m_axis_result_tdata;
     .C_B_FRACTION_WIDTH(24),
     .C_C_WIDTH(32),
     .C_C_FRACTION_WIDTH(24),
-    .C_RESULT_WIDTH(1),
-    .C_RESULT_FRACTION_WIDTH(0),
-    .C_COMPARE_OPERATION(4),
+    .C_RESULT_WIDTH(32),
+    .C_RESULT_FRACTION_WIDTH(31),
+    .C_COMPARE_OPERATION(8),
     .C_LATENCY(0),
     .C_OPTIMIZATION(1),
     .C_MULT_USAGE(0),
@@ -133,7 +126,7 @@ output wire [7 : 0] m_axis_result_tdata;
     .C_THROTTLE_SCHEME(3),
     .C_HAS_A_TUSER(0),
     .C_HAS_A_TLAST(0),
-    .C_HAS_B(1),
+    .C_HAS_B(0),
     .C_HAS_B_TUSER(0),
     .C_HAS_B_TLAST(0),
     .C_HAS_C(0),
@@ -153,7 +146,7 @@ output wire [7 : 0] m_axis_result_tdata;
     .C_C_TUSER_WIDTH(1),
     .C_OPERATION_TDATA_WIDTH(8),
     .C_OPERATION_TUSER_WIDTH(1),
-    .C_RESULT_TDATA_WIDTH(8),
+    .C_RESULT_TDATA_WIDTH(32),
     .C_RESULT_TUSER_WIDTH(1),
     .C_FIXED_DATA_UNSIGNED(0)
   ) inst (
@@ -165,9 +158,9 @@ output wire [7 : 0] m_axis_result_tdata;
     .s_axis_a_tdata(s_axis_a_tdata),
     .s_axis_a_tuser(1'B0),
     .s_axis_a_tlast(1'H0),
-    .s_axis_b_tvalid(s_axis_b_tvalid),
+    .s_axis_b_tvalid(1'H0),
     .s_axis_b_tready(),
-    .s_axis_b_tdata(s_axis_b_tdata),
+    .s_axis_b_tdata(32'B0),
     .s_axis_b_tuser(1'B0),
     .s_axis_b_tlast(1'H0),
     .s_axis_c_tvalid(1'H0),

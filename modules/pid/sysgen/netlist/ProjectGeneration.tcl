@@ -28,7 +28,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set IP_LifeCycle_Menu {1}
 	set IP_Logo {sysgen_icon_100.png}
 	set IP_Name {pid_1_0}
-	set IP_Revision {242574298}
+	set IP_Revision {244464898}
 	set IP_Socket_IP {0}
 	set IP_Socket_IP_Proj_Path {}
 	set IP_Vendor_Text {MaxIV}
@@ -58,13 +58,13 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set SynthesisTool {Vivado}
 	set TargetDir {C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist}
 	set TopLevelModule {pidsg}
-	set TopLevelSimulinkHandle 0.000244141
+	set TopLevelSimulinkHandle 8696
 	set VHDLLib {xil_defaultlib}
 	set TopLevelPortInterface {}
 	dict set TopLevelPortInterface thr_in Name {thr_in}
-	dict set TopLevelPortInterface thr_in Type XFloat_8_24
-	dict set TopLevelPortInterface thr_in ArithmeticType xlFloat
-	dict set TopLevelPortInterface thr_in BinaryPoint 24
+	dict set TopLevelPortInterface thr_in Type Fix_32_31
+	dict set TopLevelPortInterface thr_in ArithmeticType xlSigned
+	dict set TopLevelPortInterface thr_in BinaryPoint 31
 	dict set TopLevelPortInterface thr_in Width 32
 	dict set TopLevelPortInterface thr_in DatFile {pidsg_thr_in.dat}
 	dict set TopLevelPortInterface thr_in IconText {thr_in}
@@ -77,9 +77,9 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface thr_in Locs {}
 	dict set TopLevelPortInterface thr_in IOStandard {}
 	dict set TopLevelPortInterface sat_limit Name {sat_limit}
-	dict set TopLevelPortInterface sat_limit Type XFloat_8_24
-	dict set TopLevelPortInterface sat_limit ArithmeticType xlFloat
-	dict set TopLevelPortInterface sat_limit BinaryPoint 24
+	dict set TopLevelPortInterface sat_limit Type Fix_32_31
+	dict set TopLevelPortInterface sat_limit ArithmeticType xlSigned
+	dict set TopLevelPortInterface sat_limit BinaryPoint 31
 	dict set TopLevelPortInterface sat_limit Width 32
 	dict set TopLevelPortInterface sat_limit DatFile {pidsg_sat_limit.dat}
 	dict set TopLevelPortInterface sat_limit IconText {sat_limit}
@@ -92,9 +92,9 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface sat_limit Locs {}
 	dict set TopLevelPortInterface sat_limit IOStandard {}
 	dict set TopLevelPortInterface meas_in Name {meas_in}
-	dict set TopLevelPortInterface meas_in Type XFloat_8_24
-	dict set TopLevelPortInterface meas_in ArithmeticType xlFloat
-	dict set TopLevelPortInterface meas_in BinaryPoint 24
+	dict set TopLevelPortInterface meas_in Type Fix_32_31
+	dict set TopLevelPortInterface meas_in ArithmeticType xlSigned
+	dict set TopLevelPortInterface meas_in BinaryPoint 31
 	dict set TopLevelPortInterface meas_in Width 32
 	dict set TopLevelPortInterface meas_in DatFile {pidsg_meas_in.dat}
 	dict set TopLevelPortInterface meas_in IconText {meas_in}
@@ -152,9 +152,9 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface inv_command Locs {}
 	dict set TopLevelPortInterface inv_command IOStandard {}
 	dict set TopLevelPortInterface command_in Name {command_in}
-	dict set TopLevelPortInterface command_in Type XFloat_8_24
-	dict set TopLevelPortInterface command_in ArithmeticType xlFloat
-	dict set TopLevelPortInterface command_in BinaryPoint 24
+	dict set TopLevelPortInterface command_in Type Fix_32_31
+	dict set TopLevelPortInterface command_in ArithmeticType xlSigned
+	dict set TopLevelPortInterface command_in BinaryPoint 31
 	dict set TopLevelPortInterface command_in Width 32
 	dict set TopLevelPortInterface command_in DatFile {pidsg_command_in.dat}
 	dict set TopLevelPortInterface command_in IconText {command_in}
@@ -242,9 +242,9 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface aiw_g Locs {}
 	dict set TopLevelPortInterface aiw_g IOStandard {}
 	dict set TopLevelPortInterface control_out Name {control_out}
-	dict set TopLevelPortInterface control_out Type XFloat_8_24
-	dict set TopLevelPortInterface control_out ArithmeticType xlFloat
-	dict set TopLevelPortInterface control_out BinaryPoint 24
+	dict set TopLevelPortInterface control_out Type Fix_32_31
+	dict set TopLevelPortInterface control_out ArithmeticType xlSigned
+	dict set TopLevelPortInterface control_out BinaryPoint 31
 	dict set TopLevelPortInterface control_out Width 32
 	dict set TopLevelPortInterface control_out DatFile {pidsg_control_out.dat}
 	dict set TopLevelPortInterface control_out IconText {control_out}

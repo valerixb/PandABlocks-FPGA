@@ -19,6 +19,12 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==pidsg_float
 # IP: c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i4/pidsg_floating_point_v7_1_i4.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==pidsg_floating_point_v7_1_i4 || ORIG_REF_NAME==pidsg_floating_point_v7_1_i4} -quiet] -quiet
 
+# IP: c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i5/pidsg_floating_point_v7_1_i5.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==pidsg_floating_point_v7_1_i5 || ORIG_REF_NAME==pidsg_floating_point_v7_1_i5} -quiet] -quiet
+
+# IP: c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i6/pidsg_floating_point_v7_1_i6.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==pidsg_floating_point_v7_1_i6 || ORIG_REF_NAME==pidsg_floating_point_v7_1_i6} -quiet] -quiet
+
 # XDC: c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/constrs/pidsg.xdc
 # XDC: The top module name and the constraint reference have the same name: 'pidsg_bd_pidsg_1_0'. Do not add the DONT_TOUCH constraint.
 set_property KEEP_HIERARCHY SOFT [get_cells U0 -quiet] -quiet
@@ -40,6 +46,12 @@ set_property KEEP_HIERARCHY SOFT [get_cells U0 -quiet] -quiet
 
 # IP: c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i4/pidsg_floating_point_v7_1_i4.xci
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==pidsg_floating_point_v7_1_i4 || ORIG_REF_NAME==pidsg_floating_point_v7_1_i4} -quiet] -quiet
+
+# IP: c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i5/pidsg_floating_point_v7_1_i5.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==pidsg_floating_point_v7_1_i5 || ORIG_REF_NAME==pidsg_floating_point_v7_1_i5} -quiet] -quiet
+
+# IP: c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i6/pidsg_floating_point_v7_1_i6.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==pidsg_floating_point_v7_1_i6 || ORIG_REF_NAME==pidsg_floating_point_v7_1_i6} -quiet] -quiet
 
 # XDC: c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/constrs/pidsg.xdc
 # XDC: The top module name and the constraint reference have the same name: 'pidsg_bd_pidsg_1_0'. Do not add the DONT_TOUCH constraint.

@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
---Date        : Tue Jan 26 13:45:37 2021
+--Date        : Wed Feb 17 10:55:40 2021
 --Host        : w-valbas-pc-0 running 64-bit major release  (build 9200)
 --Command     : generate_target pidsg_bd.bd
 --Design      : pidsg_bd
@@ -81,7 +81,7 @@ architecture STRUCTURE of pidsg_bd is
   attribute X_INTERFACE_INFO of command_in : signal is "xilinx.com:signal:data:1.0 DATA.COMMAND_IN DATA";
   attribute X_INTERFACE_PARAMETER of command_in : signal is "XIL_INTERFACENAME DATA.COMMAND_IN, LAYERED_METADATA undef";
   attribute X_INTERFACE_INFO of control_out : signal is "xilinx.com:signal:data:1.0 DATA.CONTROL_OUT DATA";
-  attribute X_INTERFACE_PARAMETER of control_out : signal is "XIL_INTERFACENAME DATA.CONTROL_OUT, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {float {sigwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 24}}}}}}";
+  attribute X_INTERFACE_PARAMETER of control_out : signal is "XIL_INTERFACENAME DATA.CONTROL_OUT, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 31} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}";
   attribute X_INTERFACE_INFO of g1d : signal is "xilinx.com:signal:data:1.0 DATA.G1D DATA";
   attribute X_INTERFACE_PARAMETER of g1d : signal is "XIL_INTERFACENAME DATA.G1D, LAYERED_METADATA undef";
   attribute X_INTERFACE_INFO of g2d : signal is "xilinx.com:signal:data:1.0 DATA.G2D DATA";

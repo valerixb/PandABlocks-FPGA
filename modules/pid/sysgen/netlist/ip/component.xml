@@ -150,7 +150,8 @@ ediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spiri
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>LAYERED_METADATA</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.COMMAND_IN.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {float {sigwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 24}}}}}}</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.COMMAND_IN.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 31} signed {attribs {resolve_type i
+mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -240,7 +241,8 @@ ediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spiri
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>LAYERED_METADATA</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.MEAS_IN.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {float {sigwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 24}}}}}}</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.MEAS_IN.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 31} signed {attribs {resolve_type i
+mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -262,7 +264,8 @@ ediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spiri
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>LAYERED_METADATA</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.SAT_LIMIT.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {float {sigwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 24}}}}}}</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.SAT_LIMIT.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 31} signed {attribs {resolve_type i
+mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -284,7 +287,8 @@ ediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spiri
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>LAYERED_METADATA</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.THR_IN.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {float {sigwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 24}}}}}}</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.THR_IN.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 31} signed {attribs {resolve_type i
+mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -329,7 +333,8 @@ ediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spiri
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>LAYERED_METADATA</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.CONTROL_OUT.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {float {sigwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 24}}}}}}</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.CONTROL_OUT.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 31} signed {attribs {resolve_type i
+mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -647,6 +652,14 @@ ediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spiri
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>pidsg_floating_point_v7_1_i5/pidsg_floating_point_v7_1_i5.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>pidsg_floating_point_v7_1_i6/pidsg_floating_point_v7_1_i6.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>constrs/pidsg.xdc</spirit:name>
         <spirit:userFileType>xdc</spirit:userFileType>
       </spirit:file>
@@ -698,7 +711,7 @@ ediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spiri
       <spirit:file>
         <spirit:name>hdl/pidsg.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_27e87140</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_3af7eca2</spirit:userFileType>
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
@@ -722,6 +735,14 @@ ediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spiri
       </spirit:file>
       <spirit:file>
         <spirit:name>pidsg_floating_point_v7_1_i4/pidsg_floating_point_v7_1_i4.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>pidsg_floating_point_v7_1_i5/pidsg_floating_point_v7_1_i5.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>pidsg_floating_point_v7_1_i6/pidsg_floating_point_v7_1_i6.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
@@ -825,8 +846,8 @@ ediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spiri
         <xilinx:xpmLibrary>XPM_FIFO</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>242574298</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-01-26T12:45:28Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>244464898</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-02-17T09:55:31Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>
