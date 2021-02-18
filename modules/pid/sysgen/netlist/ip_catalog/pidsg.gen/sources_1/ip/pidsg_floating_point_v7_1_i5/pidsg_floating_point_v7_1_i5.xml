@@ -719,7 +719,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>TDATA_NUM_BYTES</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXIS_RESULT.TDATA_NUM_BYTES">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXIS_RESULT.TDATA_NUM_BYTES">4</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1580,7 +1580,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_RESULT_TDATA_WIDTH&apos;)) - 1)">7</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_RESULT_TDATA_WIDTH&apos;)) - 1)">31</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1662,7 +1662,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_MULTIPLY</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_HAS_MULTIPLY">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_HAS_MULTIPLY">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_DIVIDE</spirit:name>
@@ -1674,7 +1674,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_COMPARE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_HAS_COMPARE">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_HAS_COMPARE">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_FIX_TO_FLT</spirit:name>
@@ -1774,15 +1774,15 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_RESULT_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_RESULT_WIDTH">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_RESULT_WIDTH">32</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_RESULT_FRACTION_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_RESULT_FRACTION_WIDTH">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_RESULT_FRACTION_WIDTH">24</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_COMPARE_OPERATION</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COMPARE_OPERATION">4</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COMPARE_OPERATION">8</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_LATENCY</spirit:name>
@@ -1794,7 +1794,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_MULT_USAGE</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MULT_USAGE">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MULT_USAGE">3</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_BRAM_USAGE</spirit:name>
@@ -1942,7 +1942,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_RESULT_TDATA_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_RESULT_TDATA_WIDTH">8</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_RESULT_TDATA_WIDTH">32</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_RESULT_TUSER_WIDTH</spirit:name>
@@ -2001,13 +2001,16 @@
       <spirit:enumeration spirit:text="Square-root">Square_root</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
+      <spirit:name>choice_pairs_1950b1ae</spirit:name>
+      <spirit:enumeration spirit:text="No Usage">No_Usage</spirit:enumeration>
+      <spirit:enumeration spirit:text="Full Usage">Full_Usage</spirit:enumeration>
+      <spirit:enumeration spirit:text="Max Usage">Max_Usage</spirit:enumeration>
+      <spirit:enumeration spirit:text="Medium Usage">Medium_Usage</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
       <spirit:name>choice_pairs_3ca5e07e</spirit:name>
       <spirit:enumeration spirit:text="High Speed">Speed_Optimized</spirit:enumeration>
       <spirit:enumeration spirit:text="Low Latency">Low_Latency</spirit:enumeration>
-    </spirit:choice>
-    <spirit:choice>
-      <spirit:name>choice_pairs_6385fb7a</spirit:name>
-      <spirit:enumeration spirit:text="No Usage">No_Usage</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
       <spirit:name>choice_pairs_b847e975</spirit:name>
@@ -2035,7 +2038,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Operation_Type</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Operation_Type" spirit:choiceRef="choice_pairs_14eb01f2" spirit:order="2">Compare</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Operation_Type" spirit:choiceRef="choice_pairs_14eb01f2" spirit:order="2">Multiply</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Add_Sub_Value</spirit:name>
@@ -2043,7 +2046,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_Compare_Operation</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_Compare_Operation" spirit:choiceRef="choice_pairs_eed18387" spirit:order="4">Greater_Than</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_Compare_Operation" spirit:choiceRef="choice_pairs_eed18387" spirit:order="4">Programmable</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>A_Precision_Type</spirit:name>
@@ -2059,15 +2062,15 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Result_Precision_Type</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Result_Precision_Type" spirit:choiceRef="choice_list_4a7739a0" spirit:order="8">Custom</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Result_Precision_Type" spirit:choiceRef="choice_list_4a7739a0" spirit:order="8">Single</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_Result_Exponent_Width</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_Result_Exponent_Width" spirit:order="9" spirit:minimum="1" spirit:maximum="64" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_Result_Exponent_Width" spirit:order="9" spirit:minimum="0" spirit:maximum="64" spirit:rangeType="long">8</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_Result_Fraction_Width</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_Result_Fraction_Width" spirit:order="10" spirit:minimum="0" spirit:maximum="64" spirit:rangeType="long">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_Result_Fraction_Width" spirit:order="10" spirit:minimum="0" spirit:maximum="64" spirit:rangeType="long">24</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_Accum_Msb</spirit:name>
@@ -2087,7 +2090,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_Mult_Usage</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_Mult_Usage" spirit:choiceRef="choice_pairs_6385fb7a" spirit:order="15">No_Usage</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_Mult_Usage" spirit:choiceRef="choice_pairs_1950b1ae" spirit:order="15">Max_Usage</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_BRAM_Usage</spirit:name>
@@ -2111,7 +2114,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_Latency</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_Latency" spirit:order="21" spirit:minimum="0" spirit:maximum="2" spirit:rangeType="long">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_Latency" spirit:order="21" spirit:minimum="0" spirit:maximum="6" spirit:rangeType="long">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_Rate</spirit:name>
@@ -2210,6 +2213,7 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXIS_RESULT.HAS_TKEEP" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXIS_RESULT.HAS_TREADY" xilinx:valueSource="auto"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXIS_RESULT.HAS_TSTRB" xilinx:valueSource="constant"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXIS_RESULT.TDATA_NUM_BYTES" xilinx:valueSource="auto"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXIS_RESULT.TDEST_WIDTH" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXIS_RESULT.TID_WIDTH" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXIS_A.HAS_TKEEP" xilinx:valueSource="constant"/>

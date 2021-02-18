@@ -7,7 +7,7 @@
 --------------------------------------------------------------------------------
 --
 --  Description : PID controller
---  latest rev  : jan 20 2021
+--  latest rev  : feb 17 2021
 --
 --------------------------------------------------------------------------------
 
@@ -15,50 +15,81 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+
 entity pid is
 port (
     -- Clock and Reset
-    clk_i               : in  std_logic;
-    ENABLE_i            : in  std_logic;
+    clk_i                 : in  std_logic;
+    ENABLE_i              : in  std_logic;
     -- Block Input and Outputs
-    cmd_i               : in  std_logic_vector(31 downto 0); -- sfix32_En31
-    meas_i              : in  std_logic_vector(31 downto 0); -- sfix32_En31
-    kp                  : in  std_logic_vector(31 downto 0); -- sfix32_En24
-    out_o               : out std_logic_vector(31 downto 0)  -- sfix32_En31
+    -- sfix32_En31
+    cmd_i                 : in  std_logic_vector(31 downto 0); -- sfix32_En31
+    meas_i                : in  std_logic_vector(31 downto 0); -- sfix32_En31
+    thresh                : in  std_logic_vector(31 downto 0); -- sfix32_En30
+    anti_int_wndp_rat_g   : in  std_logic_vector(31 downto 0); -- sfix32_En30
+    max_out               : in  std_logic_vector(31 downto 0); -- sfix32_En30
+    out_o                 : out std_logic_vector(31 downto 0); -- sfix32_En31
+    -- float32
+    kp                    : in  std_logic_vector(31 downto 0); -- float32
+    gi                    : in  std_logic_vector(31 downto 0); -- float32
+    g1d                   : in  std_logic_vector(31 downto 0); -- float32
+    g2d                   : in  std_logic_vector(31 downto 0); -- float32
+    -- boolean
+    inv_cmd               : std_logic_vector(31 downto 0);
+    inv_meas              : std_logic_vector(31 downto 0);
+    deriv_on_procvar      : std_logic_vector(31 downto 0)
 	);
 end pid;
 
+
 architecture rtl of pid is
 
-    signal desired                 : signed(31 downto 0); -- sfix32_En31
-    signal measured                : signed(31 downto 0); -- sfix32_En31
-    signal err_temp                : signed(32 downto 0); -- sfix33_En31
-    signal err                     : signed(31 downto 0); -- sfix32_En31
-    signal prop_temp               : signed(63 downto 0); -- sfix64_En55
-    signal prop                    : signed(31 downto 0); -- sfix32_En31
+    signal pid_clr  : std_logic;
+
+    component pidsg_0
+        port
+            (
+            aiw_g       : in std_logic_vector(31 downto 0);
+            g1d         : in std_logic_vector(31 downto 0);
+            g2d         : in std_logic_vector(31 downto 0);
+            gi          : in std_logic_vector(31 downto 0);
+            pv_deriv    : in std_logic_vector(0 downto 0);
+            command_in  : in std_logic_vector(31 downto 0);
+            inv_command : in std_logic_vector(0 downto 0);
+            inv_meas    : in std_logic_vector(0 downto 0);
+            kp          : in std_logic_vector(31 downto 0);
+            meas_in     : in std_logic_vector(31 downto 0);
+            sat_limit   : in std_logic_vector(31 downto 0);
+            thr_in      : in std_logic_vector(31 downto 0);
+            clk         : in std_logic;
+            clr         : in std_logic;
+            control_out : out std_logic_vector(31 downto 0)
+            );
+    end component;
+
 
 begin
 
-    main_process : process (clk_i, ENABLE_i)
-    begin
-        if ENABLE_i = '0' then
-            desired           <= (others=>'0');
-            measured          <= (others=>'0');
-            err_temp          <= (others=>'0');
-            err               <= (others=>'0');
-            prop_temp         <= (others=>'0');
-            prop              <= (others=>'0');
-        elsif rising_edge(clk_i) then
-            --if ce = '1' then
-				desired       <= signed(cmd_i);
-				measured      <= signed(meas_i);
-				err_temp      <= resize(desired,33) - resize(measured,33);
-				err           <= err_temp(31 downto 0);
-				prop_temp     <= err * signed( kp );
-				prop          <= prop_temp(55 downto 24);
-				out_o         <= std_logic_vector(prop);
-            --end if; -- if ce
-        end if;  -- if rising_edge(clk)
-    end process main_process;
+    the_pid: pidsg_0
+        port map
+            (
+            aiw_g          => anti_int_wndp_rat_g,
+            g1d            => g1d,
+            g2d            => g2d,
+            gi             => gi,
+            pv_deriv(0)    => deriv_on_procvar(0),
+            command_in     => cmd_i,
+            inv_command(0) => inv_cmd(0),
+            inv_meas(0)    => inv_meas(0),
+            kp             => kp,
+            meas_in        => meas_i,
+            sat_limit      => max_out,
+            thr_in         => thresh,
+            clk            => clk_i,
+            clr            => pid_clr,
+            control_out    => out_o
+            );
+    
+    pid_clr <= not ENABLE_i;
 
 end;

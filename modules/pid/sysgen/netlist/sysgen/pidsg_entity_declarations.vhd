@@ -552,6 +552,15 @@ entity pidsg_xlfpconvert is
  		  ); 
  end component;
 
+ component pidsg_floating_point_v7_1_i4
+    port ( 
+    s_axis_a_tvalid: in std_logic;
+    s_axis_a_tdata: in std_logic_vector(32 - 1 downto 0) :=(others=>'0');
+    m_axis_result_tvalid: out std_logic;
+    m_axis_result_tdata: out std_logic_vector(32- 1 downto 0) :=(others=>'0') 
+ 		  ); 
+ end component;
+
 begin
  internal_clr <= (clr or (rst(0))) and ce;
  internal_ce <= ce and en(0);
@@ -576,6 +585,16 @@ begin
 
  comp1: if ((core_name0 = "pidsg_floating_point_v7_1_i3")) generate 
   core_instance1:pidsg_floating_point_v7_1_i3
+   port map ( 
+         s_axis_a_tvalid => a_tvalid_net,
+         s_axis_a_tdata => a_tdata,
+         m_axis_result_tvalid => result_tvalid_net,
+         m_axis_result_tdata => result_tdata
+  ); 
+   end generate;
+
+ comp2: if ((core_name0 = "pidsg_floating_point_v7_1_i4")) generate 
+  core_instance2:pidsg_floating_point_v7_1_i4
    port map ( 
          s_axis_a_tvalid => a_tvalid_net,
          s_axis_a_tdata => a_tdata,
@@ -711,7 +730,7 @@ entity pidsg_xlfpmult is
  signal result: std_logic_vector(p_width - 1 downto 0);
 
 
- component pidsg_floating_point_v7_1_i4
+ component pidsg_floating_point_v7_1_i5
     port ( 
     s_axis_a_tvalid: in std_logic;
     s_axis_a_tdata: in std_logic_vector(32 - 1 downto 0) :=(others=>'0');
@@ -735,8 +754,8 @@ begin
  end process mult_process;
 
 
- comp0: if ((core_name0 = "pidsg_floating_point_v7_1_i4")) generate 
-  core_instance0:pidsg_floating_point_v7_1_i4
+ comp0: if ((core_name0 = "pidsg_floating_point_v7_1_i5")) generate 
+  core_instance0:pidsg_floating_point_v7_1_i5
    port map ( 
          s_axis_a_tvalid => a_tvalid_net,
          s_axis_a_tdata => a_tdata,
@@ -874,7 +893,7 @@ entity pidsg_xlfprelational is
  signal result: std_logic_vector(op_width - 1 downto 0);
 
 
- component pidsg_floating_point_v7_1_i5
+ component pidsg_floating_point_v7_1_i6
     port ( 
     s_axis_a_tvalid: in std_logic;
     s_axis_a_tdata: in std_logic_vector(32 - 1 downto 0) :=(others=>'0');
@@ -885,7 +904,7 @@ entity pidsg_xlfprelational is
  		  ); 
  end component;
 
- component pidsg_floating_point_v7_1_i6
+ component pidsg_floating_point_v7_1_i7
     port ( 
     s_axis_a_tvalid: in std_logic;
     s_axis_a_tdata: in std_logic_vector(32 - 1 downto 0) :=(others=>'0');
@@ -909,8 +928,8 @@ begin
  end process relational_process;
 
 
- comp0: if ((core_name0 = "pidsg_floating_point_v7_1_i5")) generate 
-  core_instance0:pidsg_floating_point_v7_1_i5
+ comp0: if ((core_name0 = "pidsg_floating_point_v7_1_i6")) generate 
+  core_instance0:pidsg_floating_point_v7_1_i6
    port map ( 
          s_axis_a_tvalid => a_tvalid_net,
          s_axis_a_tdata => a_tdata,
@@ -921,8 +940,8 @@ begin
   ); 
    end generate;
 
- comp1: if ((core_name0 = "pidsg_floating_point_v7_1_i6")) generate 
-  core_instance1:pidsg_floating_point_v7_1_i6
+ comp1: if ((core_name0 = "pidsg_floating_point_v7_1_i7")) generate 
+  core_instance1:pidsg_floating_point_v7_1_i7
    port map ( 
          s_axis_a_tvalid => a_tvalid_net,
          s_axis_a_tdata => a_tdata,

@@ -23,62 +23,63 @@ entity pidsg_struct is
   );
 end pidsg_struct;
 architecture structural of pidsg_struct is 
-  signal mult4_p_net : std_logic_vector( 32-1 downto 0 );
+  signal convert2_dout_net : std_logic_vector( 32-1 downto 0 );
+  signal thr_in_net : std_logic_vector( 32-1 downto 0 );
+  signal kp_net : std_logic_vector( 32-1 downto 0 );
+  signal addsub_s_net : std_logic_vector( 32-1 downto 0 );
+  signal mux2_y_net : std_logic_vector( 32-1 downto 0 );
+  signal g2d_net : std_logic_vector( 32-1 downto 0 );
+  signal meas_in_net : std_logic_vector( 32-1 downto 0 );
+  signal gi_net : std_logic_vector( 32-1 downto 0 );
+  signal g1d_net : std_logic_vector( 32-1 downto 0 );
+  signal mux1_y_net : std_logic_vector( 32-1 downto 0 );
+  signal addsub1_s_net : std_logic_vector( 32-1 downto 0 );
+  signal command_in_net : std_logic_vector( 32-1 downto 0 );
+  signal aiw_g_net : std_logic_vector( 32-1 downto 0 );
+  signal inv_meas_net : std_logic_vector( 1-1 downto 0 );
+  signal clk_net : std_logic;
+  signal addsub6_s_net : std_logic_vector( 32-1 downto 0 );
+  signal delay_q_net : std_logic_vector( 32-1 downto 0 );
+  signal inv_command_net : std_logic_vector( 1-1 downto 0 );
+  signal sat_limit_net : std_logic_vector( 32-1 downto 0 );
+  signal ce_net : std_logic;
+  signal pv_deriv_net : std_logic_vector( 1-1 downto 0 );
+  signal constant_op_net : std_logic_vector( 32-1 downto 0 );
+  signal addsub4_s_net : std_logic_vector( 32-1 downto 0 );
+  signal mult2_p_net : std_logic_vector( 32-1 downto 0 );
+  signal mult1_p_net : std_logic_vector( 32-1 downto 0 );
+  signal addsub2_s_net : std_logic_vector( 32-1 downto 0 );
+  signal addsub3_s_net : std_logic_vector( 32-1 downto 0 );
+  signal mux7_y_net : std_logic_vector( 32-1 downto 0 );
+  signal mult3_p_net : std_logic_vector( 32-1 downto 0 );
+  signal delay1_q_net : std_logic_vector( 32-1 downto 0 );
+  signal delay2_q_net : std_logic_vector( 32-1 downto 0 );
+  signal mux3_y_net : std_logic_vector( 32-1 downto 0 );
+  signal pid_summer_s_net : std_logic_vector( 32-1 downto 0 );
+  signal delay4_q_net : std_logic_vector( 32-1 downto 0 );
+  signal mux6_y_net : std_logic_vector( 32-1 downto 0 );
+  signal convert_dout_net : std_logic_vector( 32-1 downto 0 );
+  signal addsub5_s_net : std_logic_vector( 32-1 downto 0 );
   signal delay3_q_net : std_logic_vector( 32-1 downto 0 );
+  signal mult4_p_net : std_logic_vector( 32-1 downto 0 );
+  signal convert1_dout_net : std_logic_vector( 32-1 downto 0 );
+  signal convert4_dout_net : std_logic_vector( 32-1 downto 0 );
+  signal mux5_y_net : std_logic_vector( 32-1 downto 0 );
+  signal convert3_dout_net : std_logic_vector( 32-1 downto 0 );
   signal logical_y_net : std_logic_vector( 1-1 downto 0 );
   signal relational2_op_net : std_logic_vector( 1-1 downto 0 );
   signal relational3_op_net : std_logic_vector( 1-1 downto 0 );
-  signal mult_p_net : std_logic_vector( 32-1 downto 0 );
-  signal convert3_dout_net : std_logic_vector( 32-1 downto 0 );
-  signal convert4_dout_net : std_logic_vector( 32-1 downto 0 );
-  signal constant_op_net : std_logic_vector( 32-1 downto 0 );
-  signal convert_dout_net : std_logic_vector( 32-1 downto 0 );
-  signal convert1_dout_net : std_logic_vector( 32-1 downto 0 );
-  signal mux5_y_net : std_logic_vector( 32-1 downto 0 );
-  signal g2d_net : std_logic_vector( 32-1 downto 0 );
-  signal pv_deriv_net : std_logic_vector( 1-1 downto 0 );
-  signal gi_net : std_logic_vector( 32-1 downto 0 );
-  signal convert2_dout_net : std_logic_vector( 32-1 downto 0 );
-  signal inv_command_net : std_logic_vector( 1-1 downto 0 );
-  signal aiw_g_net : std_logic_vector( 32-1 downto 0 );
-  signal inv_meas_net : std_logic_vector( 1-1 downto 0 );
-  signal kp_net : std_logic_vector( 32-1 downto 0 );
-  signal meas_in_net : std_logic_vector( 32-1 downto 0 );
-  signal sat_limit_net : std_logic_vector( 32-1 downto 0 );
-  signal g1d_net : std_logic_vector( 32-1 downto 0 );
-  signal command_in_net : std_logic_vector( 32-1 downto 0 );
-  signal thr_in_net : std_logic_vector( 32-1 downto 0 );
-  signal clk_net : std_logic;
-  signal ce_net : std_logic;
-  signal addsub_s_net : std_logic_vector( 32-1 downto 0 );
-  signal mult1_p_net : std_logic_vector( 32-1 downto 0 );
-  signal addsub6_s_net : std_logic_vector( 32-1 downto 0 );
-  signal mux7_y_net : std_logic_vector( 32-1 downto 0 );
-  signal mult3_p_net : std_logic_vector( 32-1 downto 0 );
-  signal mux1_y_net : std_logic_vector( 32-1 downto 0 );
-  signal delay_q_net : std_logic_vector( 32-1 downto 0 );
-  signal addsub3_s_net : std_logic_vector( 32-1 downto 0 );
-  signal addsub5_s_net : std_logic_vector( 32-1 downto 0 );
-  signal mult2_p_net : std_logic_vector( 32-1 downto 0 );
-  signal addsub1_s_net : std_logic_vector( 32-1 downto 0 );
-  signal addsub4_s_net : std_logic_vector( 32-1 downto 0 );
-  signal pid_summer_s_net : std_logic_vector( 32-1 downto 0 );
-  signal mux6_y_net : std_logic_vector( 32-1 downto 0 );
-  signal delay4_q_net : std_logic_vector( 32-1 downto 0 );
-  signal delay2_q_net : std_logic_vector( 32-1 downto 0 );
-  signal mux3_y_net : std_logic_vector( 32-1 downto 0 );
-  signal addsub2_s_net : std_logic_vector( 32-1 downto 0 );
-  signal mux2_y_net : std_logic_vector( 32-1 downto 0 );
-  signal delay1_q_net : std_logic_vector( 32-1 downto 0 );
-  signal negate2_op_net : std_logic_vector( 32-1 downto 0 );
   signal mux_y_net : std_logic_vector( 32-1 downto 0 );
-  signal relational1_op_net : std_logic_vector( 1-1 downto 0 );
-  signal mux4_y_net : std_logic_vector( 32-1 downto 0 );
-  signal negate_op_net : std_logic_vector( 32-1 downto 0 );
-  signal negate1_op_net : std_logic_vector( 32-1 downto 0 );
+  signal mult_p_net : std_logic_vector( 32-1 downto 0 );
   signal relational_op_net : std_logic_vector( 1-1 downto 0 );
-  signal negate3_op_net : std_logic_vector( 32-1 downto 0 );
+  signal negate2_op_net : std_logic_vector( 32-1 downto 0 );
+  signal convert5_dout_net : std_logic_vector( 32-1 downto 0 );
+  signal negate1_op_net : std_logic_vector( 32-1 downto 0 );
   signal pi_summer_s_net : std_logic_vector( 32-1 downto 0 );
+  signal mux4_y_net : std_logic_vector( 32-1 downto 0 );
+  signal relational1_op_net : std_logic_vector( 1-1 downto 0 );
+  signal negate_op_net : std_logic_vector( 32-1 downto 0 );
+  signal negate3_op_net : std_logic_vector( 32-1 downto 0 );
 begin
   aiw_g_net <= aiw_g;
   g1d_net <= g1d;
@@ -310,7 +311,7 @@ begin
     c_latency => 0,
     core_name0 => "pidsg_floating_point_v7_1_i2",
     din_arith => xlSigned,
-    din_bin_pt => 31,
+    din_bin_pt => 30,
     din_tdata_width => 32,
     din_width => 32,
     dout_arith => xlFloat,
@@ -335,7 +336,7 @@ begin
     c_latency => 0,
     core_name0 => "pidsg_floating_point_v7_1_i2",
     din_arith => xlSigned,
-    din_bin_pt => 31,
+    din_bin_pt => 30,
     din_tdata_width => 32,
     din_width => 32,
     dout_arith => xlFloat,
@@ -383,7 +384,7 @@ begin
   convert3 : entity xil_defaultlib.pidsg_xlfpconvert 
   generic map (
     c_latency => 0,
-    core_name0 => "pidsg_floating_point_v7_1_i2",
+    core_name0 => "pidsg_floating_point_v7_1_i4",
     din_arith => xlSigned,
     din_bin_pt => 31,
     din_tdata_width => 32,
@@ -408,7 +409,7 @@ begin
   convert4 : entity xil_defaultlib.pidsg_xlfpconvert 
   generic map (
     c_latency => 0,
-    core_name0 => "pidsg_floating_point_v7_1_i2",
+    core_name0 => "pidsg_floating_point_v7_1_i4",
     din_arith => xlSigned,
     din_bin_pt => 31,
     din_tdata_width => 32,
@@ -524,7 +525,7 @@ begin
     b_bin_pt => 24,
     b_width => 32,
     c_latency => 0,
-    core_name0 => "pidsg_floating_point_v7_1_i4",
+    core_name0 => "pidsg_floating_point_v7_1_i5",
     extra_registers => 0,
     latency => 0,
     overflow => 1,
@@ -553,7 +554,7 @@ begin
     b_bin_pt => 24,
     b_width => 32,
     c_latency => 0,
-    core_name0 => "pidsg_floating_point_v7_1_i4",
+    core_name0 => "pidsg_floating_point_v7_1_i5",
     extra_registers => 0,
     latency => 0,
     overflow => 1,
@@ -582,7 +583,7 @@ begin
     b_bin_pt => 24,
     b_width => 32,
     c_latency => 0,
-    core_name0 => "pidsg_floating_point_v7_1_i4",
+    core_name0 => "pidsg_floating_point_v7_1_i5",
     extra_registers => 0,
     latency => 0,
     overflow => 1,
@@ -611,7 +612,7 @@ begin
     b_bin_pt => 24,
     b_width => 32,
     c_latency => 0,
-    core_name0 => "pidsg_floating_point_v7_1_i4",
+    core_name0 => "pidsg_floating_point_v7_1_i5",
     extra_registers => 0,
     latency => 0,
     overflow => 1,
@@ -640,7 +641,7 @@ begin
     b_bin_pt => 24,
     b_width => 32,
     c_latency => 0,
-    core_name0 => "pidsg_floating_point_v7_1_i4",
+    core_name0 => "pidsg_floating_point_v7_1_i5",
     extra_registers => 0,
     latency => 0,
     overflow => 1,
@@ -654,7 +655,7 @@ begin
     clr => '0',
     en => "1",
     a => addsub3_s_net,
-    b => aiw_g_net,
+    b => convert5_dout_net,
     clk => clk_net,
     ce => ce_net,
     p => mult4_p_net
@@ -839,7 +840,7 @@ begin
     b_bin_pt => 24,
     b_width => 32,
     c_latency => 0,
-    core_name0 => "pidsg_floating_point_v7_1_i5",
+    core_name0 => "pidsg_floating_point_v7_1_i6",
     extra_registers => 0,
     latency => 0,
     op_arith => xlUnsigned,
@@ -868,7 +869,7 @@ begin
     b_bin_pt => 24,
     b_width => 32,
     c_latency => 0,
-    core_name0 => "pidsg_floating_point_v7_1_i6",
+    core_name0 => "pidsg_floating_point_v7_1_i7",
     extra_registers => 0,
     latency => 0,
     op_arith => xlUnsigned,
@@ -897,7 +898,7 @@ begin
     b_bin_pt => 24,
     b_width => 32,
     c_latency => 0,
-    core_name0 => "pidsg_floating_point_v7_1_i5",
+    core_name0 => "pidsg_floating_point_v7_1_i6",
     extra_registers => 0,
     latency => 0,
     op_arith => xlUnsigned,
@@ -926,7 +927,7 @@ begin
     b_bin_pt => 24,
     b_width => 32,
     c_latency => 0,
-    core_name0 => "pidsg_floating_point_v7_1_i6",
+    core_name0 => "pidsg_floating_point_v7_1_i7",
     extra_registers => 0,
     latency => 0,
     op_arith => xlUnsigned,
@@ -944,6 +945,31 @@ begin
     clk => clk_net,
     ce => ce_net,
     op => relational3_op_net
+  );
+  convert5 : entity xil_defaultlib.pidsg_xlfpconvert 
+  generic map (
+    c_latency => 0,
+    core_name0 => "pidsg_floating_point_v7_1_i2",
+    din_arith => xlSigned,
+    din_bin_pt => 30,
+    din_tdata_width => 32,
+    din_width => 32,
+    dout_arith => xlFloat,
+    dout_bin_pt => 24,
+    dout_tdata_width => 32,
+    dout_width => 32,
+    extra_registers => 0,
+    latency => 0,
+    overflow => 1,
+    quantization => 1
+  )
+  port map (
+    clr => '0',
+    en => "1",
+    din => aiw_g_net,
+    clk => clk_net,
+    ce => ce_net,
+    dout => convert5_dout_net
   );
 end structural;
 -- Generated from Simulink block 
@@ -1001,7 +1027,7 @@ entity pidsg is
 end pidsg;
 architecture structural of pidsg is 
   attribute core_generation_info : string;
-  attribute core_generation_info of structural : architecture is "pidsg,sysgen_core_2020_2,{,compilation=IP Catalog,block_icon_display=Default,family=zynq,part=xc7z030,speed=-1,package=sbg485,synthesis_language=vhdl,hdl_library=xil_defaultlib,synthesis_strategy=Vivado Synthesis Defaults,implementation_strategy=Vivado Implementation Defaults,testbench=0,interface_doc=0,ce_clr=1,clock_period=8,system_simulink_period=8e-09,waveform_viewer=0,axilite_interface=0,ip_catalog_plugin=0,hwcosim_burst_mode=0,simulation_time=0.15,addsub=9,constant=1,convert=5,delay=5,logical=1,mult=5,mux=8,negate=4,relational=4,}";
+  attribute core_generation_info of structural : architecture is "pidsg,sysgen_core_2020_2,{,compilation=IP Catalog,block_icon_display=Default,family=zynq,part=xc7z030,speed=-1,package=sbg485,synthesis_language=vhdl,hdl_library=xil_defaultlib,synthesis_strategy=Vivado Synthesis Defaults,implementation_strategy=Vivado Implementation Defaults,testbench=0,interface_doc=0,ce_clr=1,clock_period=8,system_simulink_period=8e-09,waveform_viewer=0,axilite_interface=0,ip_catalog_plugin=0,hwcosim_burst_mode=0,simulation_time=0.15,addsub=9,constant=1,convert=6,delay=5,logical=1,mult=5,mux=8,negate=4,relational=4,}";
   signal clk_125_net : std_logic;
   signal ce_125_net : std_logic;
 begin

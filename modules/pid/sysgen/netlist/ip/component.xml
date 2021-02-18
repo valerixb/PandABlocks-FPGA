@@ -39,7 +39,8 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>LAYERED_METADATA</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.AIW_G.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {float {sigwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 24}}}}}}</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AIW_G.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 30} signed {attribs {resolve_type i
+mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -264,7 +265,7 @@ mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spir
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>LAYERED_METADATA</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.SAT_LIMIT.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 31} signed {attribs {resolve_type i
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.SAT_LIMIT.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 30} signed {attribs {resolve_type i
 mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
@@ -287,7 +288,7 @@ mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spir
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>LAYERED_METADATA</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.THR_IN.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 31} signed {attribs {resolve_type i
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.THR_IN.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 30} signed {attribs {resolve_type i
 mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
@@ -660,6 +661,10 @@ mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spir
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>pidsg_floating_point_v7_1_i7/pidsg_floating_point_v7_1_i7.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>constrs/pidsg.xdc</spirit:name>
         <spirit:userFileType>xdc</spirit:userFileType>
       </spirit:file>
@@ -711,7 +716,7 @@ mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spir
       <spirit:file>
         <spirit:name>hdl/pidsg.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_3af7eca2</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_d62c5600</spirit:userFileType>
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
@@ -743,6 +748,10 @@ mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spir
       </spirit:file>
       <spirit:file>
         <spirit:name>pidsg_floating_point_v7_1_i6/pidsg_floating_point_v7_1_i6.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>pidsg_floating_point_v7_1_i7/pidsg_floating_point_v7_1_i7.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
@@ -846,8 +855,8 @@ mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spir
         <xilinx:xpmLibrary>XPM_FIFO</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>244464898</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-02-17T09:55:31Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>244572175</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-02-18T15:43:34Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>

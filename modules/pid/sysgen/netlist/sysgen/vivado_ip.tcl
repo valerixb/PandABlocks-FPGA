@@ -138,8 +138,8 @@ lappend params_list CONFIG.A_TUSER_Width {1}
 lappend params_list CONFIG.Add_Sub_Value {Both}
 lappend params_list CONFIG.Axi_Optimize_Goal {Resources}
 lappend params_list CONFIG.B_TUSER_Width {1}
-lappend params_list CONFIG.C_A_Exponent_Width {1}
-lappend params_list CONFIG.C_A_Fraction_Width {31}
+lappend params_list CONFIG.C_A_Exponent_Width {2}
+lappend params_list CONFIG.C_A_Fraction_Width {30}
 lappend params_list CONFIG.C_BRAM_Usage {Full_Usage}
 lappend params_list CONFIG.C_Compare_Operation {Programmable}
 lappend params_list CONFIG.C_Has_DIVIDE_BY_ZERO {false}
@@ -227,6 +227,53 @@ if {[lsearch $existingipslist pidsg_floating_point_v7_1_i4] < 0} {
 create_ip -name floating_point -version 7.1 -vendor xilinx.com -library ip -module_name pidsg_floating_point_v7_1_i4
 set params_list [list]
 lappend params_list CONFIG.Component_Name {pidsg_floating_point_v7_1_i4}
+lappend params_list CONFIG.A_Precision_Type {Custom}
+lappend params_list CONFIG.A_TUSER_Width {1}
+lappend params_list CONFIG.Add_Sub_Value {Both}
+lappend params_list CONFIG.Axi_Optimize_Goal {Resources}
+lappend params_list CONFIG.B_TUSER_Width {1}
+lappend params_list CONFIG.C_A_Exponent_Width {1}
+lappend params_list CONFIG.C_A_Fraction_Width {31}
+lappend params_list CONFIG.C_BRAM_Usage {Full_Usage}
+lappend params_list CONFIG.C_Compare_Operation {Programmable}
+lappend params_list CONFIG.C_Has_DIVIDE_BY_ZERO {false}
+lappend params_list CONFIG.C_Has_INVALID_OP {false}
+lappend params_list CONFIG.C_Has_OVERFLOW {false}
+lappend params_list CONFIG.C_Has_UNDERFLOW {false}
+lappend params_list CONFIG.C_Latency {0}
+lappend params_list CONFIG.C_Mult_Usage {No_Usage}
+lappend params_list CONFIG.C_Optimization {Speed_Optimized}
+lappend params_list CONFIG.C_Rate {1}
+lappend params_list CONFIG.C_Result_Exponent_Width {8}
+lappend params_list CONFIG.C_Result_Fraction_Width {24}
+lappend params_list CONFIG.C_TUSER_Width {1}
+lappend params_list CONFIG.Flow_Control {NonBlocking}
+lappend params_list CONFIG.Has_ACLKEN {false}
+lappend params_list CONFIG.Has_ARESETn {false}
+lappend params_list CONFIG.Has_A_TLAST {false}
+lappend params_list CONFIG.Has_A_TUSER {false}
+lappend params_list CONFIG.Has_B_TLAST {false}
+lappend params_list CONFIG.Has_B_TUSER {false}
+lappend params_list CONFIG.Has_C_TLAST {false}
+lappend params_list CONFIG.Has_C_TUSER {false}
+lappend params_list CONFIG.Has_OPERATION_TLAST {false}
+lappend params_list CONFIG.Has_OPERATION_TUSER {false}
+lappend params_list CONFIG.Has_RESULT_TREADY {false}
+lappend params_list CONFIG.Maximum_Latency {false}
+lappend params_list CONFIG.OPERATION_TUSER_Width {1}
+lappend params_list CONFIG.Operation_Type {Fixed_to_float}
+lappend params_list CONFIG.RESULT_TLAST_Behv {Null}
+lappend params_list CONFIG.Result_Precision_Type {Single}
+
+set_property -dict $params_list [get_ips pidsg_floating_point_v7_1_i4]
+}
+
+
+set existingipslist [get_ips]
+if {[lsearch $existingipslist pidsg_floating_point_v7_1_i5] < 0} {
+create_ip -name floating_point -version 7.1 -vendor xilinx.com -library ip -module_name pidsg_floating_point_v7_1_i5
+set params_list [list]
+lappend params_list CONFIG.Component_Name {pidsg_floating_point_v7_1_i5}
 lappend params_list CONFIG.A_Precision_Type {Single}
 lappend params_list CONFIG.A_TUSER_Width {1}
 lappend params_list CONFIG.Add_Sub_Value {Both}
@@ -265,15 +312,15 @@ lappend params_list CONFIG.Operation_Type {Multiply}
 lappend params_list CONFIG.RESULT_TLAST_Behv {Null}
 lappend params_list CONFIG.Result_Precision_Type {Single}
 
-set_property -dict $params_list [get_ips pidsg_floating_point_v7_1_i4]
+set_property -dict $params_list [get_ips pidsg_floating_point_v7_1_i5]
 }
 
 
 set existingipslist [get_ips]
-if {[lsearch $existingipslist pidsg_floating_point_v7_1_i5] < 0} {
-create_ip -name floating_point -version 7.1 -vendor xilinx.com -library ip -module_name pidsg_floating_point_v7_1_i5
+if {[lsearch $existingipslist pidsg_floating_point_v7_1_i6] < 0} {
+create_ip -name floating_point -version 7.1 -vendor xilinx.com -library ip -module_name pidsg_floating_point_v7_1_i6
 set params_list [list]
-lappend params_list CONFIG.Component_Name {pidsg_floating_point_v7_1_i5}
+lappend params_list CONFIG.Component_Name {pidsg_floating_point_v7_1_i6}
 lappend params_list CONFIG.A_Precision_Type {Single}
 lappend params_list CONFIG.A_TUSER_Width {1}
 lappend params_list CONFIG.Add_Sub_Value {Both}
@@ -312,15 +359,15 @@ lappend params_list CONFIG.Operation_Type {Compare}
 lappend params_list CONFIG.RESULT_TLAST_Behv {Null}
 lappend params_list CONFIG.Result_Precision_Type {Custom}
 
-set_property -dict $params_list [get_ips pidsg_floating_point_v7_1_i5]
+set_property -dict $params_list [get_ips pidsg_floating_point_v7_1_i6]
 }
 
 
 set existingipslist [get_ips]
-if {[lsearch $existingipslist pidsg_floating_point_v7_1_i6] < 0} {
-create_ip -name floating_point -version 7.1 -vendor xilinx.com -library ip -module_name pidsg_floating_point_v7_1_i6
+if {[lsearch $existingipslist pidsg_floating_point_v7_1_i7] < 0} {
+create_ip -name floating_point -version 7.1 -vendor xilinx.com -library ip -module_name pidsg_floating_point_v7_1_i7
 set params_list [list]
-lappend params_list CONFIG.Component_Name {pidsg_floating_point_v7_1_i6}
+lappend params_list CONFIG.Component_Name {pidsg_floating_point_v7_1_i7}
 lappend params_list CONFIG.A_Precision_Type {Single}
 lappend params_list CONFIG.A_TUSER_Width {1}
 lappend params_list CONFIG.Add_Sub_Value {Both}
@@ -359,7 +406,7 @@ lappend params_list CONFIG.Operation_Type {Compare}
 lappend params_list CONFIG.RESULT_TLAST_Behv {Null}
 lappend params_list CONFIG.Result_Precision_Type {Custom}
 
-set_property -dict $params_list [get_ips pidsg_floating_point_v7_1_i6]
+set_property -dict $params_list [get_ips pidsg_floating_point_v7_1_i7]
 }
 
 

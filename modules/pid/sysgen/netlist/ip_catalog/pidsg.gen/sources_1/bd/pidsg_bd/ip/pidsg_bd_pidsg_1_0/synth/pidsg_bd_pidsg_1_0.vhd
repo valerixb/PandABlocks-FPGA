@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: MaxIV:Panda_SysGen:pidsg:1.0
--- IP Revision: 244464898
+-- IP Revision: 244572175
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -115,10 +115,10 @@ ARCHITECTURE pidsg_bd_pidsg_1_0_arch OF pidsg_bd_pidsg_1_0 IS
   ATTRIBUTE X_INTERFACE_PARAMETER OF clk: SIGNAL IS "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN pidsg_bd_clk, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF clk: SIGNAL IS "xilinx.com:signal:clock:1.0 clk CLK";
   ATTRIBUTE X_INTERFACE_PARAMETER OF thr_in: SIGNAL IS "XIL_INTERFACENAME thr_in, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}" & 
-"} value 31} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}";
+"} value 30} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF thr_in: SIGNAL IS "xilinx.com:signal:data:1.0 thr_in DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF sat_limit: SIGNAL IS "XIL_INTERFACENAME sat_limit, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum" & 
-" {}} value 31} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}";
+" {}} value 30} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF sat_limit: SIGNAL IS "xilinx.com:signal:data:1.0 sat_limit DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF meas_in: SIGNAL IS "XIL_INTERFACENAME meas_in, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {" & 
 "}} value 31} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}";
@@ -147,8 +147,8 @@ ARCHITECTURE pidsg_bd_pidsg_1_0_arch OF pidsg_bd_pidsg_1_0 IS
   ATTRIBUTE X_INTERFACE_PARAMETER OF g1d: SIGNAL IS "XIL_INTERFACENAME g1d, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {float {sigwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} val" & 
 "ue 24}}}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF g1d: SIGNAL IS "xilinx.com:signal:data:1.0 g1d DATA";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF aiw_g: SIGNAL IS "XIL_INTERFACENAME aiw_g, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {float {sigwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} v" & 
-"alue 24}}}}}}";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF aiw_g: SIGNAL IS "XIL_INTERFACENAME aiw_g, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}}" & 
+" value 30} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF aiw_g: SIGNAL IS "xilinx.com:signal:data:1.0 aiw_g DATA";
 BEGIN
   U0 : pidsg

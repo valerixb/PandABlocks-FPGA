@@ -1782,7 +1782,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_COMPARE_OPERATION</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COMPARE_OPERATION">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_COMPARE_OPERATION">4</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_LATENCY</spirit:name>
@@ -2043,7 +2043,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_Compare_Operation</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_Compare_Operation" spirit:choiceRef="choice_pairs_eed18387" spirit:order="4">Less_Than</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_Compare_Operation" spirit:choiceRef="choice_pairs_eed18387" spirit:order="4">Greater_Than</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>A_Precision_Type</spirit:name>
