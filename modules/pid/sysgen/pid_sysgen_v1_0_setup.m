@@ -9,7 +9,7 @@ f_filter=5000;           % Hz, cutoff freq for derivative filter
 aiw_G=1;                 % anti integral windup fractional gain (kb/ki)
 max_control=0.9;         % output saturation value
 input_threshold=0.0;     % detent ;-)
-VHDL_latency_cycles = 0; % FPGA latency in clock cycles
+VHDL_latency_cycles = 1; % FPGA latency in clock cycles
 %-------- calculated values -------
 Ts = 1/SampleRate;       % Sampling period, sec
 R=SampleRate/f_filter;

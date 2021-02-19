@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: MaxIV:Panda_SysGen:pidsg:1.0
--- IP Revision: 244572175
+-- IP Revision: 244656226
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;

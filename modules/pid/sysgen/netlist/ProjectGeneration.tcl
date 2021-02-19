@@ -28,7 +28,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set IP_LifeCycle_Menu {1}
 	set IP_Logo {sysgen_icon_100.png}
 	set IP_Name {pid_1_0}
-	set IP_Revision {244572175}
+	set IP_Revision {244656226}
 	set IP_Socket_IP {0}
 	set IP_Socket_IP_Proj_Path {}
 	set IP_Vendor_Text {MaxIV}
@@ -69,7 +69,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface thr_in DatFile {pidsg_thr_in.dat}
 	dict set TopLevelPortInterface thr_in IconText {thr_in}
 	dict set TopLevelPortInterface thr_in Direction in
-	dict set TopLevelPortInterface thr_in Period 125
+	dict set TopLevelPortInterface thr_in Period 1
 	dict set TopLevelPortInterface thr_in Interface 0
 	dict set TopLevelPortInterface thr_in InterfaceName {}
 	dict set TopLevelPortInterface thr_in InterfaceString {DATA}
@@ -84,7 +84,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface sat_limit DatFile {pidsg_sat_limit.dat}
 	dict set TopLevelPortInterface sat_limit IconText {sat_limit}
 	dict set TopLevelPortInterface sat_limit Direction in
-	dict set TopLevelPortInterface sat_limit Period 125
+	dict set TopLevelPortInterface sat_limit Period 1
 	dict set TopLevelPortInterface sat_limit Interface 0
 	dict set TopLevelPortInterface sat_limit InterfaceName {}
 	dict set TopLevelPortInterface sat_limit InterfaceString {DATA}
@@ -99,7 +99,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface meas_in DatFile {pidsg_meas_in.dat}
 	dict set TopLevelPortInterface meas_in IconText {meas_in}
 	dict set TopLevelPortInterface meas_in Direction in
-	dict set TopLevelPortInterface meas_in Period 125
+	dict set TopLevelPortInterface meas_in Period 1
 	dict set TopLevelPortInterface meas_in Interface 0
 	dict set TopLevelPortInterface meas_in InterfaceName {}
 	dict set TopLevelPortInterface meas_in InterfaceString {DATA}
@@ -114,7 +114,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface kp DatFile {pidsg_kp.dat}
 	dict set TopLevelPortInterface kp IconText {kp}
 	dict set TopLevelPortInterface kp Direction in
-	dict set TopLevelPortInterface kp Period 125
+	dict set TopLevelPortInterface kp Period 1
 	dict set TopLevelPortInterface kp Interface 0
 	dict set TopLevelPortInterface kp InterfaceName {}
 	dict set TopLevelPortInterface kp InterfaceString {DATA}
@@ -129,7 +129,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface inv_meas DatFile {pidsg_inv_meas.dat}
 	dict set TopLevelPortInterface inv_meas IconText {inv_meas}
 	dict set TopLevelPortInterface inv_meas Direction in
-	dict set TopLevelPortInterface inv_meas Period 125
+	dict set TopLevelPortInterface inv_meas Period 1
 	dict set TopLevelPortInterface inv_meas Interface 0
 	dict set TopLevelPortInterface inv_meas InterfaceName {}
 	dict set TopLevelPortInterface inv_meas InterfaceString {DATA}
@@ -144,7 +144,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface inv_command DatFile {pidsg_inv_command.dat}
 	dict set TopLevelPortInterface inv_command IconText {inv_command}
 	dict set TopLevelPortInterface inv_command Direction in
-	dict set TopLevelPortInterface inv_command Period 125
+	dict set TopLevelPortInterface inv_command Period 1
 	dict set TopLevelPortInterface inv_command Interface 0
 	dict set TopLevelPortInterface inv_command InterfaceName {}
 	dict set TopLevelPortInterface inv_command InterfaceString {DATA}
@@ -159,7 +159,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface command_in DatFile {pidsg_command_in.dat}
 	dict set TopLevelPortInterface command_in IconText {command_in}
 	dict set TopLevelPortInterface command_in Direction in
-	dict set TopLevelPortInterface command_in Period 125
+	dict set TopLevelPortInterface command_in Period 1
 	dict set TopLevelPortInterface command_in Interface 0
 	dict set TopLevelPortInterface command_in InterfaceName {}
 	dict set TopLevelPortInterface command_in InterfaceString {DATA}
@@ -174,7 +174,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface pv_deriv DatFile {pidsg_pv_deriv.dat}
 	dict set TopLevelPortInterface pv_deriv IconText {PV_deriv}
 	dict set TopLevelPortInterface pv_deriv Direction in
-	dict set TopLevelPortInterface pv_deriv Period 125
+	dict set TopLevelPortInterface pv_deriv Period 1
 	dict set TopLevelPortInterface pv_deriv Interface 0
 	dict set TopLevelPortInterface pv_deriv InterfaceName {}
 	dict set TopLevelPortInterface pv_deriv InterfaceString {DATA}
@@ -189,7 +189,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface gi DatFile {pidsg_gi.dat}
 	dict set TopLevelPortInterface gi IconText {Gi}
 	dict set TopLevelPortInterface gi Direction in
-	dict set TopLevelPortInterface gi Period 125
+	dict set TopLevelPortInterface gi Period 1
 	dict set TopLevelPortInterface gi Interface 0
 	dict set TopLevelPortInterface gi InterfaceName {}
 	dict set TopLevelPortInterface gi InterfaceString {DATA}
@@ -204,7 +204,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface g2d DatFile {pidsg_g2d.dat}
 	dict set TopLevelPortInterface g2d IconText {G2D}
 	dict set TopLevelPortInterface g2d Direction in
-	dict set TopLevelPortInterface g2d Period 125
+	dict set TopLevelPortInterface g2d Period 1
 	dict set TopLevelPortInterface g2d Interface 0
 	dict set TopLevelPortInterface g2d InterfaceName {}
 	dict set TopLevelPortInterface g2d InterfaceString {DATA}
@@ -219,7 +219,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface g1d DatFile {pidsg_g1d.dat}
 	dict set TopLevelPortInterface g1d IconText {G1D}
 	dict set TopLevelPortInterface g1d Direction in
-	dict set TopLevelPortInterface g1d Period 125
+	dict set TopLevelPortInterface g1d Period 1
 	dict set TopLevelPortInterface g1d Interface 0
 	dict set TopLevelPortInterface g1d InterfaceName {}
 	dict set TopLevelPortInterface g1d InterfaceString {DATA}
@@ -234,7 +234,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface aiw_g DatFile {pidsg_aiw_g.dat}
 	dict set TopLevelPortInterface aiw_g IconText {AIW_g}
 	dict set TopLevelPortInterface aiw_g Direction in
-	dict set TopLevelPortInterface aiw_g Period 125
+	dict set TopLevelPortInterface aiw_g Period 1
 	dict set TopLevelPortInterface aiw_g Interface 0
 	dict set TopLevelPortInterface aiw_g InterfaceName {}
 	dict set TopLevelPortInterface aiw_g InterfaceString {DATA}
@@ -249,7 +249,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface control_out DatFile {pidsg_control_out.dat}
 	dict set TopLevelPortInterface control_out IconText {control_out}
 	dict set TopLevelPortInterface control_out Direction out
-	dict set TopLevelPortInterface control_out Period 125
+	dict set TopLevelPortInterface control_out Period 1
 	dict set TopLevelPortInterface control_out Interface 0
 	dict set TopLevelPortInterface control_out InterfaceName {}
 	dict set TopLevelPortInterface control_out InterfaceString {DATA}

@@ -716,7 +716,7 @@ mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spir
       <spirit:file>
         <spirit:name>hdl/pidsg.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_d62c5600</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_a1160120</spirit:userFileType>
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
@@ -855,8 +855,8 @@ mmediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spir
         <xilinx:xpmLibrary>XPM_FIFO</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>244572175</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-02-18T15:43:34Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>244656226</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-02-19T15:04:24Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>

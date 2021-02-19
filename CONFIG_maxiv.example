@@ -1,0 +1,34 @@
+# Example configuration file for building PandA firmware, and for simulation
+#
+# Copy this file to a file named CONFIG and edit as appropriate.  Lines that are
+# commented out can be left as they are, the default value is show.  Uncommented
+# lines must be assigned values.
+
+# Default build location.  Default is to build in build subdirectory.
+# BUILD_DIR = $(TOP)/build
+
+# Definitions needed for FPGA build
+VIVADO = /tools/Xilinx/Vivado/2020.2/settings64.sh
+ISE = /opt/Xilinx/14.7/ISE_DS/settings64.sh
+#LM_LICENSE_FILE = /home/osboxes/.Xilinx/XilinxISEsept2020.lic:/home/osboxes/.Xilinx/XilinxVivadoSept2020.lic
+
+# Path to root filesystem
+PANDA_ROOTFS = /xilinxworks/pandabox/PandABlocks-rootfs
+# MAKE_ZPKG = $(PANDA_ROOTFS)/make-zpkg
+
+# Python interpreter for running scripts
+#
+# PYTHON = python2
+
+# Sphinx build for documentation.
+# SPHINX_BUILD = sphinx-build
+
+# List of default targets to build when running make
+# DEFAULT_TARGETS = zpkg
+
+# FPGA Application Name
+#APP_NAME = PandABox-maxiv-femtomax
+#APP_NAME = PandABox-maxiv-femtomax-fmc_acq427
+APP_NAME = PandABox-maxiv-test
+
+# vim: set filetype=make:
