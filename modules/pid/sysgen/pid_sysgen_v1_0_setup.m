@@ -17,5 +17,23 @@ Gi= ki*Ts/2;
 Gd= 2*kd/Ts;
 G1D= (2*R-1)/(2*R+1);
 G2D= Gd/(2*R+1);
+%-------- print values to be used in pandabox web GUI ---------
+format long eng
+kP_value_pandaGUI  = hex2dec(num2hex(single(kp)));
+Gi_value_pandaGUI  = hex2dec(num2hex(single(Gi)));
+G1D_value_pandaGUI = hex2dec(num2hex(single(G1D)));
+G2D_value_pandaGUI = hex2dec(num2hex(single(G2D)));
+disp("----------------------------------------------------------");
+disp(sprintf("Prop   gain = %f",kp));
+disp(sprintf("Integr gain = %f",ki));
+disp(sprintf("Deriv  gain = %f",kd));
+disp("----------------------------------------------------------");
+disp(sprintf("kP  value for Panda GUI: %10d",kP_value_pandaGUI));
+disp(sprintf("Gi  value for Panda GUI: %10d",Gi_value_pandaGUI));
+disp(sprintf("G1D value for Panda GUI: %10d",G1D_value_pandaGUI));
+disp(sprintf("G2D value for Panda GUI: %10d",G2D_value_pandaGUI));
+disp("----------------------------------------------------------");
+
+
 
 
