@@ -147,7 +147,7 @@ architecture behavior of xlclockdriver is
    begin
       result := 0;
       if ((index mod period) = 0) then
-	  result := 1;
+      result := 1;
       end if;
       return result;
   end;    
@@ -252,27 +252,27 @@ begin
   pipelined_ce : if period > 1 generate
       ce_gen: process(clk_num)
       begin
-	  if unsigned_to_std_logic_vector(clk_num) = clk_for_ce_pulse_minus_regs then
+      if unsigned_to_std_logic_vector(clk_num) = clk_for_ce_pulse_minus_regs then
               ce_vec(num_pipeline_regs) <= '1';
           else
               ce_vec(num_pipeline_regs) <= '0';
-	  end if;
+      end if;
       end process;
       ce_pipeline: for index in num_pipeline_regs downto 1 generate
-	  ce_reg : synth_reg_w_init
-	      generic map (
-		  width => 1,
-		  init_index => ce_reg_init_val(index, period),
-		  init_value => b"0000",  -- not used
-		  latency => 1
-		  )
-	      port map (
-		  i => ce_vec(index downto index),
-		  ce => sysce,
-		  clr => sysclr,
-		  clk => sysclk,
-		  o => ce_vec(index-1 downto index-1)
-		  );
+      ce_reg : synth_reg_w_init
+          generic map (
+          width => 1,
+          init_index => ce_reg_init_val(index, period),
+          init_value => b"0000",  -- not used
+          latency => 1
+          )
+          port map (
+          i => ce_vec(index downto index),
+          ce => sysce,
+          clr => sysclr,
+          clk => sysclk,
+          o => ce_vec(index-1 downto index-1)
+          );
       end generate;  -- i
       internal_ce <= ce_vec(0 downto 0);
   end generate;
@@ -281,27 +281,27 @@ begin
   pipelined_ce_logic: if period > 1 generate
       ce_gen_logic: process(clk_num)
       begin
-	  if unsigned_to_std_logic_vector(clk_num) = clk_for_ce_pulse_minus_regs then
+      if unsigned_to_std_logic_vector(clk_num) = clk_for_ce_pulse_minus_regs then
               ce_vec_logic(num_pipeline_regs) <= '1';
           else
               ce_vec_logic(num_pipeline_regs) <= '0';
-	  end if;
+      end if;
       end process;
       ce_logic_pipeline: for index in num_pipeline_regs downto 1 generate
-	  ce_logic_reg : synth_reg_w_init
-	      generic map (
-		  width => 1,
-		  init_index => ce_reg_init_val(index, period),
-		  init_value => b"0000",  -- not used
-		  latency => 1
-		  )
-	      port map (
-		  i => ce_vec_logic(index downto index),
-		  ce => sysce,
-		  clr => sysclr,
-		  clk => sysclk,
-		  o => ce_vec_logic(index-1 downto index-1)
-		  );
+      ce_logic_reg : synth_reg_w_init
+          generic map (
+          width => 1,
+          init_index => ce_reg_init_val(index, period),
+          init_value => b"0000",  -- not used
+          latency => 1
+          )
+          port map (
+          i => ce_vec_logic(index downto index),
+          ce => sysce,
+          clr => sysclr,
+          clk => sysclk,
+          o => ce_vec_logic(index-1 downto index-1)
+          );
       end generate;  -- i
       internal_ce_logic <= ce_vec_logic(0 downto 0);
   end generate;

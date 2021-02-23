@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
---Date        : Fri Feb 19 16:04:33 2021
+--Date        : Tue Feb 23 11:46:33 2021
 --Host        : w-valbas-pc-0 running 64-bit major release  (build 9200)
 --Command     : generate_target pidsg_bd.bd
 --Design      : pidsg_bd
@@ -26,6 +26,7 @@ entity pidsg_bd is
     kp : in STD_LOGIC_VECTOR ( 31 downto 0 );
     meas_in : in STD_LOGIC_VECTOR ( 31 downto 0 );
     pv_deriv : in STD_LOGIC_VECTOR ( 0 to 0 );
+    res : in STD_LOGIC_VECTOR ( 0 to 0 );
     sat_limit : in STD_LOGIC_VECTOR ( 31 downto 0 );
     thr_in : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
@@ -50,6 +51,7 @@ architecture STRUCTURE of pidsg_bd is
     meas_in : in STD_LOGIC_VECTOR ( 31 downto 0 );
     sat_limit : in STD_LOGIC_VECTOR ( 31 downto 0 );
     thr_in : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    res : in STD_LOGIC_VECTOR ( 0 to 0 );
     clk : in STD_LOGIC;
     clr : in STD_LOGIC;
     control_out : out STD_LOGIC_VECTOR ( 31 downto 0 )
@@ -68,6 +70,7 @@ architecture STRUCTURE of pidsg_bd is
   signal meas_in_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal pidsg_1_control_out : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal pv_deriv_1 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal res_1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal sat_limit_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal thr_in_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   attribute X_INTERFACE_INFO : string;
@@ -98,6 +101,8 @@ architecture STRUCTURE of pidsg_bd is
   attribute X_INTERFACE_PARAMETER of meas_in : signal is "XIL_INTERFACENAME DATA.MEAS_IN, LAYERED_METADATA undef";
   attribute X_INTERFACE_INFO of pv_deriv : signal is "xilinx.com:signal:data:1.0 DATA.PV_DERIV DATA";
   attribute X_INTERFACE_PARAMETER of pv_deriv : signal is "XIL_INTERFACENAME DATA.PV_DERIV, LAYERED_METADATA undef";
+  attribute X_INTERFACE_INFO of res : signal is "xilinx.com:signal:data:1.0 DATA.RES DATA";
+  attribute X_INTERFACE_PARAMETER of res : signal is "XIL_INTERFACENAME DATA.RES, LAYERED_METADATA undef";
   attribute X_INTERFACE_INFO of sat_limit : signal is "xilinx.com:signal:data:1.0 DATA.SAT_LIMIT DATA";
   attribute X_INTERFACE_PARAMETER of sat_limit : signal is "XIL_INTERFACENAME DATA.SAT_LIMIT, LAYERED_METADATA undef";
   attribute X_INTERFACE_INFO of thr_in : signal is "xilinx.com:signal:data:1.0 DATA.THR_IN DATA";
@@ -116,6 +121,7 @@ begin
   kp_1(31 downto 0) <= kp(31 downto 0);
   meas_in_1(31 downto 0) <= meas_in(31 downto 0);
   pv_deriv_1(0) <= pv_deriv(0);
+  res_1(0) <= res(0);
   sat_limit_1(31 downto 0) <= sat_limit(31 downto 0);
   thr_in_1(31 downto 0) <= thr_in(31 downto 0);
 pidsg_1: component pidsg_bd_pidsg_1_0
@@ -133,6 +139,7 @@ pidsg_1: component pidsg_bd_pidsg_1_0
       kp(31 downto 0) => kp_1(31 downto 0),
       meas_in(31 downto 0) => meas_in_1(31 downto 0),
       pv_deriv(0) => pv_deriv_1(0),
+      res(0) => res_1(0),
       sat_limit(31 downto 0) => sat_limit_1(31 downto 0),
       thr_in(31 downto 0) => thr_in_1(31 downto 0)
     );

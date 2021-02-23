@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xE1C4ABE748E6C16E",
+      "boundary_crc": "0xCBCC43B571F199D2",
       "design_src": "SYSGEN",
       "device": "xc7z030sbg485-1",
       "gen_directory": "../../../../pidsg.gen/sources_1/bd/pidsg_bd",
@@ -183,6 +183,18 @@
           }
         }
       },
+      "res": {
+        "type": "data",
+        "direction": "I",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
       "sat_limit": {
         "type": "data",
         "direction": "I",
@@ -293,6 +305,12 @@
         "ports": [
           "pv_deriv",
           "pidsg_1/pv_deriv"
+        ]
+      },
+      "res_1": {
+        "ports": [
+          "res",
+          "pidsg_1/res"
         ]
       },
       "sat_limit_1": {

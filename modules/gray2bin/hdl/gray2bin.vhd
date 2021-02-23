@@ -24,7 +24,7 @@ port (
     -- Block Input and Outputs
     gray_in_i              : in  std_logic_vector(31 downto 0);
     bin_out_o              : out std_logic_vector(31 downto 0)
-	);
+    );
 end gray2bin;
 
 architecture rtl of gray2bin is

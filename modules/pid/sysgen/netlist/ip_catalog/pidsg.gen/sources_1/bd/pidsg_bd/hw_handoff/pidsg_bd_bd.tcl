@@ -170,6 +170,7 @@ proc create_root_design { parentCell } {
   set kp [ create_bd_port -dir I -from 31 -to 0 -type data kp ]
   set meas_in [ create_bd_port -dir I -from 31 -to 0 -type data meas_in ]
   set pv_deriv [ create_bd_port -dir I -from 0 -to 0 -type data pv_deriv ]
+  set res [ create_bd_port -dir I -from 0 -to 0 -type data res ]
   set sat_limit [ create_bd_port -dir I -from 31 -to 0 -type data sat_limit ]
   set thr_in [ create_bd_port -dir I -from 31 -to 0 -type data thr_in ]
 
@@ -190,6 +191,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net meas_in_1 [get_bd_ports meas_in] [get_bd_pins pidsg_1/meas_in]
   connect_bd_net -net pidsg_1_control_out [get_bd_ports control_out] [get_bd_pins pidsg_1/control_out]
   connect_bd_net -net pv_deriv_1 [get_bd_ports pv_deriv] [get_bd_pins pidsg_1/pv_deriv]
+  connect_bd_net -net res_1 [get_bd_ports res] [get_bd_pins pidsg_1/res]
   connect_bd_net -net sat_limit_1 [get_bd_ports sat_limit] [get_bd_pins pidsg_1/sat_limit]
   connect_bd_net -net thr_in_1 [get_bd_ports thr_in] [get_bd_pins pidsg_1/thr_in]
 

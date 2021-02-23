@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="54" Path="C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.xpr">
+<Project Version="7" Minor="54" Path="C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="fd37cb982f2b4fb2b74e7b9c41b995bb"/>
+    <Option Name="Id" Val="cdb85d14bc934904880b34518765efc3"/>
     <Option Name="Part" Val="xc7z030sbg485-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -88,7 +88,7 @@
       <File Path="$PSRCDIR/sources_1/imports/hdl/pidsg_bd_wrapper.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PGENDIR/sources_1/bd/pidsg_bd/hdl/pidsg_bd_wrapper.vhd"/>
-          <Attr Name="ImportTime" Val="1613747068"/>
+          <Attr Name="ImportTime" Val="1614077188"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -105,7 +105,7 @@
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../sysgen/pidsg_mod.vhd"/>
-          <Attr Name="ImportTime" Val="1613747064"/>
+          <Attr Name="ImportTime" Val="1614077185"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -120,7 +120,7 @@
       <File Path="$PSRCDIR/constrs_1/imports/sysgen/pidsg_clock.xdc">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../sysgen/pidsg_clock.xdc"/>
-          <Attr Name="ImportTime" Val="1613747031"/>
+          <Attr Name="ImportTime" Val="1614077153"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
@@ -128,7 +128,7 @@
       <File Path="$PSRCDIR/constrs_1/imports/sysgen/pidsg.xdc">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../sysgen/pidsg.xdc"/>
-          <Attr Name="ImportTime" Val="1613747031"/>
+          <Attr Name="ImportTime" Val="1614077153"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>

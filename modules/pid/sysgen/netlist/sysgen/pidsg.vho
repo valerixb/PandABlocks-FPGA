@@ -12,6 +12,7 @@
     meas_in => meas_in,
     sat_limit => sat_limit,
     thr_in => thr_in,
+    res => res,
     clk => clk,
     clr => clr,
     control_out => control_out

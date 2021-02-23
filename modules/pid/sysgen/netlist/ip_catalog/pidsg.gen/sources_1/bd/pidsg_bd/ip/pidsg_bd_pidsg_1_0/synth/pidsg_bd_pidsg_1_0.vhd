@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: MaxIV:Panda_SysGen:pidsg:1.0
--- IP Revision: 244656226
+-- IP Revision: 244986348
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -70,6 +70,7 @@ ENTITY pidsg_bd_pidsg_1_0 IS
     meas_in : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     sat_limit : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     thr_in : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    res : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     clk : IN STD_LOGIC;
     clr : IN STD_LOGIC;
     control_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
@@ -93,6 +94,7 @@ ARCHITECTURE pidsg_bd_pidsg_1_0_arch OF pidsg_bd_pidsg_1_0 IS
       meas_in : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       sat_limit : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       thr_in : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      res : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
       clk : IN STD_LOGIC;
       clr : IN STD_LOGIC;
       control_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
@@ -114,6 +116,9 @@ ARCHITECTURE pidsg_bd_pidsg_1_0_arch OF pidsg_bd_pidsg_1_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF clr: SIGNAL IS "xilinx.com:signal:data:1.0 clr DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF clk: SIGNAL IS "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN pidsg_bd_clk, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF clk: SIGNAL IS "xilinx.com:signal:clock:1.0 clk CLK";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF res: SIGNAL IS "XIL_INTERFACENAME res, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} va" & 
+"lue 0} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}";
+  ATTRIBUTE X_INTERFACE_INFO OF res: SIGNAL IS "xilinx.com:signal:data:1.0 res DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF thr_in: SIGNAL IS "XIL_INTERFACENAME thr_in, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}" & 
 "} value 30} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF thr_in: SIGNAL IS "xilinx.com:signal:data:1.0 thr_in DATA";
@@ -165,6 +170,7 @@ BEGIN
       meas_in => meas_in,
       sat_limit => sat_limit,
       thr_in => thr_in,
+      res => res,
       clk => clk,
       clr => clr,
       control_out => control_out

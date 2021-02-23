@@ -66,27 +66,14 @@
       'fields' => 'Slack,Delay,Logic_Delay,Routing_Delay,Levels_of_Logic,Source,Destination,Source_Clock,Destination_Clock,Path_Constraints'
     },
     {
-      'Delay' => 18.72200000000,
+      'Delay' => 18.71900000000,
       'Destination' => 'pidsg/Delay1',
       'Destination_Clock' => 'clk, ce_125',
       'Levels_of_Logic' => 61,
-      'Logic_Delay' => 7.19500000000,
+      'Logic_Delay' => 7.19200000000,
       'Path_Constraints' => 'set_multicycle_path -setup 125  -hold 124',
       'Routing_Delay' => 11.52700000000,
-      'Slack' => 981.25800000000,
-      'Source' => 'pidsg/Down Sample1',
-      'Source_Clock' => 'clk, ce_125',
-      'fields' => 'Slack,Delay,Logic_Delay,Routing_Delay,Levels_of_Logic,Source,Destination,Source_Clock,Destination_Clock,Path_Constraints'
-    },
-    {
-      'Delay' => 15.01600000000,
-      'Destination' => 'pidsg/Delay1',
-      'Destination_Clock' => 'clk, ce_125',
-      'Levels_of_Logic' => 50,
-      'Logic_Delay' => 6.22700000000,
-      'Path_Constraints' => 'set_multicycle_path -setup 125  -hold 124',
-      'Routing_Delay' => 8.78900000000,
-      'Slack' => 984.96400000000,
+      'Slack' => 981.26100000000,
       'Source' => 'pidsg/Down Sample1',
       'Source_Clock' => 'clk, ce_125',
       'fields' => 'Slack,Delay,Logic_Delay,Routing_Delay,Levels_of_Logic,Source,Destination,Source_Clock,Destination_Clock,Path_Constraints'

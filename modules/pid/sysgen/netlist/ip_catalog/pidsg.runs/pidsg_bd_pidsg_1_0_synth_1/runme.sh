@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.runs/pidsg_bd_pidsg_1_0_synth_1'
+HD_PWD='C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/pidsg_bd_pidsg_1_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

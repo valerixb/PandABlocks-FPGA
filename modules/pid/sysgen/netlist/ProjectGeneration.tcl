@@ -28,7 +28,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set IP_LifeCycle_Menu {1}
 	set IP_Logo {sysgen_icon_100.png}
 	set IP_Name {pid_1_0}
-	set IP_Revision {244656226}
+	set IP_Revision {244986348}
 	set IP_Socket_IP {0}
 	set IP_Socket_IP_Proj_Path {}
 	set IP_Vendor_Text {MaxIV}
@@ -56,11 +56,26 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set SimulationTime {150000208.00000000 ns}
 	set SynthStrategyName {Vivado Synthesis Defaults}
 	set SynthesisTool {Vivado}
-	set TargetDir {C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist}
+	set TargetDir {C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist}
 	set TopLevelModule {pidsg}
-	set TopLevelSimulinkHandle 0.000244141
+	set TopLevelSimulinkHandle 0.000366211
 	set VHDLLib {xil_defaultlib}
 	set TopLevelPortInterface {}
+	dict set TopLevelPortInterface res Name {res}
+	dict set TopLevelPortInterface res Type Bool
+	dict set TopLevelPortInterface res ArithmeticType xlUnsigned
+	dict set TopLevelPortInterface res BinaryPoint 0
+	dict set TopLevelPortInterface res Width 1
+	dict set TopLevelPortInterface res DatFile {pidsg_res.dat}
+	dict set TopLevelPortInterface res IconText {res}
+	dict set TopLevelPortInterface res Direction in
+	dict set TopLevelPortInterface res Period 1
+	dict set TopLevelPortInterface res Interface 0
+	dict set TopLevelPortInterface res InterfaceName {}
+	dict set TopLevelPortInterface res InterfaceString {DATA}
+	dict set TopLevelPortInterface res ClockDomain {pidsg}
+	dict set TopLevelPortInterface res Locs {}
+	dict set TopLevelPortInterface res IOStandard {}
 	dict set TopLevelPortInterface thr_in Name {thr_in}
 	dict set TopLevelPortInterface thr_in Type Fix_32_30
 	dict set TopLevelPortInterface thr_in ArithmeticType xlSigned

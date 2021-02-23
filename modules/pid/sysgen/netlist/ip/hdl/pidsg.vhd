@@ -17,6 +17,7 @@ entity pidsg_struct is
     meas_in : in std_logic_vector( 32-1 downto 0 );
     sat_limit : in std_logic_vector( 32-1 downto 0 );
     thr_in : in std_logic_vector( 32-1 downto 0 );
+    res : in std_logic_vector( 1-1 downto 0 );
     clk_1 : in std_logic;
     ce_1 : in std_logic;
     clk_125 : in std_logic;
@@ -25,78 +26,80 @@ entity pidsg_struct is
   );
 end pidsg_struct;
 architecture structural of pidsg_struct is 
-  signal pi_summer_s_net : std_logic_vector( 32-1 downto 0 );
+  signal down_sample6_q_net : std_logic_vector( 32-1 downto 0 );
+  signal down_sample9_q_net : std_logic_vector( 32-1 downto 0 );
+  signal relational3_op_net : std_logic_vector( 1-1 downto 0 );
+  signal relational2_op_net : std_logic_vector( 1-1 downto 0 );
+  signal mult_p_net : std_logic_vector( 32-1 downto 0 );
+  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
+  signal down_sample8_q_net : std_logic_vector( 1-1 downto 0 );
+  signal relational1_op_net : std_logic_vector( 1-1 downto 0 );
+  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
+  signal negate1_op_net : std_logic_vector( 32-1 downto 0 );
+  signal negate2_op_net : std_logic_vector( 32-1 downto 0 );
+  signal mux_y_net : std_logic_vector( 32-1 downto 0 );
   signal negate3_op_net : std_logic_vector( 32-1 downto 0 );
+  signal pi_summer_s_net : std_logic_vector( 32-1 downto 0 );
+  signal mux4_y_net : std_logic_vector( 32-1 downto 0 );
+  signal negate_op_net : std_logic_vector( 32-1 downto 0 );
+  signal ce_net : std_logic;
+  signal kp_net : std_logic_vector( 32-1 downto 0 );
+  signal sat_limit_net : std_logic_vector( 32-1 downto 0 );
+  signal command_in_net : std_logic_vector( 32-1 downto 0 );
+  signal pv_deriv_net : std_logic_vector( 1-1 downto 0 );
+  signal up_sample_q_net : std_logic_vector( 32-1 downto 0 );
+  signal inv_meas_net : std_logic_vector( 1-1 downto 0 );
+  signal meas_in_net : std_logic_vector( 32-1 downto 0 );
+  signal inv_command_net : std_logic_vector( 1-1 downto 0 );
   signal aiw_g_net : std_logic_vector( 32-1 downto 0 );
   signal g1d_net : std_logic_vector( 32-1 downto 0 );
   signal g2d_net : std_logic_vector( 32-1 downto 0 );
   signal gi_net : std_logic_vector( 32-1 downto 0 );
-  signal pv_deriv_net : std_logic_vector( 1-1 downto 0 );
-  signal kp_net : std_logic_vector( 32-1 downto 0 );
-  signal up_sample_q_net : std_logic_vector( 32-1 downto 0 );
-  signal command_in_net : std_logic_vector( 32-1 downto 0 );
-  signal inv_command_net : std_logic_vector( 1-1 downto 0 );
-  signal meas_in_net : std_logic_vector( 32-1 downto 0 );
-  signal sat_limit_net : std_logic_vector( 32-1 downto 0 );
   signal thr_in_net : std_logic_vector( 32-1 downto 0 );
-  signal dest_clk_net : std_logic;
-  signal inv_meas_net : std_logic_vector( 1-1 downto 0 );
-  signal dest_ce_net : std_logic;
+  signal res_net : std_logic_vector( 1-1 downto 0 );
+  signal src_clk_net : std_logic;
+  signal src_ce_net : std_logic;
   signal clk_net : std_logic;
-  signal ce_net : std_logic;
-  signal addsub_s_net : std_logic_vector( 32-1 downto 0 );
-  signal mux1_y_net : std_logic_vector( 32-1 downto 0 );
-  signal mux2_y_net : std_logic_vector( 32-1 downto 0 );
-  signal addsub1_s_net : std_logic_vector( 32-1 downto 0 );
-  signal delay_q_net : std_logic_vector( 32-1 downto 0 );
-  signal mult1_p_net : std_logic_vector( 32-1 downto 0 );
-  signal addsub6_s_net : std_logic_vector( 32-1 downto 0 );
-  signal addsub2_s_net : std_logic_vector( 32-1 downto 0 );
-  signal addsub3_s_net : std_logic_vector( 32-1 downto 0 );
   signal mux3_y_net : std_logic_vector( 32-1 downto 0 );
+  signal addsub6_s_net : std_logic_vector( 32-1 downto 0 );
   signal pid_summer_s_net : std_logic_vector( 32-1 downto 0 );
-  signal delay2_q_net : std_logic_vector( 32-1 downto 0 );
-  signal mux6_y_net : std_logic_vector( 32-1 downto 0 );
-  signal delay4_q_net : std_logic_vector( 32-1 downto 0 );
-  signal delay1_q_net : std_logic_vector( 32-1 downto 0 );
   signal addsub4_s_net : std_logic_vector( 32-1 downto 0 );
-  signal mult3_p_net : std_logic_vector( 32-1 downto 0 );
-  signal addsub5_s_net : std_logic_vector( 32-1 downto 0 );
   signal mux7_y_net : std_logic_vector( 32-1 downto 0 );
-  signal mult2_p_net : std_logic_vector( 32-1 downto 0 );
+  signal delay1_q_net : std_logic_vector( 32-1 downto 0 );
+  signal mult1_p_net : std_logic_vector( 32-1 downto 0 );
+  signal addsub1_s_net : std_logic_vector( 32-1 downto 0 );
+  signal mux1_y_net : std_logic_vector( 32-1 downto 0 );
+  signal addsub2_s_net : std_logic_vector( 32-1 downto 0 );
+  signal addsub_s_net : std_logic_vector( 32-1 downto 0 );
+  signal delay_q_net : std_logic_vector( 32-1 downto 0 );
+  signal mux2_y_net : std_logic_vector( 32-1 downto 0 );
+  signal delay2_q_net : std_logic_vector( 32-1 downto 0 );
+  signal addsub3_s_net : std_logic_vector( 32-1 downto 0 );
   signal constant_op_net : std_logic_vector( 32-1 downto 0 );
-  signal down_sample2_q_net : std_logic_vector( 1-1 downto 0 );
-  signal negate2_op_net : std_logic_vector( 32-1 downto 0 );
-  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
-  signal down_sample3_q_net : std_logic_vector( 1-1 downto 0 );
-  signal negate1_op_net : std_logic_vector( 32-1 downto 0 );
-  signal mux_y_net : std_logic_vector( 32-1 downto 0 );
-  signal down_sample8_q_net : std_logic_vector( 1-1 downto 0 );
-  signal negate_op_net : std_logic_vector( 32-1 downto 0 );
-  signal relational1_op_net : std_logic_vector( 1-1 downto 0 );
-  signal mux4_y_net : std_logic_vector( 32-1 downto 0 );
-  signal down_sample9_q_net : std_logic_vector( 32-1 downto 0 );
-  signal down_sample10_q_net : std_logic_vector( 32-1 downto 0 );
   signal convert_dout_net : std_logic_vector( 32-1 downto 0 );
-  signal down_sample4_q_net : std_logic_vector( 32-1 downto 0 );
+  signal addsub5_s_net : std_logic_vector( 32-1 downto 0 );
+  signal mux6_y_net : std_logic_vector( 32-1 downto 0 );
+  signal mult2_p_net : std_logic_vector( 32-1 downto 0 );
   signal convert1_dout_net : std_logic_vector( 32-1 downto 0 );
-  signal down_sample11_q_net : std_logic_vector( 32-1 downto 0 );
+  signal mult3_p_net : std_logic_vector( 32-1 downto 0 );
+  signal down_sample4_q_net : std_logic_vector( 32-1 downto 0 );
   signal convert2_dout_net : std_logic_vector( 32-1 downto 0 );
-  signal convert5_dout_net : std_logic_vector( 32-1 downto 0 );
-  signal mux5_y_net : std_logic_vector( 32-1 downto 0 );
-  signal convert4_dout_net : std_logic_vector( 32-1 downto 0 );
+  signal delay4_q_net : std_logic_vector( 32-1 downto 0 );
+  signal down_sample11_q_net : std_logic_vector( 32-1 downto 0 );
   signal convert3_dout_net : std_logic_vector( 32-1 downto 0 );
+  signal convert4_dout_net : std_logic_vector( 32-1 downto 0 );
   signal down_sample_q_net : std_logic_vector( 32-1 downto 0 );
   signal down_sample1_q_net : std_logic_vector( 32-1 downto 0 );
+  signal convert5_dout_net : std_logic_vector( 32-1 downto 0 );
   signal down_sample7_q_net : std_logic_vector( 32-1 downto 0 );
-  signal mult_p_net : std_logic_vector( 32-1 downto 0 );
-  signal down_sample6_q_net : std_logic_vector( 32-1 downto 0 );
-  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
-  signal mult4_p_net : std_logic_vector( 32-1 downto 0 );
-  signal relational2_op_net : std_logic_vector( 1-1 downto 0 );
-  signal down_sample5_q_net : std_logic_vector( 32-1 downto 0 );
+  signal down_sample12_q_net : std_logic_vector( 1-1 downto 0 );
+  signal mux5_y_net : std_logic_vector( 32-1 downto 0 );
   signal delay3_q_net : std_logic_vector( 32-1 downto 0 );
-  signal relational3_op_net : std_logic_vector( 1-1 downto 0 );
+  signal mult4_p_net : std_logic_vector( 32-1 downto 0 );
+  signal down_sample10_q_net : std_logic_vector( 32-1 downto 0 );
+  signal down_sample5_q_net : std_logic_vector( 32-1 downto 0 );
+  signal down_sample2_q_net : std_logic_vector( 1-1 downto 0 );
+  signal down_sample3_q_net : std_logic_vector( 1-1 downto 0 );
 begin
   aiw_g_net <= aiw_g;
   g1d_net <= g1d;
@@ -111,8 +114,9 @@ begin
   meas_in_net <= meas_in;
   sat_limit_net <= sat_limit;
   thr_in_net <= thr_in;
-  dest_clk_net <= clk_1;
-  dest_ce_net <= ce_1;
+  res_net <= res;
+  src_clk_net <= clk_1;
+  src_ce_net <= ce_1;
   clk_net <= clk_125;
   ce_net <= ce_125;
   addsub : entity xil_defaultlib.pidsg_xlfpaddsub 
@@ -475,80 +479,338 @@ begin
     ce => ce_net,
     dout => convert5_dout_net
   );
-  delay : entity xil_defaultlib.pidsg_xldelay 
-  generic map (
-    latency => 1,
-    reg_retiming => 0,
-    reset => 0,
-    width => 32
-  )
+  delay : entity xil_defaultlib.sysgen_delay_5fcac4fab0 
   port map (
-    en => '1',
-    rst => '0',
+    clr => '0',
     d => addsub6_s_net,
+    rst => down_sample12_q_net,
     clk => clk_net,
     ce => ce_net,
     q => delay_q_net
   );
-  delay1 : entity xil_defaultlib.pidsg_xldelay 
-  generic map (
-    latency => 1,
-    reg_retiming => 0,
-    reset => 0,
-    width => 32
-  )
+  delay1 : entity xil_defaultlib.sysgen_delay_5fcac4fab0 
   port map (
-    en => '1',
-    rst => '0',
+    clr => '0',
     d => mux5_y_net,
+    rst => down_sample12_q_net,
     clk => clk_net,
     ce => ce_net,
     q => delay1_q_net
   );
-  delay2 : entity xil_defaultlib.pidsg_xldelay 
-  generic map (
-    latency => 1,
-    reg_retiming => 0,
-    reset => 0,
-    width => 32
-  )
+  delay2 : entity xil_defaultlib.sysgen_delay_5fcac4fab0 
   port map (
-    en => '1',
-    rst => '0',
+    clr => '0',
     d => addsub2_s_net,
+    rst => down_sample12_q_net,
     clk => clk_net,
     ce => ce_net,
     q => delay2_q_net
   );
-  delay3 : entity xil_defaultlib.pidsg_xldelay 
-  generic map (
-    latency => 1,
-    reg_retiming => 0,
-    reset => 0,
-    width => 32
-  )
+  delay3 : entity xil_defaultlib.sysgen_delay_5fcac4fab0 
   port map (
-    en => '1',
-    rst => '0',
+    clr => '0',
     d => addsub5_s_net,
+    rst => down_sample12_q_net,
     clk => clk_net,
     ce => ce_net,
     q => delay3_q_net
   );
-  delay4 : entity xil_defaultlib.pidsg_xldelay 
-  generic map (
-    latency => 1,
-    reg_retiming => 0,
-    reset => 0,
-    width => 32
-  )
+  delay4 : entity xil_defaultlib.sysgen_delay_5fcac4fab0 
   port map (
-    en => '1',
-    rst => '0',
+    clr => '0',
     d => mult4_p_net,
+    rst => down_sample12_q_net,
     clk => clk_net,
     ce => ce_net,
     q => delay4_q_net
+  );
+  down_sample : entity xil_defaultlib.pidsg_xldsamp 
+  generic map (
+    d_arith => xlSigned,
+    d_bin_pt => 31,
+    d_width => 32,
+    ds_ratio => 125,
+    latency => 1,
+    phase => 124,
+    q_arith => xlSigned,
+    q_bin_pt => 31,
+    q_width => 32
+  )
+  port map (
+    src_clr => '0',
+    dest_clr => '0',
+    en => "1",
+    rst => "0",
+    d => meas_in_net,
+    src_clk => src_clk_net,
+    src_ce => src_ce_net,
+    dest_clk => clk_net,
+    dest_ce => ce_net,
+    q => down_sample_q_net
+  );
+  down_sample1 : entity xil_defaultlib.pidsg_xldsamp 
+  generic map (
+    d_arith => xlSigned,
+    d_bin_pt => 31,
+    d_width => 32,
+    ds_ratio => 125,
+    latency => 1,
+    phase => 124,
+    q_arith => xlSigned,
+    q_bin_pt => 31,
+    q_width => 32
+  )
+  port map (
+    src_clr => '0',
+    dest_clr => '0',
+    en => "1",
+    rst => "0",
+    d => command_in_net,
+    src_clk => src_clk_net,
+    src_ce => src_ce_net,
+    dest_clk => clk_net,
+    dest_ce => ce_net,
+    q => down_sample1_q_net
+  );
+  down_sample10 : entity xil_defaultlib.pidsg_xldsamp 
+  generic map (
+    d_arith => xlFloat,
+    d_bin_pt => 24,
+    d_width => 32,
+    ds_ratio => 125,
+    latency => 1,
+    phase => 124,
+    q_arith => xlFloat,
+    q_bin_pt => 24,
+    q_width => 32
+  )
+  port map (
+    src_clr => '0',
+    dest_clr => '0',
+    en => "1",
+    rst => "0",
+    d => g1d_net,
+    src_clk => src_clk_net,
+    src_ce => src_ce_net,
+    dest_clk => clk_net,
+    dest_ce => ce_net,
+    q => down_sample10_q_net
+  );
+  down_sample11 : entity xil_defaultlib.pidsg_xldsamp 
+  generic map (
+    d_arith => xlSigned,
+    d_bin_pt => 30,
+    d_width => 32,
+    ds_ratio => 125,
+    latency => 1,
+    phase => 124,
+    q_arith => xlSigned,
+    q_bin_pt => 30,
+    q_width => 32
+  )
+  port map (
+    src_clr => '0',
+    dest_clr => '0',
+    en => "1",
+    rst => "0",
+    d => sat_limit_net,
+    src_clk => src_clk_net,
+    src_ce => src_ce_net,
+    dest_clk => clk_net,
+    dest_ce => ce_net,
+    q => down_sample11_q_net
+  );
+  down_sample2 : entity xil_defaultlib.pidsg_xldsamp 
+  generic map (
+    d_arith => xlUnsigned,
+    d_bin_pt => 0,
+    d_width => 1,
+    ds_ratio => 125,
+    latency => 1,
+    phase => 124,
+    q_arith => xlUnsigned,
+    q_bin_pt => 0,
+    q_width => 1
+  )
+  port map (
+    src_clr => '0',
+    dest_clr => '0',
+    en => "1",
+    rst => "0",
+    d => inv_meas_net,
+    src_clk => src_clk_net,
+    src_ce => src_ce_net,
+    dest_clk => clk_net,
+    dest_ce => ce_net,
+    q => down_sample2_q_net
+  );
+  down_sample3 : entity xil_defaultlib.pidsg_xldsamp 
+  generic map (
+    d_arith => xlUnsigned,
+    d_bin_pt => 0,
+    d_width => 1,
+    ds_ratio => 125,
+    latency => 1,
+    phase => 124,
+    q_arith => xlUnsigned,
+    q_bin_pt => 0,
+    q_width => 1
+  )
+  port map (
+    src_clr => '0',
+    dest_clr => '0',
+    en => "1",
+    rst => "0",
+    d => inv_command_net,
+    src_clk => src_clk_net,
+    src_ce => src_ce_net,
+    dest_clk => clk_net,
+    dest_ce => ce_net,
+    q => down_sample3_q_net
+  );
+  down_sample4 : entity xil_defaultlib.pidsg_xldsamp 
+  generic map (
+    d_arith => xlSigned,
+    d_bin_pt => 30,
+    d_width => 32,
+    ds_ratio => 125,
+    latency => 1,
+    phase => 124,
+    q_arith => xlSigned,
+    q_bin_pt => 30,
+    q_width => 32
+  )
+  port map (
+    src_clr => '0',
+    dest_clr => '0',
+    en => "1",
+    rst => "0",
+    d => thr_in_net,
+    src_clk => src_clk_net,
+    src_ce => src_ce_net,
+    dest_clk => clk_net,
+    dest_ce => ce_net,
+    q => down_sample4_q_net
+  );
+  down_sample5 : entity xil_defaultlib.pidsg_xldsamp 
+  generic map (
+    d_arith => xlFloat,
+    d_bin_pt => 24,
+    d_width => 32,
+    ds_ratio => 125,
+    latency => 1,
+    phase => 124,
+    q_arith => xlFloat,
+    q_bin_pt => 24,
+    q_width => 32
+  )
+  port map (
+    src_clr => '0',
+    dest_clr => '0',
+    en => "1",
+    rst => "0",
+    d => gi_net,
+    src_clk => src_clk_net,
+    src_ce => src_ce_net,
+    dest_clk => clk_net,
+    dest_ce => ce_net,
+    q => down_sample5_q_net
+  );
+  down_sample6 : entity xil_defaultlib.pidsg_xldsamp 
+  generic map (
+    d_arith => xlFloat,
+    d_bin_pt => 24,
+    d_width => 32,
+    ds_ratio => 125,
+    latency => 1,
+    phase => 124,
+    q_arith => xlFloat,
+    q_bin_pt => 24,
+    q_width => 32
+  )
+  port map (
+    src_clr => '0',
+    dest_clr => '0',
+    en => "1",
+    rst => "0",
+    d => kp_net,
+    src_clk => src_clk_net,
+    src_ce => src_ce_net,
+    dest_clk => clk_net,
+    dest_ce => ce_net,
+    q => down_sample6_q_net
+  );
+  down_sample7 : entity xil_defaultlib.pidsg_xldsamp 
+  generic map (
+    d_arith => xlSigned,
+    d_bin_pt => 30,
+    d_width => 32,
+    ds_ratio => 125,
+    latency => 1,
+    phase => 124,
+    q_arith => xlSigned,
+    q_bin_pt => 30,
+    q_width => 32
+  )
+  port map (
+    src_clr => '0',
+    dest_clr => '0',
+    en => "1",
+    rst => "0",
+    d => aiw_g_net,
+    src_clk => src_clk_net,
+    src_ce => src_ce_net,
+    dest_clk => clk_net,
+    dest_ce => ce_net,
+    q => down_sample7_q_net
+  );
+  down_sample8 : entity xil_defaultlib.pidsg_xldsamp 
+  generic map (
+    d_arith => xlUnsigned,
+    d_bin_pt => 0,
+    d_width => 1,
+    ds_ratio => 125,
+    latency => 1,
+    phase => 124,
+    q_arith => xlUnsigned,
+    q_bin_pt => 0,
+    q_width => 1
+  )
+  port map (
+    src_clr => '0',
+    dest_clr => '0',
+    en => "1",
+    rst => "0",
+    d => pv_deriv_net,
+    src_clk => src_clk_net,
+    src_ce => src_ce_net,
+    dest_clk => clk_net,
+    dest_ce => ce_net,
+    q => down_sample8_q_net
+  );
+  down_sample9 : entity xil_defaultlib.pidsg_xldsamp 
+  generic map (
+    d_arith => xlFloat,
+    d_bin_pt => 24,
+    d_width => 32,
+    ds_ratio => 125,
+    latency => 1,
+    phase => 124,
+    q_arith => xlFloat,
+    q_bin_pt => 24,
+    q_width => 32
+  )
+  port map (
+    src_clr => '0',
+    dest_clr => '0',
+    en => "1",
+    rst => "0",
+    d => g2d_net,
+    src_clk => src_clk_net,
+    src_ce => src_ce_net,
+    dest_clk => clk_net,
+    dest_ce => ce_net,
+    q => down_sample9_q_net
   );
   logical : entity xil_defaultlib.sysgen_logical_654ceb59e6 
   port map (
@@ -1008,107 +1270,11 @@ begin
     d => convert2_dout_net,
     src_clk => clk_net,
     src_ce => ce_net,
-    dest_clk => dest_clk_net,
-    dest_ce => dest_ce_net,
+    dest_clk => src_clk_net,
+    dest_ce => src_ce_net,
     q => up_sample_q_net
   );
-  down_sample11 : entity xil_defaultlib.pidsg_xldsamp 
-  generic map (
-    d_arith => xlSigned,
-    d_bin_pt => 30,
-    d_width => 32,
-    ds_ratio => 125,
-    latency => 1,
-    phase => 124,
-    q_arith => xlSigned,
-    q_bin_pt => 30,
-    q_width => 32
-  )
-  port map (
-    src_clr => '0',
-    dest_clr => '0',
-    en => "1",
-    rst => "0",
-    d => sat_limit_net,
-    src_clk => dest_clk_net,
-    src_ce => dest_ce_net,
-    dest_clk => clk_net,
-    dest_ce => ce_net,
-    q => down_sample11_q_net
-  );
-  down_sample : entity xil_defaultlib.pidsg_xldsamp 
-  generic map (
-    d_arith => xlSigned,
-    d_bin_pt => 31,
-    d_width => 32,
-    ds_ratio => 125,
-    latency => 1,
-    phase => 124,
-    q_arith => xlSigned,
-    q_bin_pt => 31,
-    q_width => 32
-  )
-  port map (
-    src_clr => '0',
-    dest_clr => '0',
-    en => "1",
-    rst => "0",
-    d => meas_in_net,
-    src_clk => dest_clk_net,
-    src_ce => dest_ce_net,
-    dest_clk => clk_net,
-    dest_ce => ce_net,
-    q => down_sample_q_net
-  );
-  down_sample7 : entity xil_defaultlib.pidsg_xldsamp 
-  generic map (
-    d_arith => xlSigned,
-    d_bin_pt => 30,
-    d_width => 32,
-    ds_ratio => 125,
-    latency => 1,
-    phase => 124,
-    q_arith => xlSigned,
-    q_bin_pt => 30,
-    q_width => 32
-  )
-  port map (
-    src_clr => '0',
-    dest_clr => '0',
-    en => "1",
-    rst => "0",
-    d => aiw_g_net,
-    src_clk => dest_clk_net,
-    src_ce => dest_ce_net,
-    dest_clk => clk_net,
-    dest_ce => ce_net,
-    q => down_sample7_q_net
-  );
-  down_sample1 : entity xil_defaultlib.pidsg_xldsamp 
-  generic map (
-    d_arith => xlSigned,
-    d_bin_pt => 31,
-    d_width => 32,
-    ds_ratio => 125,
-    latency => 1,
-    phase => 124,
-    q_arith => xlSigned,
-    q_bin_pt => 31,
-    q_width => 32
-  )
-  port map (
-    src_clr => '0',
-    dest_clr => '0',
-    en => "1",
-    rst => "0",
-    d => command_in_net,
-    src_clk => dest_clk_net,
-    src_ce => dest_ce_net,
-    dest_clk => clk_net,
-    dest_ce => ce_net,
-    q => down_sample1_q_net
-  );
-  down_sample8 : entity xil_defaultlib.pidsg_xldsamp 
+  down_sample12 : entity xil_defaultlib.pidsg_xldsamp 
   generic map (
     d_arith => xlUnsigned,
     d_bin_pt => 0,
@@ -1125,180 +1291,12 @@ begin
     dest_clr => '0',
     en => "1",
     rst => "0",
-    d => pv_deriv_net,
-    src_clk => dest_clk_net,
-    src_ce => dest_ce_net,
+    d => res_net,
+    src_clk => src_clk_net,
+    src_ce => src_ce_net,
     dest_clk => clk_net,
     dest_ce => ce_net,
-    q => down_sample8_q_net
-  );
-  down_sample2 : entity xil_defaultlib.pidsg_xldsamp 
-  generic map (
-    d_arith => xlUnsigned,
-    d_bin_pt => 0,
-    d_width => 1,
-    ds_ratio => 125,
-    latency => 1,
-    phase => 124,
-    q_arith => xlUnsigned,
-    q_bin_pt => 0,
-    q_width => 1
-  )
-  port map (
-    src_clr => '0',
-    dest_clr => '0',
-    en => "1",
-    rst => "0",
-    d => inv_meas_net,
-    src_clk => dest_clk_net,
-    src_ce => dest_ce_net,
-    dest_clk => clk_net,
-    dest_ce => ce_net,
-    q => down_sample2_q_net
-  );
-  down_sample3 : entity xil_defaultlib.pidsg_xldsamp 
-  generic map (
-    d_arith => xlUnsigned,
-    d_bin_pt => 0,
-    d_width => 1,
-    ds_ratio => 125,
-    latency => 1,
-    phase => 124,
-    q_arith => xlUnsigned,
-    q_bin_pt => 0,
-    q_width => 1
-  )
-  port map (
-    src_clr => '0',
-    dest_clr => '0',
-    en => "1",
-    rst => "0",
-    d => inv_command_net,
-    src_clk => dest_clk_net,
-    src_ce => dest_ce_net,
-    dest_clk => clk_net,
-    dest_ce => ce_net,
-    q => down_sample3_q_net
-  );
-  down_sample4 : entity xil_defaultlib.pidsg_xldsamp 
-  generic map (
-    d_arith => xlSigned,
-    d_bin_pt => 30,
-    d_width => 32,
-    ds_ratio => 125,
-    latency => 1,
-    phase => 124,
-    q_arith => xlSigned,
-    q_bin_pt => 30,
-    q_width => 32
-  )
-  port map (
-    src_clr => '0',
-    dest_clr => '0',
-    en => "1",
-    rst => "0",
-    d => thr_in_net,
-    src_clk => dest_clk_net,
-    src_ce => dest_ce_net,
-    dest_clk => clk_net,
-    dest_ce => ce_net,
-    q => down_sample4_q_net
-  );
-  down_sample5 : entity xil_defaultlib.pidsg_xldsamp 
-  generic map (
-    d_arith => xlFloat,
-    d_bin_pt => 24,
-    d_width => 32,
-    ds_ratio => 125,
-    latency => 1,
-    phase => 124,
-    q_arith => xlFloat,
-    q_bin_pt => 24,
-    q_width => 32
-  )
-  port map (
-    src_clr => '0',
-    dest_clr => '0',
-    en => "1",
-    rst => "0",
-    d => gi_net,
-    src_clk => dest_clk_net,
-    src_ce => dest_ce_net,
-    dest_clk => clk_net,
-    dest_ce => ce_net,
-    q => down_sample5_q_net
-  );
-  down_sample6 : entity xil_defaultlib.pidsg_xldsamp 
-  generic map (
-    d_arith => xlFloat,
-    d_bin_pt => 24,
-    d_width => 32,
-    ds_ratio => 125,
-    latency => 1,
-    phase => 124,
-    q_arith => xlFloat,
-    q_bin_pt => 24,
-    q_width => 32
-  )
-  port map (
-    src_clr => '0',
-    dest_clr => '0',
-    en => "1",
-    rst => "0",
-    d => kp_net,
-    src_clk => dest_clk_net,
-    src_ce => dest_ce_net,
-    dest_clk => clk_net,
-    dest_ce => ce_net,
-    q => down_sample6_q_net
-  );
-  down_sample9 : entity xil_defaultlib.pidsg_xldsamp 
-  generic map (
-    d_arith => xlFloat,
-    d_bin_pt => 24,
-    d_width => 32,
-    ds_ratio => 125,
-    latency => 1,
-    phase => 124,
-    q_arith => xlFloat,
-    q_bin_pt => 24,
-    q_width => 32
-  )
-  port map (
-    src_clr => '0',
-    dest_clr => '0',
-    en => "1",
-    rst => "0",
-    d => g2d_net,
-    src_clk => dest_clk_net,
-    src_ce => dest_ce_net,
-    dest_clk => clk_net,
-    dest_ce => ce_net,
-    q => down_sample9_q_net
-  );
-  down_sample10 : entity xil_defaultlib.pidsg_xldsamp 
-  generic map (
-    d_arith => xlFloat,
-    d_bin_pt => 24,
-    d_width => 32,
-    ds_ratio => 125,
-    latency => 1,
-    phase => 124,
-    q_arith => xlFloat,
-    q_bin_pt => 24,
-    q_width => 32
-  )
-  port map (
-    src_clr => '0',
-    dest_clr => '0',
-    en => "1",
-    rst => "0",
-    d => g1d_net,
-    src_clk => dest_clk_net,
-    src_ce => dest_ce_net,
-    dest_clk => clk_net,
-    dest_ce => ce_net,
-    q => down_sample10_q_net
+    q => down_sample12_q_net
   );
 end structural;
 -- Generated from Simulink block 
@@ -1363,6 +1361,7 @@ entity pidsg is
     meas_in : in std_logic_vector( 32-1 downto 0 );
     sat_limit : in std_logic_vector( 32-1 downto 0 );
     thr_in : in std_logic_vector( 32-1 downto 0 );
+    res : in std_logic_vector( 1-1 downto 0 );
     clk : in std_logic;
     clr : in std_logic;
     control_out : out std_logic_vector( 32-1 downto 0 )
@@ -1370,10 +1369,10 @@ entity pidsg is
 end pidsg;
 architecture structural of pidsg is 
   attribute core_generation_info : string;
-  attribute core_generation_info of structural : architecture is "pidsg,sysgen_core_2020_2,{,compilation=IP Catalog,block_icon_display=Default,family=zynq,part=xc7z030,speed=-1,package=sbg485,synthesis_language=vhdl,hdl_library=xil_defaultlib,synthesis_strategy=Vivado Synthesis Defaults,implementation_strategy=Vivado Implementation Defaults,testbench=0,interface_doc=0,ce_clr=1,clock_period=8,system_simulink_period=8e-09,waveform_viewer=0,axilite_interface=0,ip_catalog_plugin=0,hwcosim_burst_mode=0,simulation_time=0.15,addsub=9,constant=1,convert=6,delay=5,dsamp=12,logical=1,mult=5,mux=8,negate=4,relational=4,usamp=1,}";
-  signal clk_125_net : std_logic;
-  signal ce_125_net : std_logic;
+  attribute core_generation_info of structural : architecture is "pidsg,sysgen_core_2020_2,{,compilation=IP Catalog,block_icon_display=Default,family=zynq,part=xc7z030,speed=-1,package=sbg485,synthesis_language=vhdl,hdl_library=xil_defaultlib,synthesis_strategy=Vivado Synthesis Defaults,implementation_strategy=Vivado Implementation Defaults,testbench=0,interface_doc=0,ce_clr=1,clock_period=8,system_simulink_period=8e-09,waveform_viewer=0,axilite_interface=0,ip_catalog_plugin=0,hwcosim_burst_mode=0,simulation_time=0.15,addsub=9,constant=1,convert=6,delay=5,dsamp=13,logical=1,mult=5,mux=8,negate=4,relational=4,usamp=1,}";
   signal ce_1_net : std_logic;
+  signal ce_125_net : std_logic;
+  signal clk_125_net : std_logic;
   signal clk_1_net : std_logic;
 begin
   pidsg_default_clock_driver : entity xil_defaultlib.pidsg_default_clock_driver 
@@ -1400,6 +1399,7 @@ begin
     meas_in => meas_in,
     sat_limit => sat_limit,
     thr_in => thr_in,
+    res => res,
     clk_1 => clk_1_net,
     ce_1 => ce_1_net,
     clk_125 => clk_125_net,

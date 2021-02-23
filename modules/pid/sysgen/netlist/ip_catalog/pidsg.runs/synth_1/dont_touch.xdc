@@ -11,4 +11,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==pidsg_bd ||
 # IP: bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_bd_pidsg_1_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==pidsg_bd_pidsg_1_0 || ORIG_REF_NAME==pidsg_bd_pidsg_1_0} -quiet] -quiet
 
-# XDC: c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/pidsg_bd_ooc.xdc
+# XDC: c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/pidsg_bd_ooc.xdc

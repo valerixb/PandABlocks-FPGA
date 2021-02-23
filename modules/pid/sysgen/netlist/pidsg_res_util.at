@@ -22,7 +22,7 @@
    'Resource_Utilization_Data' => [
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_118',
+          'Line_Num' => 'Line_122',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.addsub',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/addsub',
           'Primitives' => [ 
@@ -42,7 +42,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_147',
+          'Line_Num' => 'Line_151',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.addsub1',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/addsub1',
           'Primitives' => [ 
@@ -62,7 +62,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_176',
+          'Line_Num' => 'Line_180',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.addsub2',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/addsub2',
           'Primitives' => [ 
@@ -82,7 +82,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_205',
+          'Line_Num' => 'Line_209',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.addsub3',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/addsub3',
           'Primitives' => [ 
@@ -102,7 +102,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_234',
+          'Line_Num' => 'Line_238',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.addsub4',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/addsub4',
           'Primitives' => [ 
@@ -122,7 +122,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_263',
+          'Line_Num' => 'Line_267',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.addsub5',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/addsub5',
           'Primitives' => [ 
@@ -142,7 +142,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_292',
+          'Line_Num' => 'Line_296',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.addsub6',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/addsub6',
           'Primitives' => [ 
@@ -162,7 +162,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_328',
+          'Line_Num' => 'Line_332',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.convert',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/convert',
           'Primitives' => [ 
@@ -181,7 +181,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_353',
+          'Line_Num' => 'Line_357',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.convert1',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/convert1',
           'Primitives' => [ 
@@ -200,7 +200,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_378',
+          'Line_Num' => 'Line_382',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.convert2',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/convert2',
           'Primitives' => [ 
@@ -219,7 +219,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_403',
+          'Line_Num' => 'Line_407',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.convert3',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/convert3',
           'Primitives' => [ 
@@ -237,7 +237,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_428',
+          'Line_Num' => 'Line_432',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.convert4',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/convert4',
           'Primitives' => [ 
@@ -245,17 +245,17 @@
                     'LUT6' => 75,
                     'LUT2' => 53,
                     'CARRY4' => 20,
-                    'LUT3' => 101,
+                    'LUT3' => 70,
                     'LUT4' => 11,
                     'LUT5' => 8,
                     'MUXF7' => 3,
-                    'Total_LUTs' => 248,
+                    'Total_LUTs' => 217,
                },
           ], 
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_453',
+          'Line_Num' => 'Line_457',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.convert5',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/convert5',
           'Primitives' => [ 
@@ -273,7 +273,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_478',
+          'Line_Num' => 'Line_482',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.delay',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/delay',
           'Primitives' => [ 
@@ -285,7 +285,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_493',
+          'Line_Num' => 'Line_491',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.delay1',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/delay1',
           'Primitives' => [ 
@@ -297,7 +297,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_508',
+          'Line_Num' => 'Line_500',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.delay2',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/delay2',
           'Primitives' => [ 
@@ -309,7 +309,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_523',
+          'Line_Num' => 'Line_509',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.delay3',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/delay3',
           'Primitives' => [ 
@@ -321,7 +321,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_538',
+          'Line_Num' => 'Line_518',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.delay4',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/delay4',
           'Primitives' => [ 
@@ -333,7 +333,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_1039',
+          'Line_Num' => 'Line_527',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.down_sample',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/down_sample',
           'Primitives' => [ 
@@ -345,7 +345,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_1087',
+          'Line_Num' => 'Line_551',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.down_sample1',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/down_sample1',
           'Primitives' => [ 
@@ -357,7 +357,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_1279',
+          'Line_Num' => 'Line_575',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.down_sample10',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/down_sample10',
           'Primitives' => [ 
@@ -369,7 +369,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_1015',
+          'Line_Num' => 'Line_599',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.down_sample11',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/down_sample11',
           'Primitives' => [ 
@@ -381,22 +381,36 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_1135',
+          'Line_Num' => 'Line_1277',
+          'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.down_sample12',
+          'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/down_sample12',
+          'Primitives' => [ 
+               {
+                    'FDRE' => 1,
+                    'LUT4' => 31,
+                    'LUT5' => 1,
+                    'Total_Registers' => 1,
+                    'Total_LUTs' => 32,
+               },
+          ], 
+     },
+     {
+          'File_Name' => 'pidsg.vhd',
+          'Line_Num' => 'Line_623',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.down_sample2',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/down_sample2',
           'Primitives' => [ 
                {
                     'LUT6' => 1,
                     'FDRE' => 1,
-                    'LUT4' => 1,
-                    'Total_LUTs' => 2,
+                    'Total_LUTs' => 1,
                     'Total_Registers' => 1,
                },
           ], 
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_1159',
+          'Line_Num' => 'Line_647',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.down_sample3',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/down_sample3',
           'Primitives' => [ 
@@ -410,7 +424,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_1183',
+          'Line_Num' => 'Line_671',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.down_sample4',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/down_sample4',
           'Primitives' => [ 
@@ -422,7 +436,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_1207',
+          'Line_Num' => 'Line_695',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.down_sample5',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/down_sample5',
           'Primitives' => [ 
@@ -434,7 +448,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_1231',
+          'Line_Num' => 'Line_719',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.down_sample6',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/down_sample6',
           'Primitives' => [ 
@@ -446,7 +460,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_1063',
+          'Line_Num' => 'Line_743',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.down_sample7',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/down_sample7',
           'Primitives' => [ 
@@ -458,7 +472,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_1111',
+          'Line_Num' => 'Line_767',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.down_sample8',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/down_sample8',
           'Primitives' => [ 
@@ -470,7 +484,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_1255',
+          'Line_Num' => 'Line_791',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.down_sample9',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/down_sample9',
           'Primitives' => [ 
@@ -482,7 +496,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_562',
+          'Line_Num' => 'Line_824',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.mult',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/mult',
           'Primitives' => [ 
@@ -501,7 +515,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_591',
+          'Line_Num' => 'Line_853',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.mult1',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/mult1',
           'Primitives' => [ 
@@ -520,7 +534,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_620',
+          'Line_Num' => 'Line_882',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.mult2',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/mult2',
           'Primitives' => [ 
@@ -539,7 +553,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_649',
+          'Line_Num' => 'Line_911',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.mult3',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/mult3',
           'Primitives' => [ 
@@ -558,7 +572,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_678',
+          'Line_Num' => 'Line_940',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.mult4',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/mult4',
           'Primitives' => [ 
@@ -577,7 +591,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_737',
+          'Line_Num' => 'Line_999',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.mux3',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/mux3',
           'Primitives' => [ 
@@ -589,7 +603,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_848',
+          'Line_Num' => 'Line_1110',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.pi_summer',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/pi_summer',
           'Primitives' => [ 
@@ -609,7 +623,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_819',
+          'Line_Num' => 'Line_1081',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.pid_summer',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/pid_summer',
           'Primitives' => [ 
@@ -629,7 +643,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_877',
+          'Line_Num' => 'Line_1139',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.relational',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/relational',
           'Primitives' => [ 
@@ -646,7 +660,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_906',
+          'Line_Num' => 'Line_1168',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.relational1',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/relational1',
           'Primitives' => [ 
@@ -662,7 +676,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_935',
+          'Line_Num' => 'Line_1197',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.relational2',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/relational2',
           'Primitives' => [ 
@@ -679,7 +693,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_964',
+          'Line_Num' => 'Line_1226',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.relational3',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/relational3',
           'Primitives' => [ 
@@ -696,7 +710,7 @@
      },
      {
           'File_Name' => 'pidsg.vhd',
-          'Line_Num' => 'Line_993',
+          'Line_Num' => 'Line_1255',
           'Hier_Name' => 'pidsg_bd_wrapper.pidsg_bd_i.pidsg_1.U0.pidsg_struct.up_sample',
           'Cell_Name' => 'pidsg_bd_i/pidsg_1/U0/pidsg_struct/up_sample',
           'Primitives' => [ 
@@ -716,16 +730,16 @@
                     'CARRY4' => 503,
                     'MUXF7' => 35,
                     'MUXF8' => 10,
-                    'LUT3' => 1085,
+                    'LUT3' => 1054,
                     'LUT2' => 736,
                     'LUT6' => 1910,
-                    'LUT4' => 1070,
-                    'LUT5' => 584,
+                    'LUT4' => 1100,
+                    'LUT5' => 585,
                     'LUT1' => 47,
-                    'FDRE' => 483,
+                    'FDRE' => 484,
                     'DSP48E1' => 15,
                     'Total_LUTs' => 5432,
-                    'Total_Registers' => 483,
+                    'Total_Registers' => 484,
                     'Total_DSPs' => 15,
                },
           ],

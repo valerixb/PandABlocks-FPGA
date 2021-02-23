@@ -18,8 +18,20 @@ create_project managed_ip_project $BUILD_DIR/managed_ip_project -force -part xc7
 set_property target_language VHDL [current_project]
 set_property target_simulator ModelSim [current_project]
 #set_property  ip_repo_paths  $TARGET_DIR/../../modules/pid/sysgen/netlist/ip [current_project]
-set_property  ip_repo_paths  $TOP/modules/pid/sysgen/netlist/ip [current_project]
+set_property  ip_repo_paths [list \
+    ${TOP}/modules/pid/sysgen/netlist/ip \
+    ${TOP}/modules/singen/sysgen/netlist/ip] [current_project]
 update_ip_catalog
+
+#
+# Create Sine Wave Generator IP from system generator
+#
+create_ip -name singen -vendor MaxIV -library Panda_SysGen -version 1.0 -module_name singen_0 -dir $BUILD_DIR/
+generate_target {instantiation_template} [get_files $BUILD_DIR/singen_0/singen_0.xci]
+generate_target all [get_files  $BUILD_DIR/singen_0/singen_0.xci]
+catch { config_ip_cache -export [get_ips -all singen_0] }
+export_ip_user_files -of_objects [get_files $BUILD_DIR/singen_0/singen_0.xci] -no_script -sync -force -quiet
+synth_ip [get_ips singen_0]
 
 #
 # Create PID IP from system generator

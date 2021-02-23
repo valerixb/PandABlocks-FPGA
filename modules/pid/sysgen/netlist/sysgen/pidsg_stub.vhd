@@ -16,6 +16,7 @@ entity pidsg_stub is
     meas_in : in std_logic_vector( 32-1 downto 0 );
     sat_limit : in std_logic_vector( 32-1 downto 0 );
     thr_in : in std_logic_vector( 32-1 downto 0 );
+    res : in std_logic_vector( 1-1 downto 0 );
     clk : in std_logic;
     clr : in std_logic;
     control_out : out std_logic_vector( 32-1 downto 0 )
@@ -37,6 +38,7 @@ begin
     meas_in => meas_in,
     sat_limit => sat_limit,
     thr_in => thr_in,
+    res => res,
     clk => clk,
     clr => clr,
     control_out => control_out

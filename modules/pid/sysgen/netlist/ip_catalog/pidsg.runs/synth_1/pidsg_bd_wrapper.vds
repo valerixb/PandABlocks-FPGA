@@ -2,20 +2,20 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri Feb 19 16:06:43 2021
-# Process ID: 6348
-# Current directory: C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1
+# Start of session at: Tue Feb 23 11:48:46 2021
+# Process ID: 14992
+# Current directory: C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1
 # Command line: vivado.exe -log pidsg_bd_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pidsg_bd_wrapper.tcl
-# Log file: C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1/pidsg_bd_wrapper.vds
-# Journal file: C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1\vivado.jou
+# Log file: C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1/pidsg_bd_wrapper.vds
+# Journal file: C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source pidsg_bd_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip'.
-WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1'.)
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1'.)
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
-Current IP cache path is c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.cache/ip 
+Current IP cache path is c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.cache/ip 
 Command: synth_design -top pidsg_bd_wrapper -part xc7z030sbg485-1 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z030'
@@ -23,65 +23,65 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z030
 INFO: [Device 21-403] Loading part xc7z030sbg485-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 10520
+INFO: [Synth 8-7075] Helper process launched with PID 3044
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1198.145 ; gain = 71.855
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1197.559 ; gain = 57.816
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'pidsg_bd_wrapper' [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/sources_1/imports/hdl/pidsg_bd_wrapper.vhd:34]
-INFO: [Synth 8-3491] module 'pidsg_bd' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/synth/pidsg_bd.vhd:14' bound to instance 'pidsg_bd_i' of component 'pidsg_bd' [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/sources_1/imports/hdl/pidsg_bd_wrapper.vhd:55]
-INFO: [Synth 8-638] synthesizing module 'pidsg_bd' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/synth/pidsg_bd.vhd:38]
-INFO: [Synth 8-3491] module 'pidsg_bd_pidsg_1_0' declared at 'C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1/.Xil/Vivado-6348-w-valbas-pc-0/realtime/pidsg_bd_pidsg_1_0_stub.vhdl:5' bound to instance 'pidsg_1' of component 'pidsg_bd_pidsg_1_0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/synth/pidsg_bd.vhd:121]
-INFO: [Synth 8-638] synthesizing module 'pidsg_bd_pidsg_1_0' [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1/.Xil/Vivado-6348-w-valbas-pc-0/realtime/pidsg_bd_pidsg_1_0_stub.vhdl:26]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_bd' (1#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/synth/pidsg_bd.vhd:38]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_bd_wrapper' (2#1) [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/sources_1/imports/hdl/pidsg_bd_wrapper.vhd:34]
+INFO: [Synth 8-638] synthesizing module 'pidsg_bd_wrapper' [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/sources_1/imports/hdl/pidsg_bd_wrapper.vhd:35]
+INFO: [Synth 8-3491] module 'pidsg_bd' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/synth/pidsg_bd.vhd:14' bound to instance 'pidsg_bd_i' of component 'pidsg_bd' [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/sources_1/imports/hdl/pidsg_bd_wrapper.vhd:57]
+INFO: [Synth 8-638] synthesizing module 'pidsg_bd' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/synth/pidsg_bd.vhd:39]
+INFO: [Synth 8-3491] module 'pidsg_bd_pidsg_1_0' declared at 'C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1/.Xil/Vivado-14992-w-valbas-pc-0/realtime/pidsg_bd_pidsg_1_0_stub.vhdl:5' bound to instance 'pidsg_1' of component 'pidsg_bd_pidsg_1_0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/synth/pidsg_bd.vhd:127]
+INFO: [Synth 8-638] synthesizing module 'pidsg_bd_pidsg_1_0' [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1/.Xil/Vivado-14992-w-valbas-pc-0/realtime/pidsg_bd_pidsg_1_0_stub.vhdl:27]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_bd' (1#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/synth/pidsg_bd.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_bd_wrapper' (2#1) [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/sources_1/imports/hdl/pidsg_bd_wrapper.vhd:35]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1254.680 ; gain = 128.391
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1254.312 ; gain = 114.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1272.609 ; gain = 146.320
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1272.207 ; gain = 132.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1272.609 ; gain = 146.320
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1272.207 ; gain = 132.465
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1272.609 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1272.207 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_bd_pidsg_1_0/pidsg_bd_pidsg_1_0_in_context.xdc] for cell 'pidsg_bd_i/pidsg_1'
-Finished Parsing XDC File [c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_bd_pidsg_1_0/pidsg_bd_pidsg_1_0_in_context.xdc] for cell 'pidsg_bd_i/pidsg_1'
-Parsing XDC File [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg_clock.xdc]
-Finished Parsing XDC File [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg_clock.xdc]
-Parsing XDC File [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc]
-WARNING: [Vivado 12-508] No pins matched 'pidsg_default_clock_driver/clockdriver/pipelined_ce.ce_pipeline[1].ce_reg/latency_gt_0.fd_array[1].reg_comp/fd_prim_array[0].bit_is_0.fdre_comp/Q'. [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc:2]
-WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -flat -endpoints [get_pins {pidsg_default_clock_driver/clockdriver/pipelined_ce.ce_pipeline[1].ce_reg/latency_gt_0.fd_array[1].reg_comp/fd_prim_array[0].bit_is_0.fdre_comp/Q}]'. [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc:2]
-WARNING: [Vivado 12-180] No cells matched 'get_cells -of [filter [all_fanout -flat -endpoints [get_pins {pidsg_default_clock_driver/clockdriver/pipelined_ce.ce_pipeline[1].ce_reg/latency_gt_0.fd_array[1].reg_comp/fd_prim_array[0].bit_is_0.fdre_comp/Q}]] IS_ENABLE]'. [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc:2]
-WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc:4]
-Finished Parsing XDC File [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/pidsg_bd_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/pidsg_bd_wrapper_propImpl.xdc].
+Parsing XDC File [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_bd_pidsg_1_0/pidsg_bd_pidsg_1_0_in_context.xdc] for cell 'pidsg_bd_i/pidsg_1'
+Finished Parsing XDC File [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_bd_pidsg_1_0/pidsg_bd_pidsg_1_0_in_context.xdc] for cell 'pidsg_bd_i/pidsg_1'
+Parsing XDC File [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg_clock.xdc]
+Finished Parsing XDC File [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg_clock.xdc]
+Parsing XDC File [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc]
+WARNING: [Vivado 12-508] No pins matched 'pidsg_default_clock_driver/clockdriver/pipelined_ce.ce_pipeline[1].ce_reg/latency_gt_0.fd_array[1].reg_comp/fd_prim_array[0].bit_is_0.fdre_comp/Q'. [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc:2]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -flat -endpoints [get_pins {pidsg_default_clock_driver/clockdriver/pipelined_ce.ce_pipeline[1].ce_reg/latency_gt_0.fd_array[1].reg_comp/fd_prim_array[0].bit_is_0.fdre_comp/Q}]'. [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc:2]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -of [filter [all_fanout -flat -endpoints [get_pins {pidsg_default_clock_driver/clockdriver/pipelined_ce.ce_pipeline[1].ce_reg/latency_gt_0.fd_array[1].reg_comp/fd_prim_array[0].bit_is_0.fdre_comp/Q}]] IS_ENABLE]'. [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc:2]
+WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc:4]
+Finished Parsing XDC File [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/pidsg_bd_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/pidsg_bd_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/pidsg_bd_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1313.035 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1313.527 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1313.035 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1313.527 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1313.035 ; gain = 186.746
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 1313.527 ; gain = 173.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z030sbg485-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1313.035 ; gain = 186.746
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 1313.527 ; gain = 173.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -89,10 +89,10 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property KEEP_HIERARCHY = SOFT for pidsg_bd_i. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for pidsg_bd_i/pidsg_1. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1313.035 ; gain = 186.746
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 1313.527 ; gain = 173.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1313.035 ; gain = 186.746
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1313.527 ; gain = 173.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -114,25 +114,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1313.035 ; gain = 186.746
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1313.527 ; gain = 173.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1333.762 ; gain = 207.473
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1330.609 ; gain = 190.867
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1333.836 ; gain = 207.547
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1330.684 ; gain = 190.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1352.922 ; gain = 226.633
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1349.801 ; gain = 210.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -150,37 +150,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1358.734 ; gain = 232.445
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1354.605 ; gain = 214.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1358.734 ; gain = 232.445
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1354.605 ; gain = 214.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1358.734 ; gain = 232.445
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1354.605 ; gain = 214.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1358.734 ; gain = 232.445
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1354.605 ; gain = 214.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1358.734 ; gain = 232.445
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1354.605 ; gain = 214.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1358.734 ; gain = 232.445
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1354.605 ; gain = 214.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -200,23 +200,23 @@ Report Cell Usage:
 |1     |pidsg_bd_pidsg_1_0_bbox |     1|
 +------+------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1358.734 ; gain = 232.445
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1354.605 ; gain = 214.863
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1358.734 ; gain = 192.020
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1358.734 ; gain = 232.445
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1354.605 ; gain = 173.543
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1354.605 ; gain = 214.863
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1358.734 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1354.605 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1376.969 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1374.664 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 23 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1376.969 ; gain = 250.680
-INFO: [Common 17-1381] The checkpoint 'C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1/pidsg_bd_wrapper.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1374.664 ; gain = 234.922
+INFO: [Common 17-1381] The checkpoint 'C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1/pidsg_bd_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file pidsg_bd_wrapper_utilization_synth.rpt -pb pidsg_bd_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Feb 19 16:07:22 2021...
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 23 11:49:24 2021...

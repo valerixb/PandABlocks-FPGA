@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1/pidsg_bd_wrapper.tcl"
+  variable script "C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/synth_1/pidsg_bd_wrapper.tcl"
   variable category "vivado_synth"
 }
 
@@ -80,21 +80,21 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.cache/wt [current_project]
-set_property parent.project_path C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.xpr [current_project]
+set_property webtalk.parent_dir C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.cache/wt [current_project]
+set_property parent.project_path C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_repo_paths c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip [current_project]
+set_property ip_repo_paths c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip [current_project]
 update_ip_catalog
-set_property ip_output_repo c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.cache/ip [current_project]
+set_property ip_output_repo c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library xil_defaultlib C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/sources_1/imports/hdl/pidsg_bd_wrapper.vhd
-add_files C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/sources_1/bd/pidsg_bd/pidsg_bd.bd
-set_property used_in_implementation false [get_files -all c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/constrs/pidsg.xdc]
-set_property used_in_implementation false [get_files -all c:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/pidsg_bd_ooc.xdc]
+read_vhdl -library xil_defaultlib C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/sources_1/imports/hdl/pidsg_bd_wrapper.vhd
+add_files C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/sources_1/bd/pidsg_bd/pidsg_bd.bd
+set_property used_in_implementation false [get_files -all c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/constrs/pidsg.xdc]
+set_property used_in_implementation false [get_files -all c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/pidsg_bd_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -105,11 +105,11 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg_clock.xdc
-set_property used_in_implementation false [get_files C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg_clock.xdc]
+read_xdc C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg_clock.xdc
+set_property used_in_implementation false [get_files C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg_clock.xdc]
 
-read_xdc C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc
-set_property used_in_implementation false [get_files C:/home/valerix/MaxIV/year2021/xilinxworks/pid/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc]
+read_xdc C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc
+set_property used_in_implementation false [get_files C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.srcs/constrs_1/imports/sysgen/pidsg.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

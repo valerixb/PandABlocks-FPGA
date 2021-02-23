@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
---Date        : Fri Feb 19 16:04:33 2021
+--Date        : Tue Feb 23 11:46:33 2021
 --Host        : w-valbas-pc-0 running 64-bit major release  (build 9200)
 --Command     : generate_target pidsg_bd_wrapper.bd
 --Design      : pidsg_bd_wrapper
@@ -26,6 +26,7 @@ entity pidsg_bd_wrapper is
     kp : in STD_LOGIC_VECTOR ( 31 downto 0 );
     meas_in : in STD_LOGIC_VECTOR ( 31 downto 0 );
     pv_deriv : in STD_LOGIC_VECTOR ( 0 to 0 );
+    res : in STD_LOGIC_VECTOR ( 0 to 0 );
     sat_limit : in STD_LOGIC_VECTOR ( 31 downto 0 );
     thr_in : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
@@ -47,6 +48,7 @@ architecture STRUCTURE of pidsg_bd_wrapper is
     kp : in STD_LOGIC_VECTOR ( 31 downto 0 );
     meas_in : in STD_LOGIC_VECTOR ( 31 downto 0 );
     pv_deriv : in STD_LOGIC_VECTOR ( 0 to 0 );
+    res : in STD_LOGIC_VECTOR ( 0 to 0 );
     sat_limit : in STD_LOGIC_VECTOR ( 31 downto 0 );
     thr_in : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
@@ -67,6 +69,7 @@ pidsg_bd_i: component pidsg_bd
       kp(31 downto 0) => kp(31 downto 0),
       meas_in(31 downto 0) => meas_in(31 downto 0),
       pv_deriv(0) => pv_deriv(0),
+      res(0) => res(0),
       sat_limit(31 downto 0) => sat_limit(31 downto 0),
       thr_in(31 downto 0) => thr_in(31 downto 0)
     );

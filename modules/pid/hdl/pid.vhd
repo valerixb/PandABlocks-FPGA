@@ -38,7 +38,7 @@ port (
     inv_cmd               : std_logic_vector(31 downto 0);
     inv_meas              : std_logic_vector(31 downto 0);
     deriv_on_procvar      : std_logic_vector(31 downto 0)
-	);
+    );
 end pid;
 
 
@@ -57,6 +57,7 @@ architecture rtl of pid is
             command_in  : in std_logic_vector(31 downto 0);
             inv_command : in std_logic_vector(0 downto 0);
             inv_meas    : in std_logic_vector(0 downto 0);
+            res         : in std_logic_vector(0 downto 0);
             kp          : in std_logic_vector(31 downto 0);
             meas_in     : in std_logic_vector(31 downto 0);
             sat_limit   : in std_logic_vector(31 downto 0);
@@ -81,6 +82,7 @@ begin
             command_in     => cmd_i,
             inv_command(0) => inv_cmd(0),
             inv_meas(0)    => inv_meas(0),
+            res(0)         => pid_clr,
             kp             => kp,
             meas_in        => meas_i,
             sat_limit      => max_out,
