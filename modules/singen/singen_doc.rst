@@ -7,7 +7,7 @@ This is a discrete time implementation, with 1 MHz fixed sampling frequency: the
 
 Full scale is meant to be +/- 1 in the scaled PandaBlocks representation (or signed 32-bit int if raw representation is preferred).
 
-80 dB SFDR; based on Xilinx DDS Compiler v6.0.
+Based on Xilinx DDS Compiler v6.0.
 
 
 -----------------------------------------------------
