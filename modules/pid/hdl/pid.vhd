@@ -30,10 +30,10 @@ port (
     max_out               : in  std_logic_vector(31 downto 0); -- sfix32_En30
     out_o                 : out std_logic_vector(31 downto 0); -- sfix32_En31
     -- float32
-    kp                    : in  std_logic_vector(31 downto 0); -- float32
-    gi                    : in  std_logic_vector(31 downto 0); -- float32
-    g1d                   : in  std_logic_vector(31 downto 0); -- float32
-    g2d                   : in  std_logic_vector(31 downto 0); -- float32
+    reserved_gp           : in  std_logic_vector(31 downto 0); -- float32
+    reserved_gi           : in  std_logic_vector(31 downto 0); -- float32
+    reserved_g1d          : in  std_logic_vector(31 downto 0); -- float32
+    reserved_g2d          : in  std_logic_vector(31 downto 0); -- float32
     -- boolean
     inv_cmd               : std_logic_vector(31 downto 0);
     inv_meas              : std_logic_vector(31 downto 0);
@@ -75,15 +75,15 @@ begin
         port map
             (
             aiw_g          => anti_int_wndp_rat_g,
-            g1d            => g1d,
-            g2d            => g2d,
-            gi             => gi,
+            g1d            => reserved_g1d,
+            g2d            => reserved_g2d,
+            gi             => reserved_gi,
             pv_deriv(0)    => deriv_on_procvar(0),
             command_in     => cmd_i,
             inv_command(0) => inv_cmd(0),
             inv_meas(0)    => inv_meas(0),
             res(0)         => pid_clr,
-            kp             => kp,
+            kp             => reserved_gp,
             meas_in        => meas_i,
             sat_limit      => max_out,
             thr_in         => thresh,
