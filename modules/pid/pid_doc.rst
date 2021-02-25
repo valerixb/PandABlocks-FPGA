@@ -1,12 +1,11 @@
 PID - PID controller
-
 ========================
 
 
 
 The PID block is an implementation of the classical proportional/integral/derivative controller.
 Its gains are intended in 
-`parallel form <en.wikipedia.org/wiki/PID_controller#Standard_versus_parallel_(ideal)_form>`_ 
+`parallel form <https://en.wikipedia.org/wiki/PID_controller#Standard_versus_parallel_(ideal)_form>`_ 
 
 
 The controller has protection features like:
@@ -31,7 +30,6 @@ Inputs can be inverted, for ease of implementation. Full scale is meant to be +/
 
 
 Fields
-
 -----------------------------------------------------
 
 
