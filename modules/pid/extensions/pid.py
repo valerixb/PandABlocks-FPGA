@@ -1,7 +1,7 @@
 #
 # Extension module to support PID block - system generator/floating point
 #
-# latest rev: feb 25 2021
+# latest rev: mar 5 2021
 #
 
 PID_SAMPLING_FREQ = 1.e6
@@ -12,6 +12,7 @@ HOST = 'localhost'
 PORT = 8888
 
 import struct, socket
+
 
 def float_to_hex(f):
     return hex(struct.unpack('<I', struct.pack('<f', f))[0])
@@ -25,7 +26,7 @@ class PidReader:
 
     def read(self, number):
         global pid_table
-        a=pid_table[number-1][self.param_name]
+        a=pid_table[number][self.param_name]
         return a
     
 
@@ -36,36 +37,38 @@ class PidWriter:
     def write(self, number, value):
         global pid_table
         if self.param_name!='F_FILTER':
-            pid_table[number-1][self.param_name]= value/PARAM_SCALE
+            pid_table[number][self.param_name]= value/PARAM_SCALE
         else:
-            pid_table[number-1][self.param_name]= value
+            pid_table[number][self.param_name]= value
+
         
         # calculate PID filter coefficients from gains
         # and build corresponding TCP command
         cmd_list=[]
         if self.param_name=='KP':
-            gp=float(pid_table[number-1]['KP'])
+            gp=float(pid_table[number]['KP'])
             v=int(float_to_hex(gp),0)
-            s="PID{0:d}.RESERVED_GP={1:010d}\n".format(number,v)
+            s="PID{0:d}.RESERVED_GP={1:d}\n".format(number+1,v)
             cmd_list.append(s)
         elif self.param_name=='KI':
-            gi=float(pid_table[number-1]['KI'])/(2.*PID_SAMPLING_FREQ)
+            gi=float(pid_table[number]['KI']/(2.*PID_SAMPLING_FREQ))
             v=int(float_to_hex(gi),0)
-            s="PID{0:d}.RESERVED_GI={1:010d}\n".format(number,v)
+            # dont' use fancy formatting, which interferes with TCP server parsing
+            s="PID{0:d}.RESERVED_GI={1:d}\n".format(number+1,v)
             cmd_list.append(s)
         elif (self.param_name=='KD' or self.param_name=='F_FILTER'):
-            gd=float(2.*pid_table[number-1]['KD'])*PID_SAMPLING_FREQ
-            ff=float(pid_table[number-1]['F_FILTER'])
+            gd=float(2.0*pid_table[number]['KD'])*PID_SAMPLING_FREQ
+            ff=float(pid_table[number]['F_FILTER'])
             if ff==0:
                 ff=float(default_pid_params['F_FILTER'])
             R=PID_SAMPLING_FREQ/ff
             g1d=(2*R-1)/(2*R+1)
             g2d=gd/(2*R+1)
             v=int(float_to_hex(g1d),0)
-            s="PID{0:d}.RESERVED_G1D={1:010d}\n".format(number,v)
+            s="PID{0:d}.RESERVED_G1D={1:d}\n".format(number+1,v)
             cmd_list.append(s)
             v=int(float_to_hex(g2d),0)
-            s="PID{0:d}.RESERVED_G2D={1:010d}\n".format(number,v)
+            s="PID{0:d}.RESERVED_G2D={1:d}\n".format(number+1,v)
             cmd_list.append(s)
         else:
             pass
@@ -74,11 +77,11 @@ class PidWriter:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sk:
             sk.connect((HOST, PORT))
             for line in cmd_list:
-                sk.sendall(line)
-                # print(line)
+                sk.sendall(line.encode('utf-8'))
+                # print(line.encode('utf-8'))
         # socket closed automatically by "with"
         # exception caught by outside extension server framework
-        
+
 
 pid_table=[]
 default_pid_params= \
@@ -127,19 +130,19 @@ class Extension:
 #    ffilt_writer=cicci.parse_write('f_filter')
 #    # f_filt
 #    print('------------')
-#    readback_val= ffilt_reader.read(1)
+#    readback_val= ffilt_reader.read(0)
 #    print("f_filt1 before=",readback_val)
-#    ffilt_writer.write(1,14756)
-#    readback_val= ffilt_reader.read(1)
+#    ffilt_writer.write(0,14756)
+#    readback_val= ffilt_reader.read(0)
 #    print("f_filt1 after=",readback_val)
 #    # k_p
 #    print('------------')
-#    readback_val= kp_reader.read(1)
+#    readback_val= kp_reader.read(0)
 #    print("kp1 before=",readback_val)
-#    kp_writer.write(1,3.4*PARAM_SCALE)
-#    readback_val= kp_reader.read(1)
+#    kp_writer.write(0,3.4*PARAM_SCALE)
+#    readback_val= kp_reader.read(0)
 #    print("kp1 after=",readback_val)
-#    readback_val= kp_reader.read(2)
+#    readback_val= kp_reader.read(1)
 #    print("kp2 after=",readback_val)
 #    print('------------')
 #    print(pid_table)
@@ -149,8 +152,8 @@ class Extension:
 #    # GI =  897988541
 #    # G1D= 1065286241
 #    # G2D= 1137154510
-#    ffilt_writer.write(2,4000)
-#    kp_writer.write(2,7*PARAM_SCALE)
-#    ki_writer.write(2,2.0*PARAM_SCALE)
-#    kd_writer.write(2,0.1*PARAM_SCALE)
+#    ffilt_writer.write(1,4000)
+#    kp_writer.write(1,7*PARAM_SCALE)
+#    ki_writer.write(1,2.0*PARAM_SCALE)
+#    kd_writer.write(1,0.1*PARAM_SCALE)
 #    print(pid_table)
