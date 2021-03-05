@@ -28,7 +28,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set IP_LifeCycle_Menu {1}
 	set IP_Logo {sysgen_icon_100.png}
 	set IP_Name {pid_1_0}
-	set IP_Revision {244986348}
+	set IP_Revision {245859230}
 	set IP_Socket_IP {0}
 	set IP_Socket_IP_Proj_Path {}
 	set IP_Vendor_Text {MaxIV}
@@ -58,24 +58,9 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set SynthesisTool {Vivado}
 	set TargetDir {C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist}
 	set TopLevelModule {pidsg}
-	set TopLevelSimulinkHandle 0.000366211
+	set TopLevelSimulinkHandle 0.000244141
 	set VHDLLib {xil_defaultlib}
 	set TopLevelPortInterface {}
-	dict set TopLevelPortInterface res Name {res}
-	dict set TopLevelPortInterface res Type Bool
-	dict set TopLevelPortInterface res ArithmeticType xlUnsigned
-	dict set TopLevelPortInterface res BinaryPoint 0
-	dict set TopLevelPortInterface res Width 1
-	dict set TopLevelPortInterface res DatFile {pidsg_res.dat}
-	dict set TopLevelPortInterface res IconText {res}
-	dict set TopLevelPortInterface res Direction in
-	dict set TopLevelPortInterface res Period 1
-	dict set TopLevelPortInterface res Interface 0
-	dict set TopLevelPortInterface res InterfaceName {}
-	dict set TopLevelPortInterface res InterfaceString {DATA}
-	dict set TopLevelPortInterface res ClockDomain {pidsg}
-	dict set TopLevelPortInterface res Locs {}
-	dict set TopLevelPortInterface res IOStandard {}
 	dict set TopLevelPortInterface thr_in Name {thr_in}
 	dict set TopLevelPortInterface thr_in Type Fix_32_30
 	dict set TopLevelPortInterface thr_in ArithmeticType xlSigned
@@ -106,6 +91,21 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface sat_limit ClockDomain {pidsg}
 	dict set TopLevelPortInterface sat_limit Locs {}
 	dict set TopLevelPortInterface sat_limit IOStandard {}
+	dict set TopLevelPortInterface res Name {res}
+	dict set TopLevelPortInterface res Type Bool
+	dict set TopLevelPortInterface res ArithmeticType xlUnsigned
+	dict set TopLevelPortInterface res BinaryPoint 0
+	dict set TopLevelPortInterface res Width 1
+	dict set TopLevelPortInterface res DatFile {pidsg_res.dat}
+	dict set TopLevelPortInterface res IconText {res}
+	dict set TopLevelPortInterface res Direction in
+	dict set TopLevelPortInterface res Period 1
+	dict set TopLevelPortInterface res Interface 0
+	dict set TopLevelPortInterface res InterfaceName {}
+	dict set TopLevelPortInterface res InterfaceString {DATA}
+	dict set TopLevelPortInterface res ClockDomain {pidsg}
+	dict set TopLevelPortInterface res Locs {}
+	dict set TopLevelPortInterface res IOStandard {}
 	dict set TopLevelPortInterface meas_in Name {meas_in}
 	dict set TopLevelPortInterface meas_in Type Fix_32_31
 	dict set TopLevelPortInterface meas_in ArithmeticType xlSigned
@@ -271,6 +271,21 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface control_out ClockDomain {pidsg}
 	dict set TopLevelPortInterface control_out Locs {}
 	dict set TopLevelPortInterface control_out IOStandard {}
+	dict set TopLevelPortInterface ce_out Name {ce_out}
+	dict set TopLevelPortInterface ce_out Type Bool
+	dict set TopLevelPortInterface ce_out ArithmeticType xlUnsigned
+	dict set TopLevelPortInterface ce_out BinaryPoint 0
+	dict set TopLevelPortInterface ce_out Width 1
+	dict set TopLevelPortInterface ce_out DatFile {pidsg_ce_out.dat}
+	dict set TopLevelPortInterface ce_out IconText {ce_out}
+	dict set TopLevelPortInterface ce_out Direction out
+	dict set TopLevelPortInterface ce_out Period 1
+	dict set TopLevelPortInterface ce_out Interface 0
+	dict set TopLevelPortInterface ce_out InterfaceName {}
+	dict set TopLevelPortInterface ce_out InterfaceString {DATA}
+	dict set TopLevelPortInterface ce_out ClockDomain {pidsg}
+	dict set TopLevelPortInterface ce_out Locs {}
+	dict set TopLevelPortInterface ce_out IOStandard {}
 	dict set TopLevelPortInterface clr Name {clr}
 	dict set TopLevelPortInterface clr Type -
 	dict set TopLevelPortInterface clr ArithmeticType xlUnsigned

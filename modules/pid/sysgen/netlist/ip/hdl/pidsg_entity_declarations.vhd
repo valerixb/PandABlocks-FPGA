@@ -257,7 +257,7 @@ begin
     -- Mux selects current input value or register value.
     shutter_mux: process (adjusted_dest_ce, d, smpld_d)
     begin
-      if adjusted_dest_ce = '0' then
+	  if adjusted_dest_ce = '0' then
         q <= smpld_d;
       else
         q <= d;
@@ -628,6 +628,55 @@ end architecture struct;
 library xil_defaultlib;
 use xil_defaultlib.conv_pkg.all;
 
+---------------------------------------------------------------------
+--
+--  Filename      : xlceprobe.vhd
+--
+--  Description   : VHDL description of system clock enable probe.
+--                  This block assigns the clock enable signal to
+--                  the output port.
+--  Mod. History  : Added beffer so the the ce nets would not get renamed
+--
+---------------------------------------------------------------------
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+library xil_defaultlib;
+use xil_defaultlib.conv_pkg.all;
+
+-- synthesis translate_off
+library unisim;
+use unisim.vcomponents.all;
+-- synthesis translate_on
+
+
+entity pidsg_xlceprobe is
+    generic (d_width  : integer := 8;
+             q_width  : integer := 1);
+    port (d       : in std_logic_vector (d_width-1 downto 0);
+          ce      : in std_logic;
+          clk     : in std_logic;
+          q       : out std_logic_vector (q_width-1 downto 0));
+end pidsg_xlceprobe;
+
+architecture behavior of pidsg_xlceprobe is
+    component BUF
+        port(
+            O  :        out   STD_ULOGIC;
+            I  :        in    STD_ULOGIC);
+    end component;
+    attribute syn_black_box of BUF : component is true;
+    attribute fpga_dont_touch of BUF : component is "true";
+    signal ce_vec : std_logic_vector(0 downto 0);
+begin
+    buf_comp : buf port map(i => ce, o => ce_vec(0));
+     -- use the clock enable signal to drive the output port
+    q <= ce_vec;
+end architecture behavior;
+
+library xil_defaultlib;
+use xil_defaultlib.conv_pkg.all;
+
 -------------------------------------------------------------------
  -- System Generator VHDL source file.
  --
@@ -739,7 +788,7 @@ entity pidsg_xlfpaddsub is
     s_axis_b_tdata: in std_logic_vector(32 - 1 downto 0) :=(others=>'0');
     m_axis_result_tvalid: out std_logic;
     m_axis_result_tdata: out std_logic_vector(32- 1 downto 0) :=(others=>'0') 
-          ); 
+ 		  ); 
  end component;
 
  component pidsg_floating_point_v7_1_i1
@@ -750,7 +799,7 @@ entity pidsg_xlfpaddsub is
     s_axis_b_tdata: in std_logic_vector(32 - 1 downto 0) :=(others=>'0');
     m_axis_result_tvalid: out std_logic;
     m_axis_result_tdata: out std_logic_vector(32- 1 downto 0) :=(others=>'0') 
-          ); 
+ 		  ); 
  end component;
 
 begin
@@ -918,7 +967,7 @@ entity pidsg_xlfpconvert is
     s_axis_a_tdata: in std_logic_vector(32 - 1 downto 0) :=(others=>'0');
     m_axis_result_tvalid: out std_logic;
     m_axis_result_tdata: out std_logic_vector(32- 1 downto 0) :=(others=>'0') 
-          ); 
+ 		  ); 
  end component;
 
  component pidsg_floating_point_v7_1_i3
@@ -927,7 +976,7 @@ entity pidsg_xlfpconvert is
     s_axis_a_tdata: in std_logic_vector(32 - 1 downto 0) :=(others=>'0');
     m_axis_result_tvalid: out std_logic;
     m_axis_result_tdata: out std_logic_vector(32- 1 downto 0) :=(others=>'0') 
-          ); 
+ 		  ); 
  end component;
 
  component pidsg_floating_point_v7_1_i4
@@ -936,7 +985,7 @@ entity pidsg_xlfpconvert is
     s_axis_a_tdata: in std_logic_vector(32 - 1 downto 0) :=(others=>'0');
     m_axis_result_tvalid: out std_logic;
     m_axis_result_tdata: out std_logic_vector(32- 1 downto 0) :=(others=>'0') 
-          ); 
+ 		  ); 
  end component;
 
 begin
@@ -1116,7 +1165,7 @@ entity pidsg_xlfpmult is
     s_axis_b_tdata: in std_logic_vector(32 - 1 downto 0) :=(others=>'0');
     m_axis_result_tvalid: out std_logic;
     m_axis_result_tdata: out std_logic_vector(32- 1 downto 0) :=(others=>'0') 
-          ); 
+ 		  ); 
  end component;
 
 begin
@@ -1279,7 +1328,7 @@ entity pidsg_xlfprelational is
     s_axis_b_tdata: in std_logic_vector(32 - 1 downto 0) :=(others=>'0');
     m_axis_result_tvalid: out std_logic;
     m_axis_result_tdata: out std_logic_vector(8- 1 downto 0) :=(others=>'0') 
-          ); 
+ 		  ); 
  end component;
 
  component pidsg_floating_point_v7_1_i7
@@ -1290,7 +1339,7 @@ entity pidsg_xlfprelational is
     s_axis_b_tdata: in std_logic_vector(32 - 1 downto 0) :=(others=>'0');
     m_axis_result_tvalid: out std_logic;
     m_axis_result_tdata: out std_logic_vector(8- 1 downto 0) :=(others=>'0') 
-          ); 
+ 		  ); 
  end component;
 
 begin

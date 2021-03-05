@@ -10,10 +10,11 @@
     inv_meas => inv_meas,
     kp => kp,
     meas_in => meas_in,
+    res => res,
     sat_limit => sat_limit,
     thr_in => thr_in,
-    res => res,
     clk => clk,
     clr => clr,
-    control_out => control_out
+    control_out => control_out,
+    ce_out => ce_out
   );

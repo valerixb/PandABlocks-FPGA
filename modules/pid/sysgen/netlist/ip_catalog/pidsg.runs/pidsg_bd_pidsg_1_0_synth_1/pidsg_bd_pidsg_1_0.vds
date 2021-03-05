@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue Feb 23 11:46:51 2021
-# Process ID: 11836
+# Start of session at: Fri Mar  5 14:15:04 2021
+# Process ID: 6040
 # Current directory: C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/pidsg_bd_pidsg_1_0_synth_1
 # Command line: vivado.exe -log pidsg_bd_pidsg_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pidsg_bd_pidsg_1_0.tcl
 # Log file: C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/pidsg_bd_pidsg_1_0_synth_1/pidsg_bd_pidsg_1_0.vds
@@ -23,15 +23,15 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z030
 INFO: [Device 21-403] Loading part xc7z030sbg485-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 16588
+INFO: [Synth 8-7075] Helper process launched with PID 7848
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1197.238 ; gain = 70.898
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1198.148 ; gain = 58.855
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'pidsg_bd_pidsg_1_0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/synth/pidsg_bd_pidsg_1_0.vhd:80]
-INFO: [Synth 8-3491] module 'pidsg' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg.vhd:1350' bound to instance 'U0' of component 'pidsg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/synth/pidsg_bd_pidsg_1_0.vhd:159]
-INFO: [Synth 8-638] synthesizing module 'pidsg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg.vhd:1370]
-INFO: [Synth 8-638] synthesizing module 'pidsg_default_clock_driver' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg.vhd:1318]
-INFO: [Synth 8-638] synthesizing module 'xlclockdriver' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:59]
+INFO: [Synth 8-638] synthesizing module 'pidsg_bd_pidsg_1_0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/synth/pidsg_bd_pidsg_1_0.vhd:81]
+INFO: [Synth 8-3491] module 'pidsg' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg.vhd:1364' bound to instance 'U0' of component 'pidsg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/synth/pidsg_bd_pidsg_1_0.vhd:164]
+INFO: [Synth 8-638] synthesizing module 'pidsg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg.vhd:1385]
+INFO: [Synth 8-638] synthesizing module 'pidsg_default_clock_driver' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg.vhd:1332]
+INFO: [Synth 8-638] synthesizing module 'xlclockdriver' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:59]
 	Parameter period bound to: 1 - type: integer 
 	Parameter log_2_period bound to: 1 - type: integer 
 	Parameter pipeline_regs bound to: 5 - type: integer 
@@ -40,8 +40,8 @@ INFO: [Synth 8-638] synthesizing module 'xlclockdriver' [c:/home/valerix/MaxIV/y
 	Parameter init_index bound to: 0 - type: integer 
 	Parameter init_value bound to: 4'b0000 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_w_init.vhd:31' bound to instance 'clr_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:236]
-INFO: [Synth 8-638] synthesizing module 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_w_init.vhd:47]
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_w_init.vhd:31' bound to instance 'clr_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:236]
+INFO: [Synth 8-638] synthesizing module 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_w_init.vhd:47]
 	Parameter width bound to: 1 - type: integer 
 	Parameter init_index bound to: 0 - type: integer 
 	Parameter init_value bound to: 4'b0000 
@@ -49,16 +49,16 @@ INFO: [Synth 8-638] synthesizing module 'synth_reg_w_init' [c:/home/valerix/MaxI
 	Parameter width bound to: 1 - type: integer 
 	Parameter init_index bound to: 0 - type: integer 
 	Parameter init_value bound to: 4'b0000 
-INFO: [Synth 8-3491] module 'single_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/single_reg_w_init.vhd:22' bound to instance 'reg_comp' of component 'single_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_w_init.vhd:79]
-INFO: [Synth 8-638] synthesizing module 'single_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/single_reg_w_init.vhd:37]
+INFO: [Synth 8-3491] module 'single_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/single_reg_w_init.vhd:22' bound to instance 'reg_comp' of component 'single_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_w_init.vhd:79]
+INFO: [Synth 8-638] synthesizing module 'single_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/single_reg_w_init.vhd:37]
 	Parameter width bound to: 1 - type: integer 
 	Parameter init_index bound to: 0 - type: integer 
 	Parameter init_value bound to: 4'b0000 
-INFO: [Synth 8-113] binding component instance 'fdre_comp' to cell 'FDRE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/single_reg_w_init.vhd:86]
-INFO: [Synth 8-256] done synthesizing module 'single_reg_w_init' (1#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/single_reg_w_init.vhd:37]
-INFO: [Synth 8-256] done synthesizing module 'synth_reg_w_init' (2#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_w_init.vhd:47]
-INFO: [Synth 8-256] done synthesizing module 'xlclockdriver' (3#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:59]
-INFO: [Synth 8-638] synthesizing module 'xlclockdriver__parameterized0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:59]
+INFO: [Synth 8-113] binding component instance 'fdre_comp' to cell 'FDRE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/single_reg_w_init.vhd:86]
+INFO: [Synth 8-256] done synthesizing module 'single_reg_w_init' (1#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/single_reg_w_init.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'synth_reg_w_init' (2#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_w_init.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'xlclockdriver' (3#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:59]
+INFO: [Synth 8-638] synthesizing module 'xlclockdriver__parameterized0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:59]
 	Parameter period bound to: 125 - type: integer 
 	Parameter log_2_period bound to: 7 - type: integer 
 	Parameter pipeline_regs bound to: 5 - type: integer 
@@ -67,61 +67,61 @@ INFO: [Synth 8-638] synthesizing module 'xlclockdriver__parameterized0' [c:/home
 	Parameter init_index bound to: 0 - type: integer 
 	Parameter init_value bound to: 4'b0000 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_w_init.vhd:31' bound to instance 'clr_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:236]
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_w_init.vhd:31' bound to instance 'clr_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:236]
 	Parameter width bound to: 1 - type: integer 
 	Parameter init_index bound to: 0 - type: integer 
 	Parameter init_value bound to: 4'b0000 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:262]
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:262]
 	Parameter width bound to: 1 - type: integer 
 	Parameter init_index bound to: 0 - type: integer 
 	Parameter init_value bound to: 4'b0000 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:262]
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:262]
 	Parameter width bound to: 1 - type: integer 
 	Parameter init_index bound to: 0 - type: integer 
 	Parameter init_value bound to: 4'b0000 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:262]
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:262]
 	Parameter width bound to: 1 - type: integer 
 	Parameter init_index bound to: 0 - type: integer 
 	Parameter init_value bound to: 4'b0000 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:262]
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:262]
 	Parameter width bound to: 1 - type: integer 
 	Parameter init_index bound to: 0 - type: integer 
 	Parameter init_value bound to: 4'b0000 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:262]
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:262]
 	Parameter width bound to: 1 - type: integer 
 	Parameter init_index bound to: 0 - type: integer 
 	Parameter init_value bound to: 4'b0000 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_logic_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:291]
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_logic_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:291]
 	Parameter width bound to: 1 - type: integer 
 	Parameter init_index bound to: 0 - type: integer 
 	Parameter init_value bound to: 4'b0000 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_logic_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:291]
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_logic_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:291]
 	Parameter width bound to: 1 - type: integer 
 	Parameter init_index bound to: 0 - type: integer 
 	Parameter init_value bound to: 4'b0000 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_logic_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:291]
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_logic_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:291]
 	Parameter width bound to: 1 - type: integer 
 	Parameter init_index bound to: 0 - type: integer 
 	Parameter init_value bound to: 4'b0000 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_logic_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:291]
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_logic_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:291]
 	Parameter width bound to: 1 - type: integer 
 	Parameter init_index bound to: 0 - type: integer 
 	Parameter init_value bound to: 4'b0000 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_logic_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:291]
-INFO: [Synth 8-256] done synthesizing module 'xlclockdriver__parameterized0' (3#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/xlclockdriver_rd.vhd:59]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_default_clock_driver' (4#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg.vhd:1318]
-INFO: [Synth 8-638] synthesizing module 'pidsg_struct' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg.vhd:28]
-INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpaddsub' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:708]
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_logic_reg' of component 'synth_reg_w_init' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:291]
+INFO: [Synth 8-256] done synthesizing module 'xlclockdriver__parameterized0' (3#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/xlclockdriver_rd.vhd:59]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_default_clock_driver' (4#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg.vhd:1332]
+INFO: [Synth 8-638] synthesizing module 'pidsg_struct' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg.vhd:29]
+INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpaddsub' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:757]
 	Parameter core_name0 bound to: pidsg_floating_point_v7_1_i0 - type: string 
 	Parameter a_width bound to: 32 - type: integer 
 	Parameter a_bin_pt bound to: 24 - type: integer 
@@ -145,13 +145,13 @@ INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpaddsub' [c:/home/valerix/MaxI
 	Parameter quantization bound to: 1 - type: integer 
 	Parameter overflow bound to: 1 - type: integer 
 	Parameter c_latency bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i0' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i0/synth/pidsg_floating_point_v7_1_i0.v:60' bound to instance 'core_instance0' of component 'pidsg_floating_point_v7_1_i0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:771]
+INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i0' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i0/synth/pidsg_floating_point_v7_1_i0.v:60' bound to instance 'core_instance0' of component 'pidsg_floating_point_v7_1_i0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:820]
 INFO: [Synth 8-6157] synthesizing module 'pidsg_floating_point_v7_1_i0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i0/synth/pidsg_floating_point_v7_1_i0.v:60]
 INFO: [Synth 8-6157] synthesizing module 'LUT1' [C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:39137]
 INFO: [Synth 8-6155] done synthesizing module 'LUT1' (5#1) [C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:39137]
 INFO: [Synth 8-6155] done synthesizing module 'pidsg_floating_point_v7_1_i0' (31#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i0/synth/pidsg_floating_point_v7_1_i0.v:60]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfpaddsub' (32#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:708]
-INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpaddsub__parameterized0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:708]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfpaddsub' (32#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:757]
+INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpaddsub__parameterized0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:757]
 	Parameter core_name0 bound to: pidsg_floating_point_v7_1_i1 - type: string 
 	Parameter a_width bound to: 32 - type: integer 
 	Parameter a_bin_pt bound to: 24 - type: integer 
@@ -175,13 +175,13 @@ INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpaddsub__parameterized0' [c:/h
 	Parameter quantization bound to: 1 - type: integer 
 	Parameter overflow bound to: 1 - type: integer 
 	Parameter c_latency bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i1' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i1/synth/pidsg_floating_point_v7_1_i1.v:60' bound to instance 'core_instance1' of component 'pidsg_floating_point_v7_1_i1' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:783]
+INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i1' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i1/synth/pidsg_floating_point_v7_1_i1.v:60' bound to instance 'core_instance1' of component 'pidsg_floating_point_v7_1_i1' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:832]
 INFO: [Synth 8-6157] synthesizing module 'pidsg_floating_point_v7_1_i1' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i1/synth/pidsg_floating_point_v7_1_i1.v:60]
 INFO: [Synth 8-6155] done synthesizing module 'pidsg_floating_point_v7_1_i1' (33#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i1/synth/pidsg_floating_point_v7_1_i1.v:60]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfpaddsub__parameterized0' (33#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:708]
-INFO: [Synth 8-638] synthesizing module 'sysgen_constant_d970527240' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:50]
-INFO: [Synth 8-256] done synthesizing module 'sysgen_constant_d970527240' (34#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:50]
-INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpconvert' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:891]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfpaddsub__parameterized0' (33#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:757]
+INFO: [Synth 8-638] synthesizing module 'sysgen_constant_d970527240' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'sysgen_constant_d970527240' (34#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpconvert' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:940]
 	Parameter core_name0 bound to: pidsg_floating_point_v7_1_i2 - type: string 
 	Parameter din_width bound to: 32 - type: integer 
 	Parameter din_bin_pt bound to: 30 - type: integer 
@@ -202,11 +202,11 @@ INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpconvert' [c:/home/valerix/Max
 	Parameter quantization bound to: 1 - type: integer 
 	Parameter overflow bound to: 1 - type: integer 
 	Parameter c_latency bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i2' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i2/synth/pidsg_floating_point_v7_1_i2.v:60' bound to instance 'core_instance0' of component 'pidsg_floating_point_v7_1_i2' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:955]
+INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i2' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i2/synth/pidsg_floating_point_v7_1_i2.v:60' bound to instance 'core_instance0' of component 'pidsg_floating_point_v7_1_i2' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:1004]
 INFO: [Synth 8-6157] synthesizing module 'pidsg_floating_point_v7_1_i2' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i2/synth/pidsg_floating_point_v7_1_i2.v:60]
 INFO: [Synth 8-6155] done synthesizing module 'pidsg_floating_point_v7_1_i2' (38#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i2/synth/pidsg_floating_point_v7_1_i2.v:60]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfpconvert' (39#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:891]
-INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpconvert__parameterized0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:891]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfpconvert' (39#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:940]
+INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpconvert__parameterized0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:940]
 	Parameter core_name0 bound to: pidsg_floating_point_v7_1_i3 - type: string 
 	Parameter din_width bound to: 32 - type: integer 
 	Parameter din_bin_pt bound to: 24 - type: integer 
@@ -227,11 +227,11 @@ INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpconvert__parameterized0' [c:/
 	Parameter quantization bound to: 2 - type: integer 
 	Parameter overflow bound to: 2 - type: integer 
 	Parameter c_latency bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i3' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i3/synth/pidsg_floating_point_v7_1_i3.v:60' bound to instance 'core_instance1' of component 'pidsg_floating_point_v7_1_i3' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:965]
+INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i3' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i3/synth/pidsg_floating_point_v7_1_i3.v:60' bound to instance 'core_instance1' of component 'pidsg_floating_point_v7_1_i3' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:1014]
 INFO: [Synth 8-6157] synthesizing module 'pidsg_floating_point_v7_1_i3' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i3/synth/pidsg_floating_point_v7_1_i3.v:60]
 INFO: [Synth 8-6155] done synthesizing module 'pidsg_floating_point_v7_1_i3' (42#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i3/synth/pidsg_floating_point_v7_1_i3.v:60]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfpconvert__parameterized0' (42#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:891]
-INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpconvert__parameterized1' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:891]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfpconvert__parameterized0' (42#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:940]
+INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpconvert__parameterized1' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:940]
 	Parameter core_name0 bound to: pidsg_floating_point_v7_1_i4 - type: string 
 	Parameter din_width bound to: 32 - type: integer 
 	Parameter din_bin_pt bound to: 31 - type: integer 
@@ -252,13 +252,13 @@ INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpconvert__parameterized1' [c:/
 	Parameter quantization bound to: 1 - type: integer 
 	Parameter overflow bound to: 1 - type: integer 
 	Parameter c_latency bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i4' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i4/synth/pidsg_floating_point_v7_1_i4.v:60' bound to instance 'core_instance2' of component 'pidsg_floating_point_v7_1_i4' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:975]
+INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i4' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i4/synth/pidsg_floating_point_v7_1_i4.v:60' bound to instance 'core_instance2' of component 'pidsg_floating_point_v7_1_i4' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:1024]
 INFO: [Synth 8-6157] synthesizing module 'pidsg_floating_point_v7_1_i4' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i4/synth/pidsg_floating_point_v7_1_i4.v:60]
 INFO: [Synth 8-6155] done synthesizing module 'pidsg_floating_point_v7_1_i4' (43#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i4/synth/pidsg_floating_point_v7_1_i4.v:60]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfpconvert__parameterized1' (43#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:891]
-INFO: [Synth 8-638] synthesizing module 'sysgen_delay_5fcac4fab0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:71]
-INFO: [Synth 8-256] done synthesizing module 'sysgen_delay_5fcac4fab0' (44#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:71]
-INFO: [Synth 8-638] synthesizing module 'pidsg_xldsamp' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:176]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfpconvert__parameterized1' (43#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:940]
+INFO: [Synth 8-638] synthesizing module 'sysgen_delay_5fcac4fab0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:71]
+INFO: [Synth 8-256] done synthesizing module 'sysgen_delay_5fcac4fab0' (44#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'pidsg_xldsamp' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:176]
 	Parameter d_width bound to: 32 - type: integer 
 	Parameter d_bin_pt bound to: 31 - type: integer 
 	Parameter d_arith bound to: 2 - type: integer 
@@ -276,13 +276,13 @@ INFO: [Synth 8-638] synthesizing module 'pidsg_xldsamp' [c:/home/valerix/MaxIV/y
 	Parameter latency bound to: 1 - type: integer 
 	Parameter width bound to: 32 - type: integer 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_reg' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_reg.vhd:18' bound to instance 'latency_pipe' of component 'synth_reg_reg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:300]
-INFO: [Synth 8-638] synthesizing module 'synth_reg_reg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_reg.vhd:28]
+INFO: [Synth 8-3491] module 'synth_reg_reg' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_reg.vhd:18' bound to instance 'latency_pipe' of component 'synth_reg_reg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:300]
+INFO: [Synth 8-638] synthesizing module 'synth_reg_reg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_reg.vhd:28]
 	Parameter width bound to: 32 - type: integer 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'synth_reg_reg' (45#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_reg.vhd:28]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_xldsamp' (46#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:176]
-INFO: [Synth 8-638] synthesizing module 'pidsg_xldsamp__parameterized0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:176]
+INFO: [Synth 8-256] done synthesizing module 'synth_reg_reg' (45#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_reg.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_xldsamp' (46#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:176]
+INFO: [Synth 8-638] synthesizing module 'pidsg_xldsamp__parameterized0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:176]
 	Parameter d_width bound to: 32 - type: integer 
 	Parameter d_bin_pt bound to: 24 - type: integer 
 	Parameter d_arith bound to: 3 - type: integer 
@@ -300,9 +300,9 @@ INFO: [Synth 8-638] synthesizing module 'pidsg_xldsamp__parameterized0' [c:/home
 	Parameter latency bound to: 1 - type: integer 
 	Parameter width bound to: 32 - type: integer 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_reg' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_reg.vhd:18' bound to instance 'latency_pipe' of component 'synth_reg_reg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:300]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_xldsamp__parameterized0' (46#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:176]
-INFO: [Synth 8-638] synthesizing module 'pidsg_xldsamp__parameterized1' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:176]
+INFO: [Synth 8-3491] module 'synth_reg_reg' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_reg.vhd:18' bound to instance 'latency_pipe' of component 'synth_reg_reg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:300]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_xldsamp__parameterized0' (46#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:176]
+INFO: [Synth 8-638] synthesizing module 'pidsg_xldsamp__parameterized1' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:176]
 	Parameter d_width bound to: 32 - type: integer 
 	Parameter d_bin_pt bound to: 30 - type: integer 
 	Parameter d_arith bound to: 2 - type: integer 
@@ -320,9 +320,9 @@ INFO: [Synth 8-638] synthesizing module 'pidsg_xldsamp__parameterized1' [c:/home
 	Parameter latency bound to: 1 - type: integer 
 	Parameter width bound to: 32 - type: integer 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_reg' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_reg.vhd:18' bound to instance 'latency_pipe' of component 'synth_reg_reg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:300]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_xldsamp__parameterized1' (46#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:176]
-INFO: [Synth 8-638] synthesizing module 'pidsg_xldsamp__parameterized2' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:176]
+INFO: [Synth 8-3491] module 'synth_reg_reg' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_reg.vhd:18' bound to instance 'latency_pipe' of component 'synth_reg_reg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:300]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_xldsamp__parameterized1' (46#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:176]
+INFO: [Synth 8-638] synthesizing module 'pidsg_xldsamp__parameterized2' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:176]
 	Parameter d_width bound to: 1 - type: integer 
 	Parameter d_bin_pt bound to: 0 - type: integer 
 	Parameter d_arith bound to: 1 - type: integer 
@@ -340,15 +340,15 @@ INFO: [Synth 8-638] synthesizing module 'pidsg_xldsamp__parameterized2' [c:/home
 	Parameter latency bound to: 1 - type: integer 
 	Parameter width bound to: 1 - type: integer 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg_reg' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_reg.vhd:18' bound to instance 'latency_pipe' of component 'synth_reg_reg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:300]
-INFO: [Synth 8-638] synthesizing module 'synth_reg_reg__parameterized2' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_reg.vhd:28]
+INFO: [Synth 8-3491] module 'synth_reg_reg' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_reg.vhd:18' bound to instance 'latency_pipe' of component 'synth_reg_reg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:300]
+INFO: [Synth 8-638] synthesizing module 'synth_reg_reg__parameterized2' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_reg.vhd:28]
 	Parameter width bound to: 1 - type: integer 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'synth_reg_reg__parameterized2' (46#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg_reg.vhd:28]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_xldsamp__parameterized2' (46#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:176]
-INFO: [Synth 8-638] synthesizing module 'sysgen_logical_654ceb59e6' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:334]
-INFO: [Synth 8-256] done synthesizing module 'sysgen_logical_654ceb59e6' (47#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:334]
-INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpmult' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:1085]
+INFO: [Synth 8-256] done synthesizing module 'synth_reg_reg__parameterized2' (46#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg_reg.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_xldsamp__parameterized2' (46#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:176]
+INFO: [Synth 8-638] synthesizing module 'sysgen_logical_654ceb59e6' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:334]
+INFO: [Synth 8-256] done synthesizing module 'sysgen_logical_654ceb59e6' (47#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:334]
+INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpmult' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:1134]
 	Parameter core_name0 bound to: pidsg_floating_point_v7_1_i5 - type: string 
 	Parameter a_width bound to: 32 - type: integer 
 	Parameter a_bin_pt bound to: 24 - type: integer 
@@ -372,15 +372,15 @@ INFO: [Synth 8-638] synthesizing module 'pidsg_xlfpmult' [c:/home/valerix/MaxIV/
 	Parameter quantization bound to: 1 - type: integer 
 	Parameter overflow bound to: 1 - type: integer 
 	Parameter c_latency bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i5' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i5/synth/pidsg_floating_point_v7_1_i5.v:60' bound to instance 'core_instance0' of component 'pidsg_floating_point_v7_1_i5' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:1136]
+INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i5' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i5/synth/pidsg_floating_point_v7_1_i5.v:60' bound to instance 'core_instance0' of component 'pidsg_floating_point_v7_1_i5' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:1185]
 INFO: [Synth 8-6157] synthesizing module 'pidsg_floating_point_v7_1_i5' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i5/synth/pidsg_floating_point_v7_1_i5.v:60]
 INFO: [Synth 8-6155] done synthesizing module 'pidsg_floating_point_v7_1_i5' (56#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i5/synth/pidsg_floating_point_v7_1_i5.v:60]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfpmult' (57#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:1085]
-INFO: [Synth 8-638] synthesizing module 'sysgen_mux_4991e1dd24' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:362]
-INFO: [Synth 8-256] done synthesizing module 'sysgen_mux_4991e1dd24' (58#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:362]
-INFO: [Synth 8-638] synthesizing module 'sysgen_negate_e96edd741f' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:401]
-INFO: [Synth 8-256] done synthesizing module 'sysgen_negate_e96edd741f' (59#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:401]
-INFO: [Synth 8-638] synthesizing module 'pidsg_xlfprelational' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:1248]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfpmult' (57#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:1134]
+INFO: [Synth 8-638] synthesizing module 'sysgen_mux_4991e1dd24' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:362]
+INFO: [Synth 8-256] done synthesizing module 'sysgen_mux_4991e1dd24' (58#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:362]
+INFO: [Synth 8-638] synthesizing module 'sysgen_negate_e96edd741f' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:401]
+INFO: [Synth 8-256] done synthesizing module 'sysgen_negate_e96edd741f' (59#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:401]
+INFO: [Synth 8-638] synthesizing module 'pidsg_xlfprelational' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:1297]
 	Parameter core_name0 bound to: pidsg_floating_point_v7_1_i6 - type: string 
 	Parameter a_width bound to: 32 - type: integer 
 	Parameter a_bin_pt bound to: 24 - type: integer 
@@ -404,11 +404,11 @@ INFO: [Synth 8-638] synthesizing module 'pidsg_xlfprelational' [c:/home/valerix/
 	Parameter quantization bound to: 0 - type: integer 
 	Parameter overflow bound to: 0 - type: integer 
 	Parameter c_latency bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i6' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i6/synth/pidsg_floating_point_v7_1_i6.v:60' bound to instance 'core_instance0' of component 'pidsg_floating_point_v7_1_i6' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:1310]
+INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i6' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i6/synth/pidsg_floating_point_v7_1_i6.v:60' bound to instance 'core_instance0' of component 'pidsg_floating_point_v7_1_i6' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:1359]
 INFO: [Synth 8-6157] synthesizing module 'pidsg_floating_point_v7_1_i6' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i6/synth/pidsg_floating_point_v7_1_i6.v:60]
 INFO: [Synth 8-6155] done synthesizing module 'pidsg_floating_point_v7_1_i6' (63#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i6/synth/pidsg_floating_point_v7_1_i6.v:60]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfprelational' (64#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:1248]
-INFO: [Synth 8-638] synthesizing module 'pidsg_xlfprelational__parameterized0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:1248]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfprelational' (64#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:1297]
+INFO: [Synth 8-638] synthesizing module 'pidsg_xlfprelational__parameterized0' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:1297]
 	Parameter core_name0 bound to: pidsg_floating_point_v7_1_i7 - type: string 
 	Parameter a_width bound to: 32 - type: integer 
 	Parameter a_bin_pt bound to: 24 - type: integer 
@@ -432,11 +432,11 @@ INFO: [Synth 8-638] synthesizing module 'pidsg_xlfprelational__parameterized0' [
 	Parameter quantization bound to: 0 - type: integer 
 	Parameter overflow bound to: 0 - type: integer 
 	Parameter c_latency bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i7' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i7/synth/pidsg_floating_point_v7_1_i7.v:60' bound to instance 'core_instance1' of component 'pidsg_floating_point_v7_1_i7' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:1322]
+INFO: [Synth 8-3491] module 'pidsg_floating_point_v7_1_i7' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i7/synth/pidsg_floating_point_v7_1_i7.v:60' bound to instance 'core_instance1' of component 'pidsg_floating_point_v7_1_i7' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:1371]
 INFO: [Synth 8-6157] synthesizing module 'pidsg_floating_point_v7_1_i7' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i7/synth/pidsg_floating_point_v7_1_i7.v:60]
 INFO: [Synth 8-6155] done synthesizing module 'pidsg_floating_point_v7_1_i7' (65#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/pidsg_floating_point_v7_1_i7/synth/pidsg_floating_point_v7_1_i7.v:60]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfprelational__parameterized0' (65#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:1248]
-INFO: [Synth 8-638] synthesizing module 'pidsg_xlusamp' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:501]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_xlfprelational__parameterized0' (65#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:1297]
+INFO: [Synth 8-638] synthesizing module 'pidsg_xlusamp' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:501]
 	Parameter d_width bound to: 32 - type: integer 
 	Parameter d_bin_pt bound to: 31 - type: integer 
 	Parameter d_arith bound to: 2 - type: integer 
@@ -449,71 +449,76 @@ INFO: [Synth 8-638] synthesizing module 'pidsg_xlusamp' [c:/home/valerix/MaxIV/y
 	Parameter sampling_ratio bound to: 2 - type: integer 
 	Parameter latency bound to: 1 - type: integer 
 	Parameter copy_samples bound to: 1 - type: integer 
-INFO: [Synth 8-113] binding component instance 'sel_gen' to cell 'FDSE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:544]
+INFO: [Synth 8-113] binding component instance 'sel_gen' to cell 'FDSE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:544]
 	Parameter width bound to: 32 - type: integer 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'synth_reg' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg.vhd:20' bound to instance 'sampled_d_reg2' of component 'synth_reg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:611]
-INFO: [Synth 8-638] synthesizing module 'synth_reg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg.vhd:30]
+INFO: [Synth 8-3491] module 'synth_reg' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg.vhd:20' bound to instance 'sampled_d_reg2' of component 'synth_reg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:611]
+INFO: [Synth 8-638] synthesizing module 'synth_reg' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg.vhd:30]
 	Parameter width bound to: 32 - type: integer 
 	Parameter latency bound to: 1 - type: integer 
 	Parameter width bound to: 32 - type: integer 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'srlc33e' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:22' bound to instance 'last_srlc33e' of component 'srlc33e' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg.vhd:84]
-INFO: [Synth 8-638] synthesizing module 'srlc33e' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:31]
+INFO: [Synth 8-3491] module 'srlc33e' declared at 'c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:22' bound to instance 'last_srlc33e' of component 'srlc33e' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'srlc33e' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:31]
 	Parameter width bound to: 32 - type: integer 
 	Parameter latency bound to: 1 - type: integer 
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:75]
-INFO: [Synth 8-256] done synthesizing module 'srlc33e' (66#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/srl33e.vhd:31]
-INFO: [Synth 8-256] done synthesizing module 'synth_reg' (67#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/synth_reg.vhd:30]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_xlusamp' (68#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg_entity_declarations.vhd:501]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_struct' (69#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg.vhd:28]
-INFO: [Synth 8-256] done synthesizing module 'pidsg' (70#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/8a72/hdl/pidsg.vhd:1370]
-INFO: [Synth 8-256] done synthesizing module 'pidsg_bd_pidsg_1_0' (71#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/synth/pidsg_bd_pidsg_1_0.vhd:80]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:75]
+INFO: [Synth 8-256] done synthesizing module 'srlc33e' (66#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/srl33e.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'synth_reg' (67#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/synth_reg.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_xlusamp' (68#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:501]
+INFO: [Synth 8-638] synthesizing module 'pidsg_xlceprobe' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:662]
+	Parameter d_width bound to: 32 - type: integer 
+	Parameter q_width bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'buf_comp' to cell 'BUF' [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:672]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_xlceprobe' (69#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg_entity_declarations.vhd:662]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_struct' (70#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'pidsg' (71#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ipshared/781f/hdl/pidsg.vhd:1385]
+INFO: [Synth 8-256] done synthesizing module 'pidsg_bd_pidsg_1_0' (72#1) [c:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.gen/sources_1/bd/pidsg_bd/ip/pidsg_bd_pidsg_1_0/synth/pidsg_bd_pidsg_1_0.vhd:81]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1442.895 ; gain = 316.555
+Finished RTL Elaboration : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 1442.324 ; gain = 303.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1442.895 ; gain = 316.555
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1442.324 ; gain = 303.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1442.895 ; gain = 316.555
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1442.324 ; gain = 303.031
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.699 . Memory (MB): peak = 1442.895 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 2754 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.857 . Memory (MB): peak = 1442.324 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2755 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -528,21 +533,22 @@ Parsing XDC File [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/i
 Finished Parsing XDC File [C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/pidsg_bd_pidsg_1_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1497.613 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 1507.430 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 32 instances were transformed.
+  A total of 33 instances were transformed.
+  BUF => LUT1: 1 instance 
   FDE => FDRE: 32 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.249 . Memory (MB): peak = 1501.188 ; gain = 3.574
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.377 . Memory (MB): peak = 1509.258 ; gain = 1.828
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1501.188 ; gain = 374.848
+Finished Constraint Validation : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1509.258 ; gain = 369.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z030sbg485-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1501.188 ; gain = 374.848
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1509.258 ; gain = 369.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -573,10 +579,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for U0/pidsg_struct/addsub/\comp0.cor
 Applied set_property KEEP_HIERARCHY = SOFT for U0/pidsg_struct/addsub3/\comp0.core_instance0 . (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for U0/pidsg_struct/addsub4/\comp0.core_instance0 . (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1501.188 ; gain = 374.848
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1509.258 ; gain = 369.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1501.188 ; gain = 374.848
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 1509.258 ; gain = 369.965
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'flt_add_logic:/ALIGN_BLK/SUB_DELAY' (delay__parameterized0) to 'flt_add_logic:/ALIGN_BLK/SUBTRACT_PREADD_DEL'
 INFO: [Synth 8-223] decloning instance 'flt_add_logic:/NORM/ROUND/EXTRA_LSB_BIT_DEL' (delay__parameterized0) to 'flt_add_logic:/NORM/ROUND/EXTRA_LSB_RND1_DEL'
@@ -630,25 +636,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:00:59 . Memory (MB): peak = 1501.188 ; gain = 374.848
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 1509.258 ; gain = 369.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:08 ; elapsed = 00:01:09 . Memory (MB): peak = 1501.188 ; gain = 374.848
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:25 ; elapsed = 00:01:29 . Memory (MB): peak = 1509.258 ; gain = 369.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:13 ; elapsed = 00:01:14 . Memory (MB): peak = 1501.188 ; gain = 374.848
+Finished Timing Optimization : Time (s): cpu = 00:01:31 ; elapsed = 00:01:35 . Memory (MB): peak = 1509.258 ; gain = 369.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:18 ; elapsed = 00:01:20 . Memory (MB): peak = 1508.973 ; gain = 382.633
+Finished Technology Mapping : Time (s): cpu = 00:01:37 ; elapsed = 00:01:42 . Memory (MB): peak = 1511.922 ; gain = 372.629
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -666,37 +672,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:21 ; elapsed = 00:01:23 . Memory (MB): peak = 1519.012 ; gain = 392.672
+Finished IO Insertion : Time (s): cpu = 00:01:41 ; elapsed = 00:01:46 . Memory (MB): peak = 1521.312 ; gain = 382.020
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:22 ; elapsed = 00:01:23 . Memory (MB): peak = 1519.012 ; gain = 392.672
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:41 ; elapsed = 00:01:46 . Memory (MB): peak = 1521.312 ; gain = 382.020
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:23 ; elapsed = 00:01:24 . Memory (MB): peak = 1519.012 ; gain = 392.672
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:42 ; elapsed = 00:01:47 . Memory (MB): peak = 1521.312 ; gain = 382.020
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:23 ; elapsed = 00:01:24 . Memory (MB): peak = 1519.012 ; gain = 392.672
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:43 ; elapsed = 00:01:47 . Memory (MB): peak = 1521.312 ; gain = 382.020
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:23 ; elapsed = 00:01:25 . Memory (MB): peak = 1519.012 ; gain = 392.672
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:43 ; elapsed = 00:01:47 . Memory (MB): peak = 1521.312 ; gain = 382.020
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:23 ; elapsed = 00:01:25 . Memory (MB): peak = 1519.012 ; gain = 392.672
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:43 ; elapsed = 00:01:47 . Memory (MB): peak = 1521.312 ; gain = 382.020
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -712,47 +718,48 @@ Report Cell Usage:
 +------+--------+------+
 |      |Cell    |Count |
 +------+--------+------+
-|1     |CARRY4  |    54|
-|2     |DSP48E1 |    15|
-|5     |LUT1    |    48|
-|6     |LUT2    |   741|
-|7     |LUT3    |  1055|
-|8     |LUT4    |  1101|
-|9     |LUT5    |   586|
-|10    |LUT6    |  1914|
-|11    |MUXCY   |  1634|
-|12    |MUXF7   |    35|
-|13    |MUXF8   |    10|
-|14    |XORCY   |   892|
-|15    |FDE     |    32|
-|16    |FDRE    |   465|
+|1     |BUF     |     1|
+|2     |CARRY4  |    54|
+|3     |DSP48E1 |    15|
+|6     |LUT1    |    48|
+|7     |LUT2    |   741|
+|8     |LUT3    |  1055|
+|9     |LUT4    |  1101|
+|10    |LUT5    |   586|
+|11    |LUT6    |  1914|
+|12    |MUXCY   |  1634|
+|13    |MUXF7   |    35|
+|14    |MUXF8   |    10|
+|15    |XORCY   |   892|
+|16    |FDE     |    32|
+|17    |FDRE    |   465|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:23 ; elapsed = 00:01:25 . Memory (MB): peak = 1519.012 ; gain = 392.672
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:43 ; elapsed = 00:01:47 . Memory (MB): peak = 1521.312 ; gain = 382.020
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:58 ; elapsed = 00:01:17 . Memory (MB): peak = 1519.012 ; gain = 334.379
-Synthesis Optimization Complete : Time (s): cpu = 00:01:23 ; elapsed = 00:01:25 . Memory (MB): peak = 1519.012 ; gain = 392.672
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:09 ; elapsed = 00:01:37 . Memory (MB): peak = 1521.312 ; gain = 315.086
+Synthesis Optimization Complete : Time (s): cpu = 00:01:43 ; elapsed = 00:01:48 . Memory (MB): peak = 1521.312 ; gain = 382.020
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.441 . Memory (MB): peak = 1519.012 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 2672 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.474 . Memory (MB): peak = 1521.312 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2673 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1536.746 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1534.141 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 481 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 449 instances
   FDE => FDRE: 32 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-193 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+196 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:34 ; elapsed = 00:01:37 . Memory (MB): peak = 1536.746 ; gain = 410.406
+synth_design: Time (s): cpu = 00:01:55 ; elapsed = 00:02:01 . Memory (MB): peak = 1534.141 ; gain = 394.848
 INFO: [Common 17-1381] The checkpoint 'C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/pidsg_bd_pidsg_1_0_synth_1/pidsg_bd_pidsg_1_0.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP pidsg_bd_pidsg_1_0, cache-ID = 0879420ef0b6382f
-INFO: [Coretcl 2-1174] Renamed 626 cell refs.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP pidsg_bd_pidsg_1_0, cache-ID = f69b6ecaa22ef366
+INFO: [Coretcl 2-1174] Renamed 627 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.runs/pidsg_bd_pidsg_1_0_synth_1/pidsg_bd_pidsg_1_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file pidsg_bd_pidsg_1_0_utilization_synth.rpt -pb pidsg_bd_pidsg_1_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Feb 23 11:48:44 2021...
+INFO: [Common 17-206] Exiting Vivado at Fri Mar  5 14:17:29 2021...

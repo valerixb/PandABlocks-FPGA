@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
---Date        : Tue Feb 23 11:46:33 2021
+--Date        : Fri Mar  5 14:14:45 2021
 --Host        : w-valbas-pc-0 running 64-bit major release  (build 9200)
 --Command     : generate_target pidsg_bd.bd
 --Design      : pidsg_bd
@@ -14,6 +14,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity pidsg_bd is
   port (
     aiw_g : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    ce_out : out STD_LOGIC_VECTOR ( 0 to 0 );
     clk : in STD_LOGIC;
     clr : in STD_LOGIC;
     command_in : in STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -49,12 +50,13 @@ architecture STRUCTURE of pidsg_bd is
     inv_meas : in STD_LOGIC_VECTOR ( 0 to 0 );
     kp : in STD_LOGIC_VECTOR ( 31 downto 0 );
     meas_in : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    res : in STD_LOGIC_VECTOR ( 0 to 0 );
     sat_limit : in STD_LOGIC_VECTOR ( 31 downto 0 );
     thr_in : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    res : in STD_LOGIC_VECTOR ( 0 to 0 );
     clk : in STD_LOGIC;
     clr : in STD_LOGIC;
-    control_out : out STD_LOGIC_VECTOR ( 31 downto 0 )
+    control_out : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    ce_out : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component pidsg_bd_pidsg_1_0;
   signal aiw_g_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -68,6 +70,7 @@ architecture STRUCTURE of pidsg_bd is
   signal inv_meas_1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal kp_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal meas_in_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal pidsg_1_ce_out : STD_LOGIC_VECTOR ( 0 to 0 );
   signal pidsg_1_control_out : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal pv_deriv_1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal res_1 : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -81,6 +84,8 @@ architecture STRUCTURE of pidsg_bd is
   attribute X_INTERFACE_PARAMETER of clr : signal is "XIL_INTERFACENAME DATA.CLR, LAYERED_METADATA undef";
   attribute X_INTERFACE_INFO of aiw_g : signal is "xilinx.com:signal:data:1.0 DATA.AIW_G DATA";
   attribute X_INTERFACE_PARAMETER of aiw_g : signal is "XIL_INTERFACENAME DATA.AIW_G, LAYERED_METADATA undef";
+  attribute X_INTERFACE_INFO of ce_out : signal is "xilinx.com:signal:data:1.0 DATA.CE_OUT DATA";
+  attribute X_INTERFACE_PARAMETER of ce_out : signal is "XIL_INTERFACENAME DATA.CE_OUT, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}";
   attribute X_INTERFACE_INFO of command_in : signal is "xilinx.com:signal:data:1.0 DATA.COMMAND_IN DATA";
   attribute X_INTERFACE_PARAMETER of command_in : signal is "XIL_INTERFACENAME DATA.COMMAND_IN, LAYERED_METADATA undef";
   attribute X_INTERFACE_INFO of control_out : signal is "xilinx.com:signal:data:1.0 DATA.CONTROL_OUT DATA";
@@ -109,6 +114,7 @@ architecture STRUCTURE of pidsg_bd is
   attribute X_INTERFACE_PARAMETER of thr_in : signal is "XIL_INTERFACENAME DATA.THR_IN, LAYERED_METADATA undef";
 begin
   aiw_g_1(31 downto 0) <= aiw_g(31 downto 0);
+  ce_out(0) <= pidsg_1_ce_out(0);
   clk_1 <= clk;
   clr_1 <= clr;
   command_in_1(31 downto 0) <= command_in(31 downto 0);
@@ -127,6 +133,7 @@ begin
 pidsg_1: component pidsg_bd_pidsg_1_0
      port map (
       aiw_g(31 downto 0) => aiw_g_1(31 downto 0),
+      ce_out(0) => pidsg_1_ce_out(0),
       clk => clk_1,
       clr => clr_1,
       command_in(31 downto 0) => command_in_1(31 downto 0),

@@ -14,12 +14,13 @@ entity pidsg_stub is
     inv_meas : in std_logic_vector( 1-1 downto 0 );
     kp : in std_logic_vector( 32-1 downto 0 );
     meas_in : in std_logic_vector( 32-1 downto 0 );
+    res : in std_logic_vector( 1-1 downto 0 );
     sat_limit : in std_logic_vector( 32-1 downto 0 );
     thr_in : in std_logic_vector( 32-1 downto 0 );
-    res : in std_logic_vector( 1-1 downto 0 );
     clk : in std_logic;
     clr : in std_logic;
-    control_out : out std_logic_vector( 32-1 downto 0 )
+    control_out : out std_logic_vector( 32-1 downto 0 );
+    ce_out : out std_logic_vector( 1-1 downto 0 )
   );
 end pidsg_stub;
 architecture structural of pidsg_stub is 
@@ -36,11 +37,12 @@ begin
     inv_meas => inv_meas,
     kp => kp,
     meas_in => meas_in,
+    res => res,
     sat_limit => sat_limit,
     thr_in => thr_in,
-    res => res,
     clk => clk,
     clr => clr,
-    control_out => control_out
+    control_out => control_out,
+    ce_out => ce_out
   );
 end structural;

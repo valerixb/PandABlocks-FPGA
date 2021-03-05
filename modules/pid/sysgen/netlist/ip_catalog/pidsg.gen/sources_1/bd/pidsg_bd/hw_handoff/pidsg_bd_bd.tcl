@@ -158,6 +158,7 @@ proc create_root_design { parentCell } {
 
   # Create ports
   set aiw_g [ create_bd_port -dir I -from 31 -to 0 -type data aiw_g ]
+  set ce_out [ create_bd_port -dir O -from 0 -to 0 -type data ce_out ]
   set clk [ create_bd_port -dir I -type clk clk ]
   set clr [ create_bd_port -dir I -type data clr ]
   set command_in [ create_bd_port -dir I -from 31 -to 0 -type data command_in ]
@@ -189,6 +190,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net inv_meas_1 [get_bd_ports inv_meas] [get_bd_pins pidsg_1/inv_meas]
   connect_bd_net -net kp_1 [get_bd_ports kp] [get_bd_pins pidsg_1/kp]
   connect_bd_net -net meas_in_1 [get_bd_ports meas_in] [get_bd_pins pidsg_1/meas_in]
+  connect_bd_net -net pidsg_1_ce_out [get_bd_ports ce_out] [get_bd_pins pidsg_1/ce_out]
   connect_bd_net -net pidsg_1_control_out [get_bd_ports control_out] [get_bd_pins pidsg_1/control_out]
   connect_bd_net -net pv_deriv_1 [get_bd_ports pv_deriv] [get_bd_pins pidsg_1/pv_deriv]
   connect_bd_net -net res_1 [get_bd_ports res] [get_bd_pins pidsg_1/res]

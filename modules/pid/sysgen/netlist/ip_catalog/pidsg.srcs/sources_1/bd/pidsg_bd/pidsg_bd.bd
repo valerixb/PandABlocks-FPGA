@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCBCC43B571F199D2",
+      "boundary_crc": "0x8D86FE1C32A7E27C",
       "design_src": "SYSGEN",
       "device": "xc7z030sbg485-1",
       "gen_directory": "../../../../pidsg.gen/sources_1/bd/pidsg_bd",
@@ -24,6 +24,18 @@
           "LAYERED_METADATA": {
             "value": "undef",
             "value_src": "default"
+          }
+        }
+      },
+      "ce_out": {
+        "type": "data",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}",
+            "value_src": "const_prop"
           }
         }
       },
@@ -233,6 +245,12 @@
         "ports": [
           "aiw_g",
           "pidsg_1/aiw_g"
+        ]
+      },
+      "pidsg_1_ce_out": {
+        "ports": [
+          "pidsg_1/ce_out",
+          "ce_out"
         ]
       },
       "clk_1": {
