@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Fri Mar  5 14:17:25 2021
+| Date         : Mon Mar  8 10:54:07 2021
 | Host         : w-valbas-pc-0 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file pidsg_bd_pidsg_1_0_utilization_synth.rpt -pb pidsg_bd_pidsg_1_0_utilization_synth.pb
 | Design       : pidsg_bd_pidsg_1_0
@@ -156,7 +156,7 @@ Table of Contents
 | LUT6     | 1914 |                 LUT |
 | LUT4     | 1101 |                 LUT |
 | LUT3     | 1055 |                 LUT |
-| LUT2     |  741 |                 LUT |
+| LUT2     |  742 |                 LUT |
 | LUT5     |  586 |                 LUT |
 | CARRY4   |  503 |          CarryLogic |
 | FDRE     |  497 |        Flop & Latch |

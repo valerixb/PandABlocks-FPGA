@@ -15,6 +15,6 @@
     thr_in => thr_in,
     clk => clk,
     clr => clr,
-    control_out => control_out,
-    ce_out => ce_out
+    ce_out => ce_out,
+    control_out => control_out
   );

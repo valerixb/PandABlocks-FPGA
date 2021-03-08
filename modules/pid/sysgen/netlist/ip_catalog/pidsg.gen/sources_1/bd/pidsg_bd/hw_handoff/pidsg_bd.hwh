@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Mar  5 14:15:00 2021" VIVADOVERSION="2020.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Mar  8 10:52:05 2021" VIVADOVERSION="2020.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z030" NAME="pidsg_bd" PACKAGE="sbg485" SPEEDGRADE="-1"/>
 
@@ -94,7 +94,7 @@
   <EXTERNALINTERFACES/>
 
   <MODULES>
-    <MODULE COREREVISION="245859230" FULLNAME="/pidsg_1" HWVERSION="1.0" INSTANCE="pidsg_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="pidsg" VLNV="MaxIV:Panda_SysGen:pidsg:1.0">
+    <MODULE COREREVISION="246106264" FULLNAME="/pidsg_1" HWVERSION="1.0" INSTANCE="pidsg_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="pidsg" VLNV="MaxIV:Panda_SysGen:pidsg:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="pidsg_bd_pidsg_1_0"/>
@@ -176,14 +176,14 @@
             <CONNECTION INSTANCE="External_Ports" PORT="clr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="control_out" RIGHT="0" SIGIS="data" SIGNAME="pidsg_1_control_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="control_out"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="0" NAME="ce_out" RIGHT="0" SIGIS="data" SIGNAME="pidsg_1_ce_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="ce_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="control_out" RIGHT="0" SIGIS="data" SIGNAME="pidsg_1_control_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="control_out"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

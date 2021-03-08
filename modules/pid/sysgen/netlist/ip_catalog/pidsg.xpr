@@ -6,7 +6,7 @@
 <Project Version="7" Minor="54" Path="C:/home/valerix/MaxIV/year2021/xilinxworks/pid_panda/netlist/ip_catalog/pidsg.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="b87c7ddb12b54d50a87c5910f717bd1f"/>
+    <Option Name="Id" Val="38899332f59b418b95acc49c257da0d6"/>
     <Option Name="Part" Val="xc7z030sbg485-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -88,7 +88,7 @@
       <File Path="$PSRCDIR/sources_1/imports/hdl/pidsg_bd_wrapper.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PGENDIR/sources_1/bd/pidsg_bd/hdl/pidsg_bd_wrapper.vhd"/>
-          <Attr Name="ImportTime" Val="1614950080"/>
+          <Attr Name="ImportTime" Val="1615197105"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -105,7 +105,7 @@
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../sysgen/pidsg_mod.vhd"/>
-          <Attr Name="ImportTime" Val="1614950075"/>
+          <Attr Name="ImportTime" Val="1615197102"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -120,7 +120,7 @@
       <File Path="$PSRCDIR/constrs_1/imports/sysgen/pidsg_clock.xdc">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../sysgen/pidsg_clock.xdc"/>
-          <Attr Name="ImportTime" Val="1614950035"/>
+          <Attr Name="ImportTime" Val="1615197069"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
@@ -128,7 +128,7 @@
       <File Path="$PSRCDIR/constrs_1/imports/sysgen/pidsg.xdc">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../sysgen/pidsg.xdc"/>
-          <Attr Name="ImportTime" Val="1614950035"/>
+          <Attr Name="ImportTime" Val="1615197069"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>

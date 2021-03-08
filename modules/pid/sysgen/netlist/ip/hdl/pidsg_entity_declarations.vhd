@@ -37,6 +37,55 @@
 library xil_defaultlib;
 use xil_defaultlib.conv_pkg.all;
 
+---------------------------------------------------------------------
+--
+--  Filename      : xlceprobe.vhd
+--
+--  Description   : VHDL description of system clock enable probe.
+--                  This block assigns the clock enable signal to
+--                  the output port.
+--  Mod. History  : Added beffer so the the ce nets would not get renamed
+--
+---------------------------------------------------------------------
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+library xil_defaultlib;
+use xil_defaultlib.conv_pkg.all;
+
+-- synthesis translate_off
+library unisim;
+use unisim.vcomponents.all;
+-- synthesis translate_on
+
+
+entity pidsg_xlceprobe is
+    generic (d_width  : integer := 8;
+             q_width  : integer := 1);
+    port (d       : in std_logic_vector (d_width-1 downto 0);
+          ce      : in std_logic;
+          clk     : in std_logic;
+          q       : out std_logic_vector (q_width-1 downto 0));
+end pidsg_xlceprobe;
+
+architecture behavior of pidsg_xlceprobe is
+    component BUF
+        port(
+            O  :        out   STD_ULOGIC;
+            I  :        in    STD_ULOGIC);
+    end component;
+    attribute syn_black_box of BUF : component is true;
+    attribute fpga_dont_touch of BUF : component is "true";
+    signal ce_vec : std_logic_vector(0 downto 0);
+begin
+    buf_comp : buf port map(i => ce, o => ce_vec(0));
+     -- use the clock enable signal to drive the output port
+    q <= ce_vec;
+end architecture behavior;
+
+library xil_defaultlib;
+use xil_defaultlib.conv_pkg.all;
+
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
@@ -624,55 +673,6 @@ begin
      end generate; -- end gen_q_cp_smpls_1_and_lat_gt_0
    end generate; -- end copy_samples_true
 end architecture struct;
-
-library xil_defaultlib;
-use xil_defaultlib.conv_pkg.all;
-
----------------------------------------------------------------------
---
---  Filename      : xlceprobe.vhd
---
---  Description   : VHDL description of system clock enable probe.
---                  This block assigns the clock enable signal to
---                  the output port.
---  Mod. History  : Added beffer so the the ce nets would not get renamed
---
----------------------------------------------------------------------
-
-library IEEE;
-use IEEE.std_logic_1164.all;
-library xil_defaultlib;
-use xil_defaultlib.conv_pkg.all;
-
--- synthesis translate_off
-library unisim;
-use unisim.vcomponents.all;
--- synthesis translate_on
-
-
-entity pidsg_xlceprobe is
-    generic (d_width  : integer := 8;
-             q_width  : integer := 1);
-    port (d       : in std_logic_vector (d_width-1 downto 0);
-          ce      : in std_logic;
-          clk     : in std_logic;
-          q       : out std_logic_vector (q_width-1 downto 0));
-end pidsg_xlceprobe;
-
-architecture behavior of pidsg_xlceprobe is
-    component BUF
-        port(
-            O  :        out   STD_ULOGIC;
-            I  :        in    STD_ULOGIC);
-    end component;
-    attribute syn_black_box of BUF : component is true;
-    attribute fpga_dont_touch of BUF : component is "true";
-    signal ce_vec : std_logic_vector(0 downto 0);
-begin
-    buf_comp : buf port map(i => ce, o => ce_vec(0));
-     -- use the clock enable signal to drive the output port
-    q <= ce_vec;
-end architecture behavior;
 
 library xil_defaultlib;
 use xil_defaultlib.conv_pkg.all;

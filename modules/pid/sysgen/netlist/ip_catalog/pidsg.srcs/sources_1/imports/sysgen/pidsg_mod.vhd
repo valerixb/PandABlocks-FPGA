@@ -19,8 +19,8 @@ entity pidsg_stub is
     thr_in : in std_logic_vector( 32-1 downto 0 );
     clk : in std_logic;
     clr : in std_logic;
-    control_out : out std_logic_vector( 32-1 downto 0 );
-    ce_out : out std_logic_vector( 1-1 downto 0 )
+    ce_out : out std_logic_vector( 1-1 downto 0 );
+    control_out : out std_logic_vector( 32-1 downto 0 )
   );
 end pidsg_stub;
 architecture structural of pidsg_stub is 
@@ -42,7 +42,7 @@ begin
     thr_in => thr_in,
     clk => clk,
     clr => clr,
-    control_out => control_out,
-    ce_out => ce_out
+    ce_out => ce_out,
+    control_out => control_out
   );
 end structural;

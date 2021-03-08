@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: MaxIV:Panda_SysGen:pidsg:1.0
--- IP Revision: 245859230
+-- IP Revision: 246106264
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -73,8 +73,8 @@ ENTITY pidsg_bd_pidsg_1_0 IS
     thr_in : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     clk : IN STD_LOGIC;
     clr : IN STD_LOGIC;
-    control_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    ce_out : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
+    ce_out : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+    control_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 END pidsg_bd_pidsg_1_0;
 
@@ -98,20 +98,20 @@ ARCHITECTURE pidsg_bd_pidsg_1_0_arch OF pidsg_bd_pidsg_1_0 IS
       thr_in : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       clk : IN STD_LOGIC;
       clr : IN STD_LOGIC;
-      control_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      ce_out : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
+      ce_out : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+      control_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
     );
   END COMPONENT pidsg;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF pidsg_bd_pidsg_1_0_arch: ARCHITECTURE IS "sysgen";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_PARAMETER OF ce_out: SIGNAL IS "XIL_INTERFACENAME ce_out, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}}" & 
-" value 0} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}";
-  ATTRIBUTE X_INTERFACE_INFO OF ce_out: SIGNAL IS "xilinx.com:signal:data:1.0 ce_out DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF control_out: SIGNAL IS "XIL_INTERFACENAME control_out, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maxim" & 
 "um {}} value 31} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF control_out: SIGNAL IS "xilinx.com:signal:data:1.0 control_out DATA";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF ce_out: SIGNAL IS "XIL_INTERFACENAME ce_out, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}}" & 
+" value 0} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}";
+  ATTRIBUTE X_INTERFACE_INFO OF ce_out: SIGNAL IS "xilinx.com:signal:data:1.0 ce_out DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF clr: SIGNAL IS "XIL_INTERFACENAME clr, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} va" & 
 "lue 0} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF clr: SIGNAL IS "xilinx.com:signal:data:1.0 clr DATA";
@@ -174,7 +174,7 @@ BEGIN
       thr_in => thr_in,
       clk => clk,
       clr => clr,
-      control_out => control_out,
-      ce_out => ce_out
+      ce_out => ce_out,
+      control_out => control_out
     );
 END pidsg_bd_pidsg_1_0_arch;

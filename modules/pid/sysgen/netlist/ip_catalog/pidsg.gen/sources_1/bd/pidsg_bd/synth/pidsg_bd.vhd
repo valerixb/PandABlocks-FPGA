@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
---Date        : Fri Mar  5 14:14:45 2021
+--Date        : Mon Mar  8 10:51:50 2021
 --Host        : w-valbas-pc-0 running 64-bit major release  (build 9200)
 --Command     : generate_target pidsg_bd.bd
 --Design      : pidsg_bd
@@ -55,8 +55,8 @@ architecture STRUCTURE of pidsg_bd is
     thr_in : in STD_LOGIC_VECTOR ( 31 downto 0 );
     clk : in STD_LOGIC;
     clr : in STD_LOGIC;
-    control_out : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    ce_out : out STD_LOGIC_VECTOR ( 0 to 0 )
+    ce_out : out STD_LOGIC_VECTOR ( 0 to 0 );
+    control_out : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component pidsg_bd_pidsg_1_0;
   signal aiw_g_1 : STD_LOGIC_VECTOR ( 31 downto 0 );

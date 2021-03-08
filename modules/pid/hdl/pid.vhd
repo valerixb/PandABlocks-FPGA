@@ -44,9 +44,13 @@ end pid;
 
 architecture rtl of pid is
 
-    signal pid_clkdiv_clr  : std_logic;
-    signal pid_res         : std_logic;
+    constant WAIT_STATES   : natural := 3;
+    constant WAIT_CNTR_MAX : natural := 7;
+    
+    signal pid_clkdiv_clr  : std_logic := '1';
+    signal pid_res         : std_logic := '1';
     signal pid_ce_out      : std_logic;
+    signal wait_cntr       : natural range 0 to WAIT_CNTR_MAX :=0;
 
     component pidsg_0
         port
@@ -97,11 +101,11 @@ begin
             );
 
     reset_process : process (clk_i, ENABLE_i)
-        begin
+    begin
         if rising_edge(clk_i) then
             if ENABLE_i = '0' then
                 pid_res         <= '1';
-                if (pid_clkdiv_clr = '0') and (pid_ce_out = '1') then
+                if (pid_clkdiv_clr = '0') and (wait_cntr=WAIT_STATES) then
                     pid_clkdiv_clr <= '1';
                 else
                     pid_clkdiv_clr <= pid_clkdiv_clr;
@@ -116,5 +120,22 @@ begin
             end if;
         end if;
     end process reset_process;
+
     
+    wait_process : process (clk_i)
+    begin
+        if rising_edge(clk_i) then
+            if ENABLE_i = '1' then
+                wait_cntr <= 0;
+            else
+                if (pid_clkdiv_clr = '0') and (pid_ce_out = '1') then
+                    wait_cntr <= wait_cntr +1;
+                else
+                    wait_cntr <= wait_cntr;
+                end if;
+            end if;            
+        end if;    
+    end process wait_process;
+
+
 end rtl;

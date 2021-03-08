@@ -28,7 +28,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set IP_LifeCycle_Menu {1}
 	set IP_Logo {sysgen_icon_100.png}
 	set IP_Name {pid_1_0}
-	set IP_Revision {245859230}
+	set IP_Revision {246106264}
 	set IP_Socket_IP {0}
 	set IP_Socket_IP_Proj_Path {}
 	set IP_Vendor_Text {MaxIV}
@@ -256,21 +256,6 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface aiw_g ClockDomain {pidsg}
 	dict set TopLevelPortInterface aiw_g Locs {}
 	dict set TopLevelPortInterface aiw_g IOStandard {}
-	dict set TopLevelPortInterface control_out Name {control_out}
-	dict set TopLevelPortInterface control_out Type Fix_32_31
-	dict set TopLevelPortInterface control_out ArithmeticType xlSigned
-	dict set TopLevelPortInterface control_out BinaryPoint 31
-	dict set TopLevelPortInterface control_out Width 32
-	dict set TopLevelPortInterface control_out DatFile {pidsg_control_out.dat}
-	dict set TopLevelPortInterface control_out IconText {control_out}
-	dict set TopLevelPortInterface control_out Direction out
-	dict set TopLevelPortInterface control_out Period 1
-	dict set TopLevelPortInterface control_out Interface 0
-	dict set TopLevelPortInterface control_out InterfaceName {}
-	dict set TopLevelPortInterface control_out InterfaceString {DATA}
-	dict set TopLevelPortInterface control_out ClockDomain {pidsg}
-	dict set TopLevelPortInterface control_out Locs {}
-	dict set TopLevelPortInterface control_out IOStandard {}
 	dict set TopLevelPortInterface ce_out Name {ce_out}
 	dict set TopLevelPortInterface ce_out Type Bool
 	dict set TopLevelPortInterface ce_out ArithmeticType xlUnsigned
@@ -286,6 +271,21 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface ce_out ClockDomain {pidsg}
 	dict set TopLevelPortInterface ce_out Locs {}
 	dict set TopLevelPortInterface ce_out IOStandard {}
+	dict set TopLevelPortInterface control_out Name {control_out}
+	dict set TopLevelPortInterface control_out Type Fix_32_31
+	dict set TopLevelPortInterface control_out ArithmeticType xlSigned
+	dict set TopLevelPortInterface control_out BinaryPoint 31
+	dict set TopLevelPortInterface control_out Width 32
+	dict set TopLevelPortInterface control_out DatFile {pidsg_control_out.dat}
+	dict set TopLevelPortInterface control_out IconText {control_out}
+	dict set TopLevelPortInterface control_out Direction out
+	dict set TopLevelPortInterface control_out Period 1
+	dict set TopLevelPortInterface control_out Interface 0
+	dict set TopLevelPortInterface control_out InterfaceName {}
+	dict set TopLevelPortInterface control_out InterfaceString {DATA}
+	dict set TopLevelPortInterface control_out ClockDomain {pidsg}
+	dict set TopLevelPortInterface control_out Locs {}
+	dict set TopLevelPortInterface control_out IOStandard {}
 	dict set TopLevelPortInterface clr Name {clr}
 	dict set TopLevelPortInterface clr Type -
 	dict set TopLevelPortInterface clr ArithmeticType xlUnsigned
