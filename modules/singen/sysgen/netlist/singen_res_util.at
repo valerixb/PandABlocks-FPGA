@@ -22,7 +22,7 @@
    'Resource_Utilization_Data' => [
      {
           'File_Name' => 'singen.vhd',
-          'Line_Num' => 'Line_52',
+          'Line_Num' => 'Line_55',
           'Hier_Name' => 'singen_bd_wrapper.singen_bd_i.singen_1.U0.singen_struct.convert',
           'Cell_Name' => 'singen_bd_i/singen_1/U0/singen_struct/convert',
           'Primitives' => [ 
@@ -34,7 +34,7 @@
      },
      {
           'File_Name' => 'singen.vhd',
-          'Line_Num' => 'Line_73',
+          'Line_Num' => 'Line_76',
           'Hier_Name' => 'singen_bd_wrapper.singen_bd_i.singen_1.U0.singen_struct.convert1',
           'Cell_Name' => 'singen_bd_i/singen_1/U0/singen_struct/convert1',
           'Primitives' => [ 
@@ -46,7 +46,7 @@
      },
      {
           'File_Name' => 'singen.vhd',
-          'Line_Num' => 'Line_94',
+          'Line_Num' => 'Line_97',
           'Hier_Name' => 'singen_bd_wrapper.singen_bd_i.singen_1.U0.singen_struct.dds_compiler_6_0',
           'Cell_Name' => 'singen_bd_i/singen_1/U0/singen_struct/dds_compiler_6_0',
           'Primitives' => [ 
@@ -70,7 +70,7 @@
      },
      {
           'File_Name' => 'singen.vhd',
-          'Line_Num' => 'Line_141',
+          'Line_Num' => 'Line_107',
           'Hier_Name' => 'singen_bd_wrapper.singen_bd_i.singen_1.U0.singen_struct.down_sample',
           'Cell_Name' => 'singen_bd_i/singen_1/U0/singen_struct/down_sample',
           'Primitives' => [ 
@@ -84,7 +84,7 @@
      },
      {
           'File_Name' => 'singen.vhd',
-          'Line_Num' => 'Line_165',
+          'Line_Num' => 'Line_131',
           'Hier_Name' => 'singen_bd_wrapper.singen_bd_i.singen_1.U0.singen_struct.down_sample1',
           'Cell_Name' => 'singen_bd_i/singen_1/U0/singen_struct/down_sample1',
           'Primitives' => [ 
@@ -98,7 +98,7 @@
      },
      {
           'File_Name' => 'singen.vhd',
-          'Line_Num' => 'Line_211',
+          'Line_Num' => 'Line_155',
           'Hier_Name' => 'singen_bd_wrapper.singen_bd_i.singen_1.U0.singen_struct.down_sample2',
           'Cell_Name' => 'singen_bd_i/singen_1/U0/singen_struct/down_sample2',
           'Primitives' => [ 
@@ -112,7 +112,7 @@
      },
      {
           'File_Name' => 'singen.vhd',
-          'Line_Num' => 'Line_104',
+          'Line_Num' => 'Line_179',
           'Hier_Name' => 'singen_bd_wrapper.singen_bd_i.singen_1.U0.singen_struct.mult',
           'Cell_Name' => 'singen_bd_i/singen_1/U0/singen_struct/mult',
           'Primitives' => [ 
@@ -129,7 +129,7 @@
      },
      {
           'File_Name' => 'singen.vhd',
-          'Line_Num' => 'Line_189',
+          'Line_Num' => 'Line_216',
           'Hier_Name' => 'singen_bd_wrapper.singen_bd_i.singen_1.U0.singen_struct.up_sample',
           'Cell_Name' => 'singen_bd_i/singen_1/U0/singen_struct/up_sample',
           'Primitives' => [ 

@@ -28,7 +28,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set IP_LifeCycle_Menu {1}
 	set IP_Logo {sysgen_icon_100.png}
 	set IP_Name {singen}
-	set IP_Revision {244985793}
+	set IP_Revision {246391147}
 	set IP_Socket_IP {0}
 	set IP_Socket_IP_Proj_Path {}
 	set IP_Vendor_Text {MaxIV}
@@ -76,21 +76,6 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface reset_n ClockDomain {singen}
 	dict set TopLevelPortInterface reset_n Locs {}
 	dict set TopLevelPortInterface reset_n IOStandard {}
-	dict set TopLevelPortInterface ampl Name {ampl}
-	dict set TopLevelPortInterface ampl Type Fix_32_30
-	dict set TopLevelPortInterface ampl ArithmeticType xlSigned
-	dict set TopLevelPortInterface ampl BinaryPoint 30
-	dict set TopLevelPortInterface ampl Width 32
-	dict set TopLevelPortInterface ampl DatFile {singen_ampl.dat}
-	dict set TopLevelPortInterface ampl IconText {ampl}
-	dict set TopLevelPortInterface ampl Direction in
-	dict set TopLevelPortInterface ampl Period 1
-	dict set TopLevelPortInterface ampl Interface 0
-	dict set TopLevelPortInterface ampl InterfaceName {}
-	dict set TopLevelPortInterface ampl InterfaceString {DATA}
-	dict set TopLevelPortInterface ampl ClockDomain {singen}
-	dict set TopLevelPortInterface ampl Locs {}
-	dict set TopLevelPortInterface ampl IOStandard {}
 	dict set TopLevelPortInterface rational_freq Name {rational_freq}
 	dict set TopLevelPortInterface rational_freq Type Fix_32_31
 	dict set TopLevelPortInterface rational_freq ArithmeticType xlSigned
@@ -106,6 +91,21 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface rational_freq ClockDomain {singen}
 	dict set TopLevelPortInterface rational_freq Locs {}
 	dict set TopLevelPortInterface rational_freq IOStandard {}
+	dict set TopLevelPortInterface ampl Name {ampl}
+	dict set TopLevelPortInterface ampl Type Fix_32_30
+	dict set TopLevelPortInterface ampl ArithmeticType xlSigned
+	dict set TopLevelPortInterface ampl BinaryPoint 30
+	dict set TopLevelPortInterface ampl Width 32
+	dict set TopLevelPortInterface ampl DatFile {singen_ampl.dat}
+	dict set TopLevelPortInterface ampl IconText {ampl}
+	dict set TopLevelPortInterface ampl Direction in
+	dict set TopLevelPortInterface ampl Period 1
+	dict set TopLevelPortInterface ampl Interface 0
+	dict set TopLevelPortInterface ampl InterfaceName {}
+	dict set TopLevelPortInterface ampl InterfaceString {DATA}
+	dict set TopLevelPortInterface ampl ClockDomain {singen}
+	dict set TopLevelPortInterface ampl Locs {}
+	dict set TopLevelPortInterface ampl IOStandard {}
 	dict set TopLevelPortInterface sine_out Name {sine_out}
 	dict set TopLevelPortInterface sine_out Type Fix_32_31
 	dict set TopLevelPortInterface sine_out ArithmeticType xlSigned
@@ -121,6 +121,21 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	dict set TopLevelPortInterface sine_out ClockDomain {singen}
 	dict set TopLevelPortInterface sine_out Locs {}
 	dict set TopLevelPortInterface sine_out IOStandard {}
+	dict set TopLevelPortInterface ce_out Name {ce_out}
+	dict set TopLevelPortInterface ce_out Type Bool
+	dict set TopLevelPortInterface ce_out ArithmeticType xlUnsigned
+	dict set TopLevelPortInterface ce_out BinaryPoint 0
+	dict set TopLevelPortInterface ce_out Width 1
+	dict set TopLevelPortInterface ce_out DatFile {singen_ce_out.dat}
+	dict set TopLevelPortInterface ce_out IconText {ce_out}
+	dict set TopLevelPortInterface ce_out Direction out
+	dict set TopLevelPortInterface ce_out Period 1
+	dict set TopLevelPortInterface ce_out Interface 0
+	dict set TopLevelPortInterface ce_out InterfaceName {}
+	dict set TopLevelPortInterface ce_out InterfaceString {DATA}
+	dict set TopLevelPortInterface ce_out ClockDomain {singen}
+	dict set TopLevelPortInterface ce_out Locs {}
+	dict set TopLevelPortInterface ce_out IOStandard {}
 	dict set TopLevelPortInterface clr Name {clr}
 	dict set TopLevelPortInterface clr Type -
 	dict set TopLevelPortInterface clr ArithmeticType xlUnsigned

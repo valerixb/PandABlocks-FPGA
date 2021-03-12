@@ -121,7 +121,7 @@ begin
         end if;
     end process reset_process;
 
-    
+
     wait_process : process (clk_i)
     begin
         if rising_edge(clk_i) then

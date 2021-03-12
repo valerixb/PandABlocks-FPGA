@@ -158,6 +158,7 @@ proc create_root_design { parentCell } {
 
   # Create ports
   set ampl [ create_bd_port -dir I -from 31 -to 0 -type data ampl ]
+  set ce_out [ create_bd_port -dir O -from 0 -to 0 -type data ce_out ]
   set clk [ create_bd_port -dir I -type clk clk ]
   set clr [ create_bd_port -dir I -type data clr ]
   set rational_freq [ create_bd_port -dir I -from 31 -to 0 -type data rational_freq ]
@@ -173,6 +174,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net clr_1 [get_bd_ports clr] [get_bd_pins singen_1/clr]
   connect_bd_net -net rational_freq_1 [get_bd_ports rational_freq] [get_bd_pins singen_1/rational_freq]
   connect_bd_net -net reset_n_1 [get_bd_ports reset_n] [get_bd_pins singen_1/reset_n]
+  connect_bd_net -net singen_1_ce_out [get_bd_ports ce_out] [get_bd_pins singen_1/ce_out]
   connect_bd_net -net singen_1_sine_out [get_bd_ports sine_out] [get_bd_pins singen_1/sine_out]
 
   # Create address segments

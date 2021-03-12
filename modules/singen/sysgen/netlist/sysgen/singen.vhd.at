@@ -1,65 +1,70 @@
 {
-  'Line_104' => {
-    'CodeInstance' => 'singen_struct/mult',
-    'Instance' => 'mult',
-    'SimulinkInstance' => 'singen/Mult'
-  },
-  'Line_141' => {
+  'Line_107' => {
     'CodeInstance' => 'singen_struct/down_sample',
     'Instance' => 'down_sample',
     'SimulinkInstance' => 'singen/Down Sample'
   },
-  'Line_165' => {
+  'Line_131' => {
     'CodeInstance' => 'singen_struct/down_sample1',
     'Instance' => 'down_sample1',
     'SimulinkInstance' => 'singen/Down Sample1'
   },
-  'Line_189' => {
-    'CodeInstance' => 'singen_struct/up_sample',
-    'Instance' => 'up_sample',
-    'SimulinkInstance' => 'singen/Up Sample'
-  },
-  'Line_211' => {
+  'Line_155' => {
     'CodeInstance' => 'singen_struct/down_sample2',
     'Instance' => 'down_sample2',
     'SimulinkInstance' => 'singen/Down Sample2'
   },
-  'Line_254' => {
+  'Line_179' => {
+    'CodeInstance' => 'singen_struct/mult',
+    'Instance' => 'mult',
+    'SimulinkInstance' => 'singen/Mult'
+  },
+  'Line_216' => {
+    'CodeInstance' => 'singen_struct/up_sample',
+    'Instance' => 'up_sample',
+    'SimulinkInstance' => 'singen/Up Sample'
+  },
+  'Line_238' => {
+    'CodeInstance' => 'singen_struct/clock_enable_probe',
+    'Instance' => 'clock_enable_probe',
+    'SimulinkInstance' => 'singen/Clock Enable Probe'
+  },
+  'Line_268' => {
     'CodeInstance' => 'singen_default_clock_driver/clockdriver_x0',
     'Instance' => 'clockdriver_x0',
     'SimulinkInstance' => ''
   },
-  'Line_266' => {
+  'Line_280' => {
     'CodeInstance' => 'singen_default_clock_driver/clockdriver',
     'Instance' => 'clockdriver',
     'SimulinkInstance' => ''
   },
-  'Line_302' => {
+  'Line_317' => {
     'CodeInstance' => 'singen_default_clock_driver',
     'Instance' => 'singen_default_clock_driver',
     'SimulinkInstance' => ''
   },
-  'Line_312' => {
+  'Line_327' => {
     'CodeInstance' => 'singen_struct',
     'Instance' => 'singen_struct',
     'SimulinkInstance' => 'singen'
   },
-  'Line_45' => {
+  'Line_48' => {
     'CodeInstance' => 'singen_struct/constant1',
     'Instance' => 'constant1',
     'SimulinkInstance' => 'singen/Constant1'
   },
-  'Line_52' => {
+  'Line_55' => {
     'CodeInstance' => 'singen_struct/convert',
     'Instance' => 'convert',
     'SimulinkInstance' => 'singen/Convert'
   },
-  'Line_73' => {
+  'Line_76' => {
     'CodeInstance' => 'singen_struct/convert1',
     'Instance' => 'convert1',
     'SimulinkInstance' => 'singen/Convert1'
   },
-  'Line_94' => {
+  'Line_97' => {
     'CodeInstance' => 'singen_struct/dds_compiler_6_0',
     'Instance' => 'dds_compiler_6_0',
     'SimulinkInstance' => 'singen/DDS Compiler 6.0'

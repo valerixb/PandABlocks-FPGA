@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="singen_bd" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1614076611"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1614076611"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1614076611"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1614076611"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1615481968"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1615481968"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1615481968"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1615481968"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="synth\singen_bd.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>

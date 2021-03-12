@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
---Date        : Tue Feb 23 11:36:50 2021
+--Date        : Thu Mar 11 17:59:26 2021
 --Host        : w-valbas-pc-0 running 64-bit major release  (build 9200)
 --Command     : generate_target singen_bd.bd
 --Design      : singen_bd
@@ -14,6 +14,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity singen_bd is
   port (
     ampl : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    ce_out : out STD_LOGIC_VECTOR ( 0 to 0 );
     clk : in STD_LOGIC;
     clr : in STD_LOGIC;
     rational_freq : in STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -29,12 +30,13 @@ end singen_bd;
 architecture STRUCTURE of singen_bd is
   component singen_bd_singen_1_0 is
   port (
-    rational_freq : in STD_LOGIC_VECTOR ( 31 downto 0 );
     ampl : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    rational_freq : in STD_LOGIC_VECTOR ( 31 downto 0 );
     reset_n : in STD_LOGIC_VECTOR ( 0 to 0 );
     clk : in STD_LOGIC;
     clr : in STD_LOGIC;
-    sine_out : out STD_LOGIC_VECTOR ( 31 downto 0 )
+    sine_out : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    ce_out : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component singen_bd_singen_1_0;
   signal ampl_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -42,6 +44,7 @@ architecture STRUCTURE of singen_bd is
   signal clr_1 : STD_LOGIC;
   signal rational_freq_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal reset_n_1 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal singen_1_ce_out : STD_LOGIC_VECTOR ( 0 to 0 );
   signal singen_1_sine_out : STD_LOGIC_VECTOR ( 31 downto 0 );
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of clk : signal is "xilinx.com:signal:clock:1.0 CLK.CLK CLK";
@@ -51,6 +54,8 @@ architecture STRUCTURE of singen_bd is
   attribute X_INTERFACE_PARAMETER of clr : signal is "XIL_INTERFACENAME DATA.CLR, LAYERED_METADATA undef";
   attribute X_INTERFACE_INFO of ampl : signal is "xilinx.com:signal:data:1.0 DATA.AMPL DATA";
   attribute X_INTERFACE_PARAMETER of ampl : signal is "XIL_INTERFACENAME DATA.AMPL, LAYERED_METADATA undef";
+  attribute X_INTERFACE_INFO of ce_out : signal is "xilinx.com:signal:data:1.0 DATA.CE_OUT DATA";
+  attribute X_INTERFACE_PARAMETER of ce_out : signal is "XIL_INTERFACENAME DATA.CE_OUT, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}";
   attribute X_INTERFACE_INFO of rational_freq : signal is "xilinx.com:signal:data:1.0 DATA.RATIONAL_FREQ DATA";
   attribute X_INTERFACE_PARAMETER of rational_freq : signal is "XIL_INTERFACENAME DATA.RATIONAL_FREQ, LAYERED_METADATA undef";
   attribute X_INTERFACE_INFO of reset_n : signal is "xilinx.com:signal:data:1.0 DATA.RESET_N DATA";
@@ -59,6 +64,7 @@ architecture STRUCTURE of singen_bd is
   attribute X_INTERFACE_PARAMETER of sine_out : signal is "XIL_INTERFACENAME DATA.SINE_OUT, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 31} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}";
 begin
   ampl_1(31 downto 0) <= ampl(31 downto 0);
+  ce_out(0) <= singen_1_ce_out(0);
   clk_1 <= clk;
   clr_1 <= clr;
   rational_freq_1(31 downto 0) <= rational_freq(31 downto 0);
@@ -67,6 +73,7 @@ begin
 singen_1: component singen_bd_singen_1_0
      port map (
       ampl(31 downto 0) => ampl_1(31 downto 0),
+      ce_out(0) => singen_1_ce_out(0),
       clk => clk_1,
       clr => clr_1,
       rational_freq(31 downto 0) => rational_freq_1(31 downto 0),

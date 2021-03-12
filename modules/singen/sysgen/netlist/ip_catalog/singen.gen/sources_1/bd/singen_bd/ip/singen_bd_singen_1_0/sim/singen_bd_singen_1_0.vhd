@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: MaxIV:Panda_SysGen:singen:1.0
--- IP Revision: 244985793
+-- IP Revision: 246391147
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -58,12 +58,13 @@ USE xil_defaultlib.singen;
 
 ENTITY singen_bd_singen_1_0 IS
   PORT (
-    rational_freq : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     ampl : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    rational_freq : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     reset_n : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     clk : IN STD_LOGIC;
     clr : IN STD_LOGIC;
-    sine_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+    sine_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    ce_out : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
   );
 END singen_bd_singen_1_0;
 
@@ -72,18 +73,22 @@ ARCHITECTURE singen_bd_singen_1_0_arch OF singen_bd_singen_1_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF singen_bd_singen_1_0_arch: ARCHITECTURE IS "yes";
   COMPONENT singen IS
     PORT (
-      rational_freq : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       ampl : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      rational_freq : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       reset_n : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
       clk : IN STD_LOGIC;
       clr : IN STD_LOGIC;
-      sine_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+      sine_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      ce_out : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
     );
   END COMPONENT singen;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF singen_bd_singen_1_0_arch: ARCHITECTURE IS "sysgen";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
+  ATTRIBUTE X_INTERFACE_PARAMETER OF ce_out: SIGNAL IS "XIL_INTERFACENAME ce_out, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}}" & 
+" value 0} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}";
+  ATTRIBUTE X_INTERFACE_INFO OF ce_out: SIGNAL IS "xilinx.com:signal:data:1.0 ce_out DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF sine_out: SIGNAL IS "XIL_INTERFACENAME sine_out, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum " & 
 "{}} value 31} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF sine_out: SIGNAL IS "xilinx.com:signal:data:1.0 sine_out DATA";
@@ -95,20 +100,21 @@ ARCHITECTURE singen_bd_singen_1_0_arch OF singen_bd_singen_1_0 IS
   ATTRIBUTE X_INTERFACE_PARAMETER OF reset_n: SIGNAL IS "XIL_INTERFACENAME reset_n, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}" & 
 "} value 0} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF reset_n: SIGNAL IS "xilinx.com:signal:data:1.0 reset_n DATA";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF ampl: SIGNAL IS "XIL_INTERFACENAME ampl, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} " & 
-"value 30} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}";
-  ATTRIBUTE X_INTERFACE_INFO OF ampl: SIGNAL IS "xilinx.com:signal:data:1.0 ampl DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF rational_freq: SIGNAL IS "XIL_INTERFACENAME rational_freq, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} max" & 
 "imum {}} value 31} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}";
   ATTRIBUTE X_INTERFACE_INFO OF rational_freq: SIGNAL IS "xilinx.com:signal:data:1.0 rational_freq DATA";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF ampl: SIGNAL IS "XIL_INTERFACENAME ampl, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} " & 
+"value 30} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}";
+  ATTRIBUTE X_INTERFACE_INFO OF ampl: SIGNAL IS "xilinx.com:signal:data:1.0 ampl DATA";
 BEGIN
   U0 : singen
     PORT MAP (
-      rational_freq => rational_freq,
       ampl => ampl,
+      rational_freq => rational_freq,
       reset_n => reset_n,
       clk => clk,
       clr => clr,
-      sine_out => sine_out
+      sine_out => sine_out,
+      ce_out => ce_out
     );
 END singen_bd_singen_1_0_arch;
