@@ -11,11 +11,6 @@ MD5_SUM_u-boot-xlnx-xilinx-v2015.1 = b6d212208b7694f748727883eebaa74e
 #MD5_SUM_linux-xlnx-xilinx-v2015.1  = 930d126df2113221e63c4ec4ce356f2c
 
 U_BOOT_TAG = xilinx-v2015.1
-CROSS_COMPILE = arm-xilinx-linux-gnueabi-
-ARCH = arm
-
-export PATH := $(SDK_ROOT)/gnu/arm/lin/bin:$(PATH)
-
 
 # ------------------------------------------------------------------------------
 # Helper code lifted from rootfs and other miscellaneous functions
@@ -34,22 +29,20 @@ MAKE_U_BOOT = $(MAKE) -C $(U_BOOT_SRC) \
   ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) KBUILD_OUTPUT=$(U_BOOT_BUILD)
 
 u-boot: $(U_BOOT_SRC) $(DEVICE_TREE_DTB)
-	ln -s $(TGT_DIR)/etc/PandA.h $(U_BOOT_SRC)/include/configs
 	mkdir -p $(U_BOOT_BUILD)
-	$(MAKE_U_BOOT) PandA_config
-	$(MAKE_U_BOOT) EXT_DTB=$(DEVICE_TREE_DTB)
+	. $(VIVADO) && $(MAKE_U_BOOT) $(UBOOT_CONFIG) 
+	. $(VIVADO) && $(MAKE_U_BOOT) EXT_DTB=$(DEVICE_TREE_DTB)
 
 $(U_BOOT_SRC):
 	mkdir -p $(SRC_ROOT)
 	$(call EXTRACT_FILE,$(U_BOOT_NAME).tar.gz,$(MD5_SUM_$(U_BOOT_NAME)))
 	patch -p1 -d $(U_BOOT_SRC) < $(TOP)/common/u-boot/u-boot.patch
+	patch -p1 -d $(U_BOOT_SRC) < $(TOP)/common/u-boot/u-boot_rsa.patch
 	ln -s $(TOP)/common/u-boot/PandA_defconfig $(U_BOOT_SRC)/configs
-	#ln -s $(TGT_DIR)/etc/PandA.h $(U_BOOT_SRC)/include/configs
-	#chmod -R a-w $(U_BOOT_SRC)
+	ln -s $(TOP)/common/u-boot/PandA.h $(U_BOOT_SRC)/include/configs/PandA.h
+	chmod -R a-w $(U_BOOT_SRC)
 
 u-boot-src: $(U_BOOT_SRC)
 
 .PHONY: u-boot u-boot-src
-
-
 
