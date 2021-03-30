@@ -48,7 +48,7 @@ VERSION :
 $(IP_CORES) :
 	$(RUNVIVADO) -mode batch -source $(TARGET_DIR)/scripts/build_ips.tcl \
 	  -log build_ips.log -nojournal \
-	  -tclargs $(TARGET_DIR) -tclargs $(IP_DIR)
+	  -tclargs $(TARGET_DIR) -tclargs $(IP_DIR) -tclargs $(TOP)
 
 $(PS_CORE) :
 	$(RUNVIVADO) -mode batch -source $(TARGET_DIR)/scripts/build_ps.tcl \
