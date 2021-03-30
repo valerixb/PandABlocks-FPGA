@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"singen_bd": {
+			"proto_instances": {
+			}
+		}
+	}
+}

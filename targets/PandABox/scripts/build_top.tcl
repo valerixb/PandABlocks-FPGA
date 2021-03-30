@@ -54,6 +54,12 @@ set_property used_in_synthesis false -quiet [get_files *_impl.xdc]
 # Read Zynq block design
 read_bd   $BUILD_DIR/panda_ps/panda_ps.srcs/sources_1/bd/panda_ps/panda_ps.bd
 
+# Update the IPs as the PS script does not build them properly
+update_compile_order -fileset sources_1
+upgrade_ip [get_ips {panda_ps_processing_system7_0_0 panda_ps_proc_sys_reset_0_0}]
+set_property synth_checkpoint_mode None [get_files  $BUILD_DIR/panda_ps/panda_ps.srcs/sources_1/bd/panda_ps/panda_ps.bd]
+generate_target all [get_files  $BUILD_DIR/panda_ps/panda_ps.srcs/sources_1/bd/panda_ps/panda_ps.bd]
+
 # Read auto generated files
 add_files [glob $AUTOGEN/hdl/*.vhd]
 
@@ -76,8 +82,11 @@ report_timing_summary -file post_synth_timing_summary.rpt
 # STEP#3: run placement and logic optimisation, report utilization and timing
 # estimates, write checkpoint design
 #
+#opt_design -directive Explore
 opt_design
+#place_design -directive Explore
 place_design
+#phys_opt_design -directive ExploreWithHoldFix
 phys_opt_design
 write_checkpoint -force post_place
 report_timing_summary -file post_place_timing_summary.rpt
@@ -87,6 +96,7 @@ write_debug_probes -force panda_carrier_top.ltx
 # STEP#4: run router, report actual utilization and timing, write checkpoint
 # design, run drc, write verilog and xdc out
 #
+#route_design -directive NoTimingRelaxation
 route_design
 
 write_checkpoint -force post_route

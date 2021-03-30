@@ -9,11 +9,39 @@ set_param board.repoPaths $TARGET_DIR/configs
 # Build directory
 set BUILD_DIR [lindex $argv 1]
 
+# Top Panda directory
+set TOP [lindex $argv 2]
+
 # Create Managed IP Project
 create_project managed_ip_project $BUILD_DIR/managed_ip_project -force -part xc7z030sbg485-1 -ip
 
 set_property target_language VHDL [current_project]
 set_property target_simulator ModelSim [current_project]
+#set_property  ip_repo_paths  $TARGET_DIR/../../modules/pid/sysgen/netlist/ip [current_project]
+set_property  ip_repo_paths [list \
+    ${TOP}/modules/pid/sysgen/netlist/ip \
+    ${TOP}/modules/singen/sysgen/netlist/ip] [current_project]
+update_ip_catalog
+
+#
+# Create Sine Wave Generator IP from system generator
+#
+create_ip -name singen -vendor MaxIV -library Panda_SysGen -version 1.0 -module_name singen_0 -dir $BUILD_DIR/
+generate_target {instantiation_template} [get_files $BUILD_DIR/singen_0/singen_0.xci]
+generate_target all [get_files  $BUILD_DIR/singen_0/singen_0.xci]
+catch { config_ip_cache -export [get_ips -all singen_0] }
+export_ip_user_files -of_objects [get_files $BUILD_DIR/singen_0/singen_0.xci] -no_script -sync -force -quiet
+synth_ip [get_ips singen_0]
+
+#
+# Create PID IP from system generator
+#
+create_ip -name pidsg -vendor MaxIV -library Panda_SysGen -version 1.0 -module_name pidsg_0 -dir $BUILD_DIR/
+generate_target {instantiation_template} [get_files $BUILD_DIR/pidsg_0/pidsg_0.xci]
+generate_target all [get_files  $BUILD_DIR/pidsg_0/pidsg_0.xci]
+catch { config_ip_cache -export [get_ips -all pidsg_0] }
+export_ip_user_files -of_objects [get_files $BUILD_DIR/pidsg_0/pidsg_0.xci] -no_script -sync -force -quiet
+synth_ip [get_ips pidsg_0]
 
 #
 # Create PULSE_QUEUE IP
@@ -299,7 +327,7 @@ generate_target all [get_files  $BUILD_DIR/event_receiver_mgt/event_receiver_mgt
 synth_ip [get_ips event_receiver_mgt]
 
 #
-# Create SFP event receiver mgt
+# Create SFP sync
 create_ip -vlnv [get_ipdefs -filter {NAME == gtwizard}] \
 -module_name sfp_panda_sync -dir $BUILD_DIR/
 

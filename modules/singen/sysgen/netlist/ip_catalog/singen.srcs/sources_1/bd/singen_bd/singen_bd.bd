@@ -1,0 +1,168 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xB96927C0D4EC94AE",
+      "design_src": "SYSGEN",
+      "device": "xc7z030sbg485-1",
+      "gen_directory": "../../../../singen.gen/sources_1/bd/singen_bd",
+      "name": "singen_bd",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2020.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "singen_1": ""
+    },
+    "ports": {
+      "ampl": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "ce_out": {
+        "type": "data",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}",
+            "value_src": "const_prop"
+          }
+        }
+      },
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "singen_bd_clk",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "clr": {
+        "type": "data",
+        "direction": "I",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "rational_freq": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "reset_n": {
+        "type": "data",
+        "direction": "I",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "sine_out": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 31} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}",
+            "value_src": "const_prop"
+          }
+        }
+      }
+    },
+    "components": {
+      "singen_1": {
+        "vlnv": "MaxIV:Panda_SysGen:singen:1.0",
+        "xci_name": "singen_bd_singen_1_0",
+        "xci_path": "ip\\singen_bd_singen_1_0\\singen_bd_singen_1_0.xci",
+        "inst_hier_path": "singen_1"
+      }
+    },
+    "nets": {
+      "ampl_1": {
+        "ports": [
+          "ampl",
+          "singen_1/ampl"
+        ]
+      },
+      "singen_1_ce_out": {
+        "ports": [
+          "singen_1/ce_out",
+          "ce_out"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "singen_1/clk"
+        ]
+      },
+      "clr_1": {
+        "ports": [
+          "clr",
+          "singen_1/clr"
+        ]
+      },
+      "rational_freq_1": {
+        "ports": [
+          "rational_freq",
+          "singen_1/rational_freq"
+        ]
+      },
+      "reset_n_1": {
+        "ports": [
+          "reset_n",
+          "singen_1/reset_n"
+        ]
+      },
+      "singen_1_sine_out": {
+        "ports": [
+          "singen_1/sine_out",
+          "sine_out"
+        ]
+      }
+    }
+  }
+}

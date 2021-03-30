@@ -17,7 +17,7 @@ port (
     -- System Bus
     bit_bus_i           : in  bit_bus_t;
     pos_bus_i           : in  pos_bus_t;
-	-- Outputs to BitBus from FMC
+    -- Outputs to BitBus from FMC
     bit1_o              : out std_logic_vector(0 downto 0);
     bit2_o              : out std_logic_vector(0 downto 0);
     bit3_o              : out std_logic_vector(0 downto 0);
@@ -100,7 +100,22 @@ signal bit1,bit2,bit3,bit4   : std_logic;
 
 signal err_cnt               : std_logic_vector(15 downto 0);
 
+signal TXN                : std_logic;
+signal TXP                : std_logic;
+
 begin
+
+txnobuf : obuf
+port map (
+    I => TXN,
+    O => SFP_o.TXN_OUT
+);
+
+txpobuf : obuf
+port map (
+    I => TXP,
+    O => SFP_o.TXP_OUT
+);
 
 -- Assign outputs
 
@@ -178,8 +193,8 @@ port map(
     event_clk_i        => event_clk,
     rxp_i              => SFP_i.RXP_IN,
     rxn_i              => SFP_i.RXN_IN,
-    txp_o              => SFP_o.TXP_OUT,
-    txn_o              => SFP_o.TXN_OUT,
+    txp_o              => TXP,
+    txn_o              => TXN,
     rx_link_ok_i       => rx_link_ok_o,
     rxbyteisaligned_o  => rxbyteisaligned_o,
     rxbyterealign_o    => rxbyterealign_o,
