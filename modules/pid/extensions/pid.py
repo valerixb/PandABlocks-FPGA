@@ -52,7 +52,7 @@ class PidWriter:
         self.debugfile.write(s)
         self.debugfile.close()
         
-    def trim_positive_param(v, rawmax, scale)
+    def trim_positive_param(self, v, rawmax, scale):
         return min(abs(v),rawmax)/scale
         
     def parse_KP(self, number, value):
@@ -83,8 +83,8 @@ class PidWriter:
             ff=float(default_pid_params['F_FILTER'])
         # keep f_filter below Nyquist
         if ff>=(fs/2):
-			ff=fs/2.5
-			pid_table[number]['F_FILTER']= ff
+            ff=fs/2.5
+            pid_table[number]['F_FILTER']= ff
         R=fs/ff
         g1d=(2*R-1)/(2*R+1)*G1D_SCALE
         g2d=gd/(2*R+1)*G2D_SCALE
@@ -104,7 +104,7 @@ class PidWriter:
         fs=pid_table[number]['FS']
         # keep f_filter below Nyquist
         if ff>=(fs/2):
-			ff=fs/2.5
+            ff=fs/2.5
         pid_table[number]['F_FILTER']= ff
         kd=pid_table[number]['KD']*D_SCALE
         t=self.parse_KD(number,kd)

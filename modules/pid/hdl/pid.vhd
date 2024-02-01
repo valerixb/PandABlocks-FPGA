@@ -38,7 +38,7 @@ port (
     reserved_g1d          : in  std_logic_vector(31 downto 0); -- ufix32_En32 - note: UNSIGNED
     reserved_g2d          : in  std_logic_vector(31 downto 0); -- ufix32_En07 - note: UNSIGNED
     -- boolean
-    sample_clk            : in  std_logic_vector(31 downto 0);
+    sample_clk_i          : in  std_logic;
     inv_cmd               : in  std_logic_vector(31 downto 0);
     inv_meas              : in  std_logic_vector(31 downto 0);
     deriv_on_procvar      : in  std_logic_vector(31 downto 0)
@@ -112,7 +112,7 @@ begin
     pipes: process (clk_i)
     begin
         if rising_edge(clk_i) then
-            sample_clk_prev <= sample_clk(0);
+            sample_clk_prev <= sample_clk_i;
             pid_ce_out_prev <= pid_ce_out;
         end if;
     end process pipes;
@@ -157,10 +157,10 @@ begin
 
     -- synchronize external sampling clock to the PID internal 1 MHz clock (== ce_out pulse)
     -- and supply it as CE_in to the PID IP
-    extfs_process : process (clk_i, sample_clk(0))
+    extfs_process : process (clk_i, sample_clk_i)
     begin
         if rising_edge(clk_i) then
-            if((sample_clk(0) = '1') and (sample_clk_prev='0')) then
+            if((sample_clk_i = '1') and (sample_clk_prev='0')) then
                 pid_ce_in <= '1';
             elsif((pid_ce_out = '1') and (pid_ce_out_prev='0')) then
                 pid_ce_in <= '0';
