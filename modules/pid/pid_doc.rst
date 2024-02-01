@@ -4,7 +4,7 @@ PID - PID controller
 
 
 The PID block is an implementation of the classical proportional/integral/derivative controller.
-Its gains are intended in 
+Its gains are intended as in 
 `parallel form <https://en.wikipedia.org/wiki/PID_controller#Standard_versus_parallel_(ideal)_form>`_ 
 
 
@@ -16,11 +16,9 @@ The controller has protection features like:
     - possibility to take the derivative of the process variable instead of the error
 
 
-This is a discrete time implementation, with 1 MHz fixed sampling frequency: the same of the FMC_ACQ427 analog card block. The 125:1 clock divider that generates the 1 MHz internal resampling frequency is reset by the ENABLE signal.
+This is a discrete time implementation, with external sampling frequency in range [1Hz,1MHz]. The internal clock resampler frequency is reset by the ENABLE signal, so it's recommended to use the same signal for the ENABLE of the CLOCK block that generates the sampling frequency.
 
-Internal computations are in single precision floating point, for increased applicability of the module to different use cases.
-
-Inputs can be inverted, for ease of implementation. Full scale is meant to be +/- 1 in the scaled PandaBlocks representation (or signed 32-bit int if raw representation is preferred).
+Inputs can be inverted, for ease of implementation. Full scale is meant to be +/- 1 in the scaled PandaBlocks representation (or signed 32-bit int if raw representation is preferred). Internal calculations in 64 bit.
 
 
 

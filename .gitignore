@@ -7,6 +7,7 @@
 *.jou
 *.log
 .Xil
+makepanda
 
 # virtual environment folder
 /venv

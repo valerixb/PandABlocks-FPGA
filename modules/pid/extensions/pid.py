@@ -1,11 +1,22 @@
 #
-# Extension module to support PID block - system generator/floating point
+# Extension module to support PID block
+# model composer; variable sampling frequency; fixed point
 #
-# latest rev: jan 22 2024
+# latest rev: jan 31 2024
 #
 
-PID_SAMPLING_FREQ = 1.e6
-PARAM_SCALE = 65536.0
+# fixed point parameter scaling
+P_SCALE   = 2**23
+P_RAWMAX  = (2**31-1)
+I_SCALE   = 2**4
+I_RAWMAX  = (2**10-1)
+D_SCALE   = 2**7
+D_RAWMAX  = (2**12-1)
+FS_MAX    = 1e6
+FS_MIN    = 1
+GI_SCALE  = 2**25
+G1D_SCALE = 2**32
+G2D_SCALE = 2**7
 LOG_FNAME = '/tmp/pidlog.txt'
 
 WRITELOG = False
@@ -41,35 +52,44 @@ class PidWriter:
         self.debugfile.write(s)
         self.debugfile.close()
         
+    def trim_positive_param(v, rawmax, scale)
+        return min(abs(v),rawmax)/scale
+        
     def parse_KP(self, number, value):
-        pid_table[number]['KP']= value/PARAM_SCALE
-        gp=float(pid_table[number]['KP'])
-        v=int(float_to_hex(gp),0)
+        pid_table[number]['KP']= self.trim_positive_param(value, P_RAWMAX, P_SCALE)
+        gp=pid_table[number]['KP']*P_SCALE
+        v=int(gp)
         if WRITELOG:
             s="PID{0:d}.RESERVED_GP={1:d}\n".format(number+1,v)
             self.logentry(s)
         return(v,)
         
     def parse_KI(self, number, value):
-        pid_table[number]['KI']= value/PARAM_SCALE
-        gi=float(pid_table[number]['KI']/(2.*PID_SAMPLING_FREQ))
-        v=int(float_to_hex(gi),0)
+        pid_table[number]['KI']= self.trim_positive_param(value, I_RAWMAX, I_SCALE)
+        fs=pid_table[number]['FS']
+        gi=pid_table[number]['KI']/(2.*fs)*GI_SCALE
+        v=int(gi)
         if WRITELOG:
             s="PID{0:d}.RESERVED_GI={1:d}\n".format(number+1,v)
             self.logentry(s)
         return(v,)
         
     def parse_KD(self, number, value):
-        pid_table[number]['KD']= value/PARAM_SCALE
-        gd=float(2.0*pid_table[number]['KD'])*PID_SAMPLING_FREQ
-        ff=float(pid_table[number]['F_FILTER'])
+        pid_table[number]['KD']= self.trim_positive_param(value, D_RAWMAX, D_SCALE)
+        fs=pid_table[number]['FS']
+        gd=2.0*pid_table[number]['KD']*fs
+        ff=pid_table[number]['F_FILTER']
         if ff==0:
             ff=float(default_pid_params['F_FILTER'])
-        R=PID_SAMPLING_FREQ/ff
-        g1d=(2*R-1)/(2*R+1)
-        g2d=gd/(2*R+1)
-        v1=int(float_to_hex(g1d),0)
-        v2=int(float_to_hex(g2d),0)
+        # keep f_filter below Nyquist
+        if ff>=(fs/2):
+			ff=fs/2.5
+			pid_table[number]['F_FILTER']= ff
+        R=fs/ff
+        g1d=(2*R-1)/(2*R+1)*G1D_SCALE
+        g2d=gd/(2*R+1)*G2D_SCALE
+        v1=int(g1d)
+        v2=int(g2d)
         if WRITELOG:
             s=     "PID{0:d}.RESERVED_G1D={1:d}\n".format(number+1,v1)
             s= s + "PID{0:d}.RESERVED_G2D={1:d}\n".format(number+1,v2)
@@ -77,30 +97,49 @@ class PidWriter:
         return(v1,v2)
 
     def parse_F_FILTER(self, number, value):
-        pid_table[number]['F_FILTER']= value
-        gd=float(2.0*pid_table[number]['KD'])*PID_SAMPLING_FREQ
-        ff=float(pid_table[number]['F_FILTER'])
-        if ff==0:
-            ff=float(default_pid_params['F_FILTER'])
-        R=PID_SAMPLING_FREQ/ff
-        g1d=(2*R-1)/(2*R+1)
-        g2d=gd/(2*R+1)
-        v1=int(float_to_hex(g1d),0)
-        v2=int(float_to_hex(g2d),0)
-        if WRITELOG:
-            s=     "PID{0:d}.RESERVED_G1D={1:d}\n".format(number+1,v1)
-            s= s + "PID{0:d}.RESERVED_G2D={1:d}\n".format(number+1,v2)
-            self.logentry(s)
-        return(v1,v2)
+        if value==0:
+            ff=default_pid_params['F_FILTER']
+        else:
+            ff=value
+        fs=pid_table[number]['FS']
+        # keep f_filter below Nyquist
+        if ff>=(fs/2):
+			ff=fs/2.5
+        pid_table[number]['F_FILTER']= ff
+        kd=pid_table[number]['KD']*D_SCALE
+        t=self.parse_KD(number,kd)
+        return t
+        
+        #fs=pid_table[number]['FS']
+        #gd=2.0*pid_table[number]['KD']*fs
+        #R=fs/ff
+        #g1d=(2*R-1)/(2*R+1)*G1D_SCALE
+        #g2d=gd/(2*R+1)*G2D_SCALE
+        #v1=int(g1d)
+        #v2=int(g2d)
+        #if WRITELOG:
+        #    s=     "PID{0:d}.RESERVED_G1D={1:d}\n".format(number+1,v1)
+        #    s= s + "PID{0:d}.RESERVED_G2D={1:d}\n".format(number+1,v2)
+        #    self.logentry(s)
+        #return(v1,v2)
 
+    def parse_F_SAMPLE(self, number, value):
+        fs=min(FS_MAX,max(FS_MIN,value))
+        pid_table[number]['FS']= fs
+        ki=pid_table[number]['KI']*I_SCALE
+        kd=pid_table[number]['KD']*D_SCALE
+        # return concatenation of tuples
+        t= self.parse_KI(number,ki) + self.parse_KD(number,kd)
+        return t
 
 pid_table=[]
 default_pid_params= \
     {
-    'KP'      :    1.0,
-    'KI'      :    0.0,
-    'KD'      :    0.0,
-    'F_FILTER': 5000.0
+    'KP'      :   1.0,
+    'KI'      :   0.0,
+    'KD'      :   0.0,
+    'F_FILTER':  20.0,
+    'FS'      : 100.0
     }
 PID_Reader=PidReader()
 PID_Writer=PidWriter()

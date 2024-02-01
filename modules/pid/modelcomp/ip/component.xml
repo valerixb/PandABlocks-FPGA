@@ -22,6 +22,22 @@
       </spirit:portMaps>
     </spirit:busInterface>
     <spirit:busInterface>
+      <spirit:name>ce</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clockenable" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clockenable_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CE</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>ce</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
       <spirit:name>g1d</spirit:name>
       <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="data" spirit:version="1.0"/>
       <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="data_rtl" spirit:version="1.0"/>
@@ -336,6 +352,23 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
+        <spirit:name>ce</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">0</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
         <spirit:name>g1d</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
@@ -459,7 +492,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:left spirit:format="long">30</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -605,35 +638,47 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i0/pidmc_floating_point_v7_1_i0.xci</spirit:name>
+        <spirit:name>pidmc_c_addsub_v12_0_i0/pidmc_c_addsub_v12_0_i0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i1/pidmc_floating_point_v7_1_i1.xci</spirit:name>
+        <spirit:name>pidmc_c_addsub_v12_0_i1/pidmc_c_addsub_v12_0_i1.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i2/pidmc_floating_point_v7_1_i2.xci</spirit:name>
+        <spirit:name>pidmc_c_addsub_v12_0_i2/pidmc_c_addsub_v12_0_i2.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i3/pidmc_floating_point_v7_1_i3.xci</spirit:name>
+        <spirit:name>pidmc_c_addsub_v12_0_i3/pidmc_c_addsub_v12_0_i3.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i4/pidmc_floating_point_v7_1_i4.xci</spirit:name>
+        <spirit:name>pidmc_c_addsub_v12_0_i4/pidmc_c_addsub_v12_0_i4.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i5/pidmc_floating_point_v7_1_i5.xci</spirit:name>
+        <spirit:name>pidmc_c_addsub_v12_0_i5/pidmc_c_addsub_v12_0_i5.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i6/pidmc_floating_point_v7_1_i6.xci</spirit:name>
+        <spirit:name>pidmc_mult_gen_v12_0_i0/pidmc_mult_gen_v12_0_i0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i7/pidmc_floating_point_v7_1_i7.xci</spirit:name>
+        <spirit:name>pidmc_mult_gen_v12_0_i1/pidmc_mult_gen_v12_0_i1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>pidmc_mult_gen_v12_0_i2/pidmc_mult_gen_v12_0_i2.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>pidmc_mult_gen_v12_0_i3/pidmc_mult_gen_v12_0_i3.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>pidmc_mult_gen_v12_0_i4/pidmc_mult_gen_v12_0_i4.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
@@ -688,42 +733,54 @@
       <spirit:file>
         <spirit:name>hdl/pidmc.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_6ddff548</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_aa814833</spirit:userFileType>
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i0/pidmc_floating_point_v7_1_i0.xci</spirit:name>
+        <spirit:name>pidmc_c_addsub_v12_0_i0/pidmc_c_addsub_v12_0_i0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i1/pidmc_floating_point_v7_1_i1.xci</spirit:name>
+        <spirit:name>pidmc_c_addsub_v12_0_i1/pidmc_c_addsub_v12_0_i1.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i2/pidmc_floating_point_v7_1_i2.xci</spirit:name>
+        <spirit:name>pidmc_c_addsub_v12_0_i2/pidmc_c_addsub_v12_0_i2.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i3/pidmc_floating_point_v7_1_i3.xci</spirit:name>
+        <spirit:name>pidmc_c_addsub_v12_0_i3/pidmc_c_addsub_v12_0_i3.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i4/pidmc_floating_point_v7_1_i4.xci</spirit:name>
+        <spirit:name>pidmc_c_addsub_v12_0_i4/pidmc_c_addsub_v12_0_i4.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i5/pidmc_floating_point_v7_1_i5.xci</spirit:name>
+        <spirit:name>pidmc_c_addsub_v12_0_i5/pidmc_c_addsub_v12_0_i5.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i6/pidmc_floating_point_v7_1_i6.xci</spirit:name>
+        <spirit:name>pidmc_mult_gen_v12_0_i0/pidmc_mult_gen_v12_0_i0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pidmc_floating_point_v7_1_i7/pidmc_floating_point_v7_1_i7.xci</spirit:name>
+        <spirit:name>pidmc_mult_gen_v12_0_i1/pidmc_mult_gen_v12_0_i1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>pidmc_mult_gen_v12_0_i2/pidmc_mult_gen_v12_0_i2.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>pidmc_mult_gen_v12_0_i3/pidmc_mult_gen_v12_0_i3.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>pidmc_mult_gen_v12_0_i4/pidmc_mult_gen_v12_0_i4.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
@@ -827,8 +884,8 @@
         <xilinx:xpmLibrary>XPM_FIFO</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>336309253</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-01-16T10:16:29Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>337693589</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2024-02-01T10:46:56Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2022.2</xilinx:xilinxVersion>
