@@ -2,7 +2,7 @@
 # Extension module to support PID block
 # model composer; variable sampling frequency; fixed point
 #
-# latest rev: jan 31 2024
+# latest rev: feb 2 2024
 #
 
 # fixed point parameter scaling
@@ -14,6 +14,7 @@ D_SCALE   = 2**7
 D_RAWMAX  = (2**12-1)
 FS_MAX    = 1e6
 FS_MIN    = 1
+FF_SCALE  = 2**10
 GI_SCALE  = 2**25
 G1D_SCALE = 2**32
 G2D_SCALE = 2**7
@@ -79,11 +80,9 @@ class PidWriter:
         fs=pid_table[number]['FS']
         gd=2.0*pid_table[number]['KD']*fs
         ff=pid_table[number]['F_FILTER']
-        if ff==0:
-            ff=float(default_pid_params['F_FILTER'])
-        # keep f_filter below Nyquist
-        if ff>=(fs/2):
-            ff=fs/2.5
+        # keep f_filter below Nyquist and non-zero
+        if ((ff==0) or (ff>=(fs/2))):
+            ff=round(fs/3.*FF_SCALE)/FF_SCALE
             pid_table[number]['F_FILTER']= ff
         R=fs/ff
         g1d=(2*R-1)/(2*R+1)*G1D_SCALE
@@ -97,31 +96,15 @@ class PidWriter:
         return(v1,v2)
 
     def parse_F_FILTER(self, number, value):
-        if value==0:
-            ff=default_pid_params['F_FILTER']
-        else:
-            ff=value
         fs=pid_table[number]['FS']
-        # keep f_filter below Nyquist
-        if ff>=(fs/2):
-            ff=fs/2.5
+        ff=value/FF_SCALE
+        # keep f_filter below Nyquist and non-zero
+        if ((ff==0) or (ff>=(fs/2))):
+            ff=round(fs/3.*FF_SCALE)/FF_SCALE
         pid_table[number]['F_FILTER']= ff
         kd=pid_table[number]['KD']*D_SCALE
         t=self.parse_KD(number,kd)
         return t
-        
-        #fs=pid_table[number]['FS']
-        #gd=2.0*pid_table[number]['KD']*fs
-        #R=fs/ff
-        #g1d=(2*R-1)/(2*R+1)*G1D_SCALE
-        #g2d=gd/(2*R+1)*G2D_SCALE
-        #v1=int(g1d)
-        #v2=int(g2d)
-        #if WRITELOG:
-        #    s=     "PID{0:d}.RESERVED_G1D={1:d}\n".format(number+1,v1)
-        #    s= s + "PID{0:d}.RESERVED_G2D={1:d}\n".format(number+1,v2)
-        #    self.logentry(s)
-        #return(v1,v2)
 
     def parse_F_SAMPLE(self, number, value):
         fs=min(FS_MAX,max(FS_MIN,value))

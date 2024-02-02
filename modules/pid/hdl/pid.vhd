@@ -11,7 +11,7 @@
 --                       - floating point
 --                       - fixed sampling frequency=1 MHz
 --
---  latest rev  : jan 31 2024
+--  latest rev  : feb 2 2024
 --
 --------------------------------------------------------------------------------
 
@@ -48,15 +48,14 @@ end pid;
 
 architecture rtl of pid is
 
-    constant WAIT_STATES   : natural := 3;
-    constant WAIT_CNTR_MAX : natural := 7;
+    constant WAIT_STATES   : natural := 5;
     
     signal pid_clkdiv_clr  : std_logic := '1';
     signal pid_res         : std_logic := '1';
     signal pid_ce_in       : std_logic;
     signal pid_ce_out, pid_ce_out_prev : std_logic;
     signal sample_clk_prev : std_logic;
-    signal wait_cntr       : natural range 0 to WAIT_CNTR_MAX :=0;
+    signal wait_cntr       : natural range 0 to WAIT_STATES :=0;
 
     component pidmc_0
         port
@@ -146,7 +145,7 @@ begin
             if ENABLE_i = '1' then
                 wait_cntr <= 0;
             else
-                if (pid_clkdiv_clr = '0') and (pid_ce_out = '1') then
+                if (pid_clkdiv_clr = '0') and (pid_ce_out = '1') and (wait_cntr/=WAIT_STATES) then
                     wait_cntr <= wait_cntr +1;
                 else
                     wait_cntr <= wait_cntr;
