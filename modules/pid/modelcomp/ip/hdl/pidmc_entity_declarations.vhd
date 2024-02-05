@@ -1486,8 +1486,6 @@ entity pidmc_xladdsub is
  component pidmc_c_addsub_v12_0_i2
     port ( 
     a: in std_logic_vector(65 - 1 downto 0);
-    clk: in std_logic:= '0';
-    ce: in std_logic:= '0';
     s: out std_logic_vector(c_output_width - 1 downto 0);
     b: in std_logic_vector(65 - 1 downto 0) 
  		  ); 
@@ -1495,21 +1493,13 @@ entity pidmc_xladdsub is
 
  component pidmc_c_addsub_v12_0_i3
     port ( 
-    a: in std_logic_vector(65 - 1 downto 0);
-    s: out std_logic_vector(c_output_width - 1 downto 0);
-    b: in std_logic_vector(65 - 1 downto 0) 
- 		  ); 
- end component;
-
- component pidmc_c_addsub_v12_0_i4
-    port ( 
     a: in std_logic_vector(34 - 1 downto 0);
     s: out std_logic_vector(c_output_width - 1 downto 0);
     b: in std_logic_vector(34 - 1 downto 0) 
  		  ); 
  end component;
 
- component pidmc_c_addsub_v12_0_i5
+ component pidmc_c_addsub_v12_0_i4
     port ( 
     a: in std_logic_vector(73 - 1 downto 0);
     s: out std_logic_vector(c_output_width - 1 downto 0);
@@ -1554,8 +1544,6 @@ begin
   core_instance2:pidmc_c_addsub_v12_0_i2
    port map ( 
          a => full_a,
-         clk => clk,
-         ce => internal_ce,
          s => core_s,
          b => full_b
   ); 
@@ -1572,15 +1560,6 @@ begin
 
  comp4: if ((core_name0 = "pidmc_c_addsub_v12_0_i4")) generate 
   core_instance4:pidmc_c_addsub_v12_0_i4
-   port map ( 
-         a => full_a,
-         s => core_s,
-         b => full_b
-  ); 
-   end generate;
-
- comp5: if ((core_name0 = "pidmc_c_addsub_v12_0_i5")) generate 
-  core_instance5:pidmc_c_addsub_v12_0_i5
    port map ( 
          a => full_a,
          s => core_s,

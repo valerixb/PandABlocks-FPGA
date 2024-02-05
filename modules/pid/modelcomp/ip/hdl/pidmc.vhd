@@ -54,35 +54,38 @@ architecture structural of pidmc_struct is
   signal addsub1_s_net : std_logic_vector( 64-1 downto 0 );
   signal addsub6_s_net : std_logic_vector( 64-1 downto 0 );
   signal delay_q_net : std_logic_vector( 64-1 downto 0 );
-  signal mult3_p_net : std_logic_vector( 64-1 downto 0 );
   signal addsub2_s_net : std_logic_vector( 64-1 downto 0 );
   signal mult1_p_net : std_logic_vector( 64-1 downto 0 );
-  signal down_sample13_q_net : std_logic_vector( 1-1 downto 0 );
+  signal delay3_q_net : std_logic_vector( 64-1 downto 0 );
   signal addsub3_s_net : std_logic_vector( 64-1 downto 0 );
   signal mux3_y_net : std_logic_vector( 64-1 downto 0 );
   signal pid_summer_s_net : std_logic_vector( 64-1 downto 0 );
+  signal convert2_dout_net : std_logic_vector( 32-1 downto 0 );
   signal addsub4_s_net : std_logic_vector( 33-1 downto 0 );
   signal mux7_y_net : std_logic_vector( 33-1 downto 0 );
   signal delay1_q_net : std_logic_vector( 33-1 downto 0 );
   signal addsub5_s_net : std_logic_vector( 64-1 downto 0 );
   signal mult2_p_net : std_logic_vector( 64-1 downto 0 );
+  signal mult3_p_net : std_logic_vector( 64-1 downto 0 );
+  signal down_sample10_q_net : std_logic_vector( 32-1 downto 0 );
   signal convert1_dout_net : std_logic_vector( 64-1 downto 0 );
   signal delay4_q_net : std_logic_vector( 64-1 downto 0 );
   signal constant_op_net : std_logic_vector( 33-1 downto 0 );
   signal convert_dout_net : std_logic_vector( 33-1 downto 0 );
   signal down_sample4_q_net : std_logic_vector( 32-1 downto 0 );
   signal mux6_y_net : std_logic_vector( 33-1 downto 0 );
-  signal convert2_dout_net : std_logic_vector( 32-1 downto 0 );
   signal convert3_dout_net : std_logic_vector( 32-1 downto 0 );
   signal down_sample6_q_net : std_logic_vector( 31-1 downto 0 );
   signal convert4_dout_net : std_logic_vector( 33-1 downto 0 );
   signal down_sample5_q_net : std_logic_vector( 32-1 downto 0 );
   signal down_sample12_q_net : std_logic_vector( 1-1 downto 0 );
+  signal down_sample13_q_net : std_logic_vector( 1-1 downto 0 );
   signal mux5_y_net : std_logic_vector( 33-1 downto 0 );
+  signal delay2_q_net : std_logic_vector( 64-1 downto 0 );
   signal mult4_p_net : std_logic_vector( 64-1 downto 0 );
   signal down_sample_q_net : std_logic_vector( 32-1 downto 0 );
   signal down_sample1_q_net : std_logic_vector( 32-1 downto 0 );
-  signal down_sample10_q_net : std_logic_vector( 32-1 downto 0 );
+  signal negate2_op_net : std_logic_vector( 32-1 downto 0 );
   signal relational1_op_net : std_logic_vector( 1-1 downto 0 );
   signal negate_op_net : std_logic_vector( 33-1 downto 0 );
   signal mux4_y_net : std_logic_vector( 32-1 downto 0 );
@@ -99,9 +102,9 @@ architecture structural of pidmc_struct is
   signal mux_y_net : std_logic_vector( 64-1 downto 0 );
   signal relational_op_net : std_logic_vector( 1-1 downto 0 );
   signal negate1_op_net : std_logic_vector( 32-1 downto 0 );
-  signal negate2_op_net : std_logic_vector( 32-1 downto 0 );
   signal negate3_op_net : std_logic_vector( 34-1 downto 0 );
   signal pi_summer_s_net : std_logic_vector( 64-1 downto 0 );
+  signal delay5_q_net : std_logic_vector( 64-1 downto 0 );
 begin
   aiw_g_net <= aiw_g;
   ce_net_x0 <= ce;
@@ -194,16 +197,13 @@ begin
     b_bin_pt => 62,
     b_width => 64,
     c_has_c_out => 0,
-    c_latency => 1,
+    c_latency => 0,
     c_output_width => 65,
-    core_name0 => "pidmc_c_addsub_v12_0_i2",
-    en_arith => xlUnsigned,
-    en_bin_pt => 0,
-    en_width => 1,
+    core_name0 => "pidmc_c_addsub_v12_0_i1",
     extra_registers => 0,
     full_s_arith => 2,
     full_s_width => 65,
-    latency => 1,
+    latency => 0,
     overflow => 2,
     quantization => 1,
     s_arith => xlSigned,
@@ -212,9 +212,9 @@ begin
   )
   port map (
     clr => '0',
+    en => "1",
     a => mult1_p_net,
-    b => addsub2_s_net,
-    en => down_sample13_q_net,
+    b => delay3_q_net,
     clk => clk_net,
     ce => ce_net,
     s => addsub2_s_net
@@ -230,7 +230,7 @@ begin
     c_has_c_out => 0,
     c_latency => 0,
     c_output_width => 65,
-    core_name0 => "pidmc_c_addsub_v12_0_i3",
+    core_name0 => "pidmc_c_addsub_v12_0_i2",
     extra_registers => 0,
     full_s_arith => 2,
     full_s_width => 65,
@@ -261,7 +261,7 @@ begin
     c_has_c_out => 0,
     c_latency => 0,
     c_output_width => 34,
-    core_name0 => "pidmc_c_addsub_v12_0_i4",
+    core_name0 => "pidmc_c_addsub_v12_0_i3",
     extra_registers => 0,
     full_s_arith => 2,
     full_s_width => 34,
@@ -290,16 +290,13 @@ begin
     b_bin_pt => 62,
     b_width => 64,
     c_has_c_out => 0,
-    c_latency => 1,
+    c_latency => 0,
     c_output_width => 65,
-    core_name0 => "pidmc_c_addsub_v12_0_i2",
-    en_arith => xlUnsigned,
-    en_bin_pt => 0,
-    en_width => 1,
+    core_name0 => "pidmc_c_addsub_v12_0_i1",
     extra_registers => 0,
     full_s_arith => 2,
     full_s_width => 65,
-    latency => 1,
+    latency => 0,
     overflow => 2,
     quantization => 1,
     s_arith => xlSigned,
@@ -308,9 +305,9 @@ begin
   )
   port map (
     clr => '0',
+    en => "1",
     a => mult2_p_net,
     b => mult3_p_net,
-    en => down_sample13_q_net,
     clk => clk_net,
     ce => ce_net,
     s => addsub5_s_net
@@ -326,7 +323,7 @@ begin
     c_has_c_out => 0,
     c_latency => 0,
     c_output_width => 73,
-    core_name0 => "pidmc_c_addsub_v12_0_i5",
+    core_name0 => "pidmc_c_addsub_v12_0_i4",
     extra_registers => 0,
     full_s_arith => 2,
     full_s_width => 73,
@@ -488,6 +485,26 @@ begin
     clk => clk_net,
     ce => ce_net,
     q => delay1_q_net
+  );
+  delay2 : entity xil_defaultlib.sysgen_delay_ad5e453ba8 
+  port map (
+    clr => '0',
+    d => addsub5_s_net,
+    rst => down_sample12_q_net,
+    en => down_sample13_q_net,
+    clk => clk_net,
+    ce => ce_net,
+    q => delay2_q_net
+  );
+  delay3 : entity xil_defaultlib.sysgen_delay_ad5e453ba8 
+  port map (
+    clr => '0',
+    d => addsub2_s_net,
+    rst => down_sample12_q_net,
+    en => down_sample13_q_net,
+    clk => clk_net,
+    ce => ce_net,
+    q => delay3_q_net
   );
   delay4 : entity xil_defaultlib.sysgen_delay_ad5e453ba8 
   port map (
@@ -860,10 +877,7 @@ begin
     c_output_width => 65,
     c_type => 0,
     core_name0 => "pidmc_mult_gen_v12_0_i0",
-    en_arith => xlUnsigned,
-    en_bin_pt => 0,
-    en_width => 1,
-    extra_registers => 1,
+    extra_registers => 0,
     multsign => 2,
     overflow => 2,
     p_arith => xlSigned,
@@ -874,10 +888,10 @@ begin
   port map (
     clr => '0',
     core_clr => '1',
+    en => "1",
     rst => "0",
     a => convert3_dout_net,
     b => mux6_y_net,
-    en => down_sample13_q_net,
     clk => clk_net,
     ce => ce_net,
     core_clk => clk_net,
@@ -987,7 +1001,7 @@ begin
     core_clr => '1',
     en => "1",
     rst => "0",
-    a => addsub5_s_net,
+    a => delay2_q_net,
     b => down_sample10_q_net,
     clk => clk_net,
     ce => ce_net,
@@ -1170,7 +1184,7 @@ begin
     clr => '0',
     en => "1",
     a => pi_summer_s_net,
-    b => addsub5_s_net,
+    b => delay2_q_net,
     clk => clk_net,
     ce => ce_net,
     s => pid_summer_s_net
@@ -1200,8 +1214,8 @@ begin
   port map (
     clr => '0',
     en => "1",
-    a => mult_p_net,
-    b => addsub2_s_net,
+    a => delay5_q_net,
+    b => delay3_q_net,
     clk => clk_net,
     ce => ce_net,
     s => pi_summer_s_net
@@ -1263,6 +1277,16 @@ begin
     dest_clk => src_clk_net,
     dest_ce => src_ce_net,
     q => up_sample_q_net
+  );
+  delay5 : entity xil_defaultlib.sysgen_delay_ad5e453ba8 
+  port map (
+    clr => '0',
+    d => mult_p_net,
+    rst => down_sample12_q_net,
+    en => down_sample13_q_net,
+    clk => clk_net,
+    ce => ce_net,
+    q => delay5_q_net
   );
 end structural;
 -- Generated from Simulink block 
@@ -1337,7 +1361,7 @@ entity pidmc is
 end pidmc;
 architecture structural of pidmc is 
   attribute core_generation_info : string;
-  attribute core_generation_info of structural : architecture is "pidmc,sysgen_core_2022_2,{,compilation=IP Catalog,block_icon_display=Default,family=zynq,part=xc7z030,speed=-1,package=sbg485,synthesis_language=vhdl,hdl_library=xil_defaultlib,synthesis_strategy=Vivado Synthesis Defaults,implementation_strategy=Vivado Implementation Defaults,testbench=0,interface_doc=0,ce_clr=1,clock_period=8,system_simulink_period=8e-09,waveform_viewer=0,axilite_interface=0,ip_catalog_plugin=0,hwcosim_burst_mode=0,simulation_time=0.15,addsub=9,ceprobe=1,constant=1,convert=5,delay=3,dsamp=14,logical=1,mult=5,mux=8,negate=4,relational=4,usamp=1,}";
+  attribute core_generation_info of structural : architecture is "pidmc,sysgen_core_2022_2,{,compilation=IP Catalog,block_icon_display=Default,family=zynq,part=xc7z030,speed=-1,package=sbg485,synthesis_language=vhdl,hdl_library=xil_defaultlib,synthesis_strategy=Vivado Synthesis Defaults,implementation_strategy=Vivado Implementation Defaults,testbench=0,interface_doc=0,ce_clr=1,clock_period=8,system_simulink_period=8e-09,waveform_viewer=0,axilite_interface=0,ip_catalog_plugin=0,hwcosim_burst_mode=0,simulation_time=0.15,addsub=9,ceprobe=1,constant=1,convert=5,delay=6,dsamp=14,logical=1,mult=5,mux=8,negate=4,relational=4,usamp=1,}";
   signal clk_1_net : std_logic;
   signal ce_1_net : std_logic;
   signal clk_125_net : std_logic;

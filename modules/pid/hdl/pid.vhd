@@ -48,7 +48,7 @@ end pid;
 
 architecture rtl of pid is
 
-    constant WAIT_STATES   : natural := 5;
+    constant WAIT_STATES   : natural := 4;
     
     signal pid_clkdiv_clr  : std_logic := '1';
     signal pid_res         : std_logic := '1';
