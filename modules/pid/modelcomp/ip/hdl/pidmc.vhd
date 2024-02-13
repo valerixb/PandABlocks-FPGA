@@ -67,7 +67,6 @@ architecture structural of pidmc_struct is
   signal addsub5_s_net : std_logic_vector( 64-1 downto 0 );
   signal mult2_p_net : std_logic_vector( 64-1 downto 0 );
   signal mult3_p_net : std_logic_vector( 64-1 downto 0 );
-  signal down_sample10_q_net : std_logic_vector( 32-1 downto 0 );
   signal convert1_dout_net : std_logic_vector( 64-1 downto 0 );
   signal delay4_q_net : std_logic_vector( 64-1 downto 0 );
   signal constant_op_net : std_logic_vector( 33-1 downto 0 );
@@ -83,12 +82,15 @@ architecture structural of pidmc_struct is
   signal mux5_y_net : std_logic_vector( 33-1 downto 0 );
   signal delay2_q_net : std_logic_vector( 64-1 downto 0 );
   signal mult4_p_net : std_logic_vector( 64-1 downto 0 );
+  signal delay5_q_net : std_logic_vector( 64-1 downto 0 );
+  signal mult_p_net : std_logic_vector( 64-1 downto 0 );
   signal down_sample_q_net : std_logic_vector( 32-1 downto 0 );
   signal down_sample1_q_net : std_logic_vector( 32-1 downto 0 );
+  signal negate1_op_net : std_logic_vector( 32-1 downto 0 );
   signal negate2_op_net : std_logic_vector( 32-1 downto 0 );
   signal relational1_op_net : std_logic_vector( 1-1 downto 0 );
   signal negate_op_net : std_logic_vector( 33-1 downto 0 );
-  signal mux4_y_net : std_logic_vector( 32-1 downto 0 );
+  signal down_sample10_q_net : std_logic_vector( 32-1 downto 0 );
   signal down_sample11_q_net : std_logic_vector( 32-1 downto 0 );
   signal down_sample2_q_net : std_logic_vector( 1-1 downto 0 );
   signal down_sample3_q_net : std_logic_vector( 1-1 downto 0 );
@@ -98,13 +100,11 @@ architecture structural of pidmc_struct is
   signal logical_y_net : std_logic_vector( 1-1 downto 0 );
   signal relational2_op_net : std_logic_vector( 1-1 downto 0 );
   signal relational3_op_net : std_logic_vector( 1-1 downto 0 );
-  signal mult_p_net : std_logic_vector( 64-1 downto 0 );
   signal mux_y_net : std_logic_vector( 64-1 downto 0 );
   signal relational_op_net : std_logic_vector( 1-1 downto 0 );
-  signal negate1_op_net : std_logic_vector( 32-1 downto 0 );
+  signal mux4_y_net : std_logic_vector( 32-1 downto 0 );
   signal negate3_op_net : std_logic_vector( 34-1 downto 0 );
   signal pi_summer_s_net : std_logic_vector( 64-1 downto 0 );
-  signal delay5_q_net : std_logic_vector( 64-1 downto 0 );
 begin
   aiw_g_net <= aiw_g;
   ce_net_x0 <= ce;
@@ -414,7 +414,7 @@ begin
     dout_width => 32,
     latency => 0,
     overflow => xlSaturate,
-    quantization => xlRound
+    quantization => xlTruncate
   )
   port map (
     clr => '0',
@@ -515,6 +515,16 @@ begin
     clk => clk_net,
     ce => ce_net,
     q => delay4_q_net
+  );
+  delay5 : entity xil_defaultlib.sysgen_delay_ad5e453ba8 
+  port map (
+    clr => '0',
+    d => mult_p_net,
+    rst => down_sample12_q_net,
+    en => down_sample13_q_net,
+    clk => clk_net,
+    ce => ce_net,
+    q => delay5_q_net
   );
   down_sample : entity xil_defaultlib.pidmc_xldsamp 
   generic map (
@@ -1277,16 +1287,6 @@ begin
     dest_clk => src_clk_net,
     dest_ce => src_ce_net,
     q => up_sample_q_net
-  );
-  delay5 : entity xil_defaultlib.sysgen_delay_ad5e453ba8 
-  port map (
-    clr => '0',
-    d => mult_p_net,
-    rst => down_sample12_q_net,
-    en => down_sample13_q_net,
-    clk => clk_net,
-    ce => ce_net,
-    q => delay5_q_net
   );
 end structural;
 -- Generated from Simulink block 
