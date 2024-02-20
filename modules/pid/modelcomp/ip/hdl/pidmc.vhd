@@ -1361,7 +1361,7 @@ entity pidmc is
 end pidmc;
 architecture structural of pidmc is 
   attribute core_generation_info : string;
-  attribute core_generation_info of structural : architecture is "pidmc,sysgen_core_2022_2,{,compilation=IP Catalog,block_icon_display=Default,family=zynq,part=xc7z030,speed=-1,package=sbg485,synthesis_language=vhdl,hdl_library=xil_defaultlib,synthesis_strategy=Vivado Synthesis Defaults,implementation_strategy=Vivado Implementation Defaults,testbench=0,interface_doc=0,ce_clr=1,clock_period=8,system_simulink_period=8e-09,waveform_viewer=0,axilite_interface=0,ip_catalog_plugin=0,hwcosim_burst_mode=0,simulation_time=0.15,addsub=9,ceprobe=1,constant=1,convert=5,delay=6,dsamp=14,logical=1,mult=5,mux=8,negate=4,relational=4,usamp=1,}";
+  attribute core_generation_info of structural : architecture is "pidmc,sysgen_core_2022_2,{,compilation=IP Catalog,block_icon_display=Default,family=zynq,part=xc7z030,speed=-1,package=sbg485,synthesis_language=vhdl,hdl_library=xil_defaultlib,synthesis_strategy=Vivado Synthesis Defaults,implementation_strategy=Vivado Implementation Defaults,testbench=0,interface_doc=0,ce_clr=1,clock_period=8,system_simulink_period=8e-09,waveform_viewer=0,axilite_interface=0,ip_catalog_plugin=0,hwcosim_burst_mode=0,simulation_time=0.05,addsub=9,ceprobe=1,constant=1,convert=5,delay=6,dsamp=14,logical=1,mult=5,mux=8,negate=4,relational=4,usamp=1,}";
   signal clk_1_net : std_logic;
   signal ce_1_net : std_logic;
   signal clk_125_net : std_logic;

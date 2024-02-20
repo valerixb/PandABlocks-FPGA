@@ -1,23 +1,18 @@
 %-------- input values -------
 maxSampleRate = 1e6;     % max Sampling rate, Hz
-%SampleRate = 10.e3;        % actual Sampling rate, Hz, achieved through a CE pin
 SampleRate = 100.e3;        % actual Sampling rate, Hz, achieved through a CE pin
 FPGA_CLK_MHZ = 125;
-%kp= 1.3;                 % proportional gain
-kp= 2.5;                 % proportional gain
-%ki= 0.5;                 % integral gain
-ki= 0.0;                 % integral gain
-%kd= 0.07;                 % derivative gain
-kd= 0.0;                 % derivative gain
+kp= 1.3;                 % proportional gain
+ki= 0.5;                 % integral gain
+kd= 0.07;                 % derivative gain
 f_filter=500;           % Hz, cutoff freq for derivative filter
 aiw_G=1;                 % anti integral windup fractional gain (kb/ki)
 max_control=0.9;         % output saturation value
 input_threshold=0.0;     % detent ;-)
-VHDL_fast_latency_cycles = 3; % FPGA latency in clock cycles
-%VHDL_fast_latency_cycles = 1; % FPGA latency in clock cycles
-VHDL_slow_latency_cycles = 0; % FPGA latency in clock cycles
+VHDL_fast_latency_cycles = 3; % FPGA latency in FPGA clock cycles
+VHDL_slow_latency_cycles = 0; % FPGA latency in PID sampling clock cycles
 matlab_discrete_PID_latency = 1; % matlab discrete PID always has 1 clock cycle latency
-% inizialize a 10component input vector to avoid simulink errors when
+% inizialize a 1-component input vector to avoid simulink errors when
 % there are no actual panda data to load
 pidin=[0 0];
 %-------- round parameters to their integer representation
@@ -27,6 +22,8 @@ kp=round(kp*2^23)/2^23;
 ki=round(ki*2^4)/2^4;
 % kd is ufix12_En7
 kd=round(kd*2^7)/2^7;
+% f_filter is ufix30_En10
+f_filter=round(f_filter*2^10)/2^10;
 %-------- calculated values -------
 Ts = 1/SampleRate;       % Sampling period, sec
 R=SampleRate/f_filter;
@@ -37,11 +34,14 @@ G2D= Gd/(2*R+1);
 %-------- round Gxx -------
 % kp=Gp, so it's already rounded
 % Gi  is ufix32en25
-Gi=round(Gi*2^25)/2^25;
+%Gi=round(Gi*2^25)/2^25;
+Gi=floor(Gi*2^25)/2^25;
 % G1D is ufix32en32
-G1D=round(G1D*2^32)/2^32;
+%G1D=round(G1D*2^32)/2^32;
+G1D=floor(G1D*2^32)/2^32;
 % G2D is ufix32en7
-G2D=round(G2D*2^7)/2^7;
+%G2D=round(G2D*2^7)/2^7;
+G2D=floor(G2D*2^7)/2^7;
 %-------- now calculate back the kxx to be fed to simulink PID ----------
 % don't need to recalc kp
 ki=2*Gi/Ts;

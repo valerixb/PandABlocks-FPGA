@@ -129,11 +129,7 @@ begin
                 end if;
             else
                 pid_clkdiv_clr  <= '0';
-                if (pid_res = '1') and (pid_ce_out = '1') then
-                    pid_res <= '0';
-                else
-                    pid_res <= pid_res;
-                end if;
+                pid_res <= '0';
             end if;
         end if;
     end process reset_process;
