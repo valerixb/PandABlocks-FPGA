@@ -2,7 +2,7 @@
 # Extension module to support PID block
 # model composer; variable sampling frequency; fixed point
 #
-# latest rev: feb 2 2024
+# latest rev: feb 23 2024
 #
 
 # fixed point parameter scaling
@@ -80,9 +80,9 @@ class PidWriter:
         fs=pid_table[number]['FS']
         gd=2.0*pid_table[number]['KD']*fs
         ff=pid_table[number]['F_FILTER']
-        # keep f_filter below Nyquist and non-zero
-        if ((ff==0) or (ff>=(fs/2))):
-            ff=round(fs/3.*FF_SCALE)/FF_SCALE
+        # keep f_filter below Fs/4 (for bilinear convergence) and non-zero
+        if ((ff==0) or (ff>=(fs/4.))):
+            ff=round(fs/5.*FF_SCALE)/FF_SCALE
             pid_table[number]['F_FILTER']= ff
         R=fs/ff
         g1d=(2*R-1)/(2*R+1)*G1D_SCALE
@@ -98,9 +98,9 @@ class PidWriter:
     def parse_F_FILTER(self, number, value):
         fs=pid_table[number]['FS']
         ff=value/FF_SCALE
-        # keep f_filter below Nyquist and non-zero
-        if ((ff==0) or (ff>=(fs/2))):
-            ff=round(fs/3.*FF_SCALE)/FF_SCALE
+        # keep f_filter below Fs/4 (for bilinear convergence) and non-zero
+        if ((ff==0) or (ff>=(fs/4.))):
+            ff=round(fs/5.*FF_SCALE)/FF_SCALE
         pid_table[number]['F_FILTER']= ff
         kd=pid_table[number]['KD']*D_SCALE
         t=self.parse_KD(number,kd)
