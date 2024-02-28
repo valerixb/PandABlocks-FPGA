@@ -1,0 +1,13 @@
+#!/bin/bash
+set -x # echo on
+virtualenv venv
+source venv/bin/activate
+#pip install --upgrade pip
+#pip install -r tests/requirements.txt
+#pip install sphinx
+#pip install sphinx-rtd-theme
+#pip install matplotlib
+make clean-all
+make ip_clean
+make
+#make boot

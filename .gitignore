@@ -1,4 +1,4 @@
-/CONFIG
+#/CONFIG
 /build
 /docs/build
 *.pyc
@@ -7,7 +7,7 @@
 *.jou
 *.log
 .Xil
-makepanda
+#makepanda
 
 # virtual environment folder
 /venv

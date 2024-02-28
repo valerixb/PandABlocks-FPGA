@@ -1,0 +1,169 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xB96927C000C8F17C",
+      "design_src": "SYSGEN",
+      "device": "xc7z030sbg485-1",
+      "gen_directory": "../../../../singenmc.gen/sources_1/bd/singenmc_bd",
+      "name": "singenmc_bd",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2023.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "singenmc_1": ""
+    },
+    "ports": {
+      "ampl": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "ce_out": {
+        "type": "data",
+        "direction": "O",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "singenmc_bd_clk",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "clr": {
+        "type": "data",
+        "direction": "I",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "rational_freq": {
+        "type": "data",
+        "direction": "I",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "reset_n": {
+        "type": "data",
+        "direction": "I",
+        "left": "0",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "sine_out": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "singenmc_1": {
+        "vlnv": "MaxIV:Panda_ModelComp:singenmc:1.0",
+        "ip_revision": "339856383",
+        "xci_name": "singenmc_bd_singenmc_1_0",
+        "xci_path": "ip/singenmc_bd_singenmc_1_0/singenmc_bd_singenmc_1_0.xci",
+        "inst_hier_path": "singenmc_1"
+      }
+    },
+    "nets": {
+      "ampl_1": {
+        "ports": [
+          "ampl",
+          "singenmc_1/ampl"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "singenmc_1/clk"
+        ]
+      },
+      "clr_1": {
+        "ports": [
+          "clr",
+          "singenmc_1/clr"
+        ]
+      },
+      "rational_freq_1": {
+        "ports": [
+          "rational_freq",
+          "singenmc_1/rational_freq"
+        ]
+      },
+      "reset_n_1": {
+        "ports": [
+          "reset_n",
+          "singenmc_1/reset_n"
+        ]
+      },
+      "singenmc_1_ce_out": {
+        "ports": [
+          "singenmc_1/ce_out",
+          "ce_out"
+        ]
+      },
+      "singenmc_1_sine_out": {
+        "ports": [
+          "singenmc_1/sine_out",
+          "sine_out"
+        ]
+      }
+    }
+  }
+}

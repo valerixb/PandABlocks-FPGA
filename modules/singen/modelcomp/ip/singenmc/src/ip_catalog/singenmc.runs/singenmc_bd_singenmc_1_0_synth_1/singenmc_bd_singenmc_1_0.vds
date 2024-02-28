@@ -1,0 +1,689 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Feb 26 12:33:43 2024
+# Process ID: 6903
+# Current directory: /xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.runs/singenmc_bd_singenmc_1_0_synth_1
+# Command line: vivado -log singenmc_bd_singenmc_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source singenmc_bd_singenmc_1_0.tcl
+# Log file: /xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.runs/singenmc_bd_singenmc_1_0_synth_1/singenmc_bd_singenmc_1_0.vds
+# Journal file: /xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.runs/singenmc_bd_singenmc_1_0_synth_1/vivado.jou
+# Running On: ub2020p4p3vm, OS: Linux, CPU Frequency: 1992.001 MHz, CPU Physical cores: 3, Host memory: 10437 MB
+#-----------------------------------------------------------
+source singenmc_bd_singenmc_1_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1343.926 ; gain = 36.836 ; free physical = 1102 ; free virtual = 24353
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.runs/singenmc_bd_singenmc_1_0_synth_1'.)
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2023.2/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: singenmc_bd_singenmc_1_0
+Command: synth_design -top singenmc_bd_singenmc_1_0 -part xc7z030sbg485-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z030'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z030'
+INFO: [Device 21-403] Loading part xc7z030sbg485-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 6909
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2134.805 ; gain = 404.629 ; free physical = 129 ; free virtual = 23300
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'singenmc_bd_singenmc_1_0' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/synth/singenmc_bd_singenmc_1_0.vhd:71]
+INFO: [Synth 8-3491] module 'singenmc' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc.vhd:298' bound to instance 'U0' of component 'singenmc' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/synth/singenmc_bd_singenmc_1_0.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'singenmc' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc.vhd:309]
+INFO: [Synth 8-638] synthesizing module 'singenmc_default_clock_driver' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc.vhd:266]
+INFO: [Synth 8-638] synthesizing module 'xlclockdriver' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:59]
+	Parameter width bound to: 1 - type: integer 
+	Parameter init_index bound to: 0 - type: integer 
+	Parameter init_value bound to: 4'b0000 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_w_init.vhd:31' bound to instance 'clr_reg' of component 'synth_reg_w_init' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:236]
+INFO: [Synth 8-638] synthesizing module 'synth_reg_w_init' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_w_init.vhd:47]
+	Parameter width bound to: 1 - type: integer 
+	Parameter init_index bound to: 0 - type: integer 
+	Parameter init_value bound to: 4'b0000 
+INFO: [Synth 8-3491] module 'single_reg_w_init' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/single_reg_w_init.vhd:22' bound to instance 'reg_comp' of component 'single_reg_w_init' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_w_init.vhd:79]
+INFO: [Synth 8-638] synthesizing module 'single_reg_w_init' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/single_reg_w_init.vhd:37]
+INFO: [Synth 8-113] binding component instance 'fdre_comp' to cell 'FDRE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/single_reg_w_init.vhd:86]
+INFO: [Synth 8-256] done synthesizing module 'single_reg_w_init' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/single_reg_w_init.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'synth_reg_w_init' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_w_init.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'xlclockdriver' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:59]
+INFO: [Synth 8-638] synthesizing module 'xlclockdriver__parameterized0' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:59]
+	Parameter width bound to: 1 - type: integer 
+	Parameter init_index bound to: 0 - type: integer 
+	Parameter init_value bound to: 4'b0000 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_w_init.vhd:31' bound to instance 'clr_reg' of component 'synth_reg_w_init' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:236]
+	Parameter width bound to: 1 - type: integer 
+	Parameter init_index bound to: 0 - type: integer 
+	Parameter init_value bound to: 4'b0000 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_reg' of component 'synth_reg_w_init' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:262]
+	Parameter width bound to: 1 - type: integer 
+	Parameter init_index bound to: 0 - type: integer 
+	Parameter init_value bound to: 4'b0000 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_reg' of component 'synth_reg_w_init' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:262]
+	Parameter width bound to: 1 - type: integer 
+	Parameter init_index bound to: 0 - type: integer 
+	Parameter init_value bound to: 4'b0000 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_reg' of component 'synth_reg_w_init' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:262]
+	Parameter width bound to: 1 - type: integer 
+	Parameter init_index bound to: 0 - type: integer 
+	Parameter init_value bound to: 4'b0000 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_reg' of component 'synth_reg_w_init' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:262]
+	Parameter width bound to: 1 - type: integer 
+	Parameter init_index bound to: 0 - type: integer 
+	Parameter init_value bound to: 4'b0000 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_reg' of component 'synth_reg_w_init' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:262]
+	Parameter width bound to: 1 - type: integer 
+	Parameter init_index bound to: 0 - type: integer 
+	Parameter init_value bound to: 4'b0000 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_logic_reg' of component 'synth_reg_w_init' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:291]
+	Parameter width bound to: 1 - type: integer 
+	Parameter init_index bound to: 0 - type: integer 
+	Parameter init_value bound to: 4'b0000 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_logic_reg' of component 'synth_reg_w_init' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:291]
+	Parameter width bound to: 1 - type: integer 
+	Parameter init_index bound to: 0 - type: integer 
+	Parameter init_value bound to: 4'b0000 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_logic_reg' of component 'synth_reg_w_init' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:291]
+	Parameter width bound to: 1 - type: integer 
+	Parameter init_index bound to: 0 - type: integer 
+	Parameter init_value bound to: 4'b0000 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_logic_reg' of component 'synth_reg_w_init' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:291]
+	Parameter width bound to: 1 - type: integer 
+	Parameter init_index bound to: 0 - type: integer 
+	Parameter init_value bound to: 4'b0000 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg_w_init' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_w_init.vhd:31' bound to instance 'ce_logic_reg' of component 'synth_reg_w_init' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:291]
+INFO: [Synth 8-256] done synthesizing module 'xlclockdriver__parameterized0' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:59]
+INFO: [Synth 8-256] done synthesizing module 'singenmc_default_clock_driver' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc.vhd:266]
+INFO: [Synth 8-638] synthesizing module 'singenmc_struct' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc.vhd:19]
+INFO: [Synth 8-638] synthesizing module 'singenmc_xlceprobe' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:72]
+INFO: [Synth 8-113] binding component instance 'buf_comp' to cell 'BUF' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:82]
+INFO: [Synth 8-256] done synthesizing module 'singenmc_xlceprobe' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:72]
+INFO: [Synth 8-638] synthesizing module 'sysgen_constant_4b89a017e0' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:100]
+INFO: [Synth 8-256] done synthesizing module 'sysgen_constant_4b89a017e0' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:100]
+INFO: [Synth 8-638] synthesizing module 'singenmc_xlconvert' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:194]
+	Parameter din_width bound to: 32 - type: integer 
+	Parameter din_bin_pt bound to: 31 - type: integer 
+	Parameter din_arith bound to: 2 - type: integer 
+	Parameter dout_width bound to: 24 - type: integer 
+	Parameter dout_bin_pt bound to: 24 - type: integer 
+	Parameter dout_arith bound to: 1 - type: integer 
+	Parameter quantization bound to: 1 - type: integer 
+	Parameter overflow bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'convert_func_call_singenmc_xlconvert' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:138' bound to instance 'convert' of component 'convert_func_call_singenmc_xlconvert' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:246]
+INFO: [Synth 8-638] synthesizing module 'convert_func_call_singenmc_xlconvert' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:153]
+INFO: [Synth 8-256] done synthesizing module 'convert_func_call_singenmc_xlconvert' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:153]
+	Parameter width bound to: 24 - type: integer 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg.vhd:20' bound to instance 'reg' of component 'synth_reg' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:262]
+INFO: [Synth 8-638] synthesizing module 'synth_reg' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg.vhd:30]
+	Parameter width bound to: 24 - type: integer 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'srlc33e' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:22' bound to instance 'last_srlc33e' of component 'srlc33e' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'srlc33e' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:31]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-256] done synthesizing module 'srlc33e' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'synth_reg' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'singenmc_xlconvert' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:194]
+INFO: [Synth 8-638] synthesizing module 'singenmc_xlconvert__parameterized0' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:194]
+	Parameter din_width bound to: 32 - type: integer 
+	Parameter din_bin_pt bound to: 30 - type: integer 
+	Parameter din_arith bound to: 2 - type: integer 
+	Parameter dout_width bound to: 15 - type: integer 
+	Parameter dout_bin_pt bound to: 13 - type: integer 
+	Parameter dout_arith bound to: 1 - type: integer 
+	Parameter quantization bound to: 1 - type: integer 
+	Parameter overflow bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'convert_func_call_singenmc_xlconvert' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:138' bound to instance 'convert' of component 'convert_func_call_singenmc_xlconvert' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:246]
+INFO: [Synth 8-638] synthesizing module 'convert_func_call_singenmc_xlconvert__parameterized1' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:153]
+INFO: [Synth 8-256] done synthesizing module 'convert_func_call_singenmc_xlconvert__parameterized1' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:153]
+	Parameter width bound to: 15 - type: integer 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg.vhd:20' bound to instance 'reg' of component 'synth_reg' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:262]
+INFO: [Synth 8-638] synthesizing module 'synth_reg__parameterized1' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg.vhd:30]
+	Parameter width bound to: 15 - type: integer 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'srlc33e' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:22' bound to instance 'last_srlc33e' of component 'srlc33e' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'srlc33e__parameterized1' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:31]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-256] done synthesizing module 'srlc33e__parameterized1' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'synth_reg__parameterized1' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'singenmc_xlconvert__parameterized0' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:194]
+INFO: [Synth 8-638] synthesizing module 'xldds_compiler_fff68277c7f6cf71cad056fa8277dafa' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:706]
+INFO: [Synth 8-3491] module 'singenmc_dds_compiler_v6_0_i0' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_dds_compiler_v6_0_i0/synth/singenmc_dds_compiler_v6_0_i0.vhd:59' bound to instance 'singenmc_dds_compiler_v6_0_i0_instance' of component 'singenmc_dds_compiler_v6_0_i0' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:725]
+INFO: [Synth 8-638] synthesizing module 'singenmc_dds_compiler_v6_0_i0' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_dds_compiler_v6_0_i0/synth/singenmc_dds_compiler_v6_0_i0.vhd:71]
+WARNING: [Synth 8-5640] Port 'debug_axi_pinc_in' is missing in component declaration [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_dds_compiler_v6_0_i0/synth/singenmc_dds_compiler_v6_0_i0.vhd:74]
+WARNING: [Synth 8-5640] Port 'debug_axi_poff_in' is missing in component declaration [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_dds_compiler_v6_0_i0/synth/singenmc_dds_compiler_v6_0_i0.vhd:74]
+WARNING: [Synth 8-5640] Port 'debug_axi_resync_in' is missing in component declaration [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_dds_compiler_v6_0_i0/synth/singenmc_dds_compiler_v6_0_i0.vhd:74]
+WARNING: [Synth 8-5640] Port 'debug_axi_chan_in' is missing in component declaration [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_dds_compiler_v6_0_i0/synth/singenmc_dds_compiler_v6_0_i0.vhd:74]
+WARNING: [Synth 8-5640] Port 'debug_core_nd' is missing in component declaration [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_dds_compiler_v6_0_i0/synth/singenmc_dds_compiler_v6_0_i0.vhd:74]
+WARNING: [Synth 8-5640] Port 'debug_phase' is missing in component declaration [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_dds_compiler_v6_0_i0/synth/singenmc_dds_compiler_v6_0_i0.vhd:74]
+WARNING: [Synth 8-5640] Port 'debug_phase_nd' is missing in component declaration [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_dds_compiler_v6_0_i0/synth/singenmc_dds_compiler_v6_0_i0.vhd:74]
+	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
+	Parameter C_MODE_OF_OPERATION bound to: 0 - type: integer 
+	Parameter C_MODULUS bound to: 9 - type: integer 
+	Parameter C_ACCUMULATOR_WIDTH bound to: 24 - type: integer 
+	Parameter C_CHANNELS bound to: 1 - type: integer 
+	Parameter C_HAS_PHASE_OUT bound to: 0 - type: integer 
+	Parameter C_HAS_PHASEGEN bound to: 1 - type: integer 
+	Parameter C_HAS_SINCOS bound to: 1 - type: integer 
+	Parameter C_LATENCY bound to: 9 - type: integer 
+	Parameter C_MEM_TYPE bound to: 1 - type: integer 
+	Parameter C_NEGATIVE_COSINE bound to: 0 - type: integer 
+	Parameter C_NEGATIVE_SINE bound to: 0 - type: integer 
+	Parameter C_NOISE_SHAPING bound to: 1 - type: integer 
+	Parameter C_OUTPUTS_REQUIRED bound to: 0 - type: integer 
+	Parameter C_OUTPUT_FORM bound to: 0 - type: integer 
+	Parameter C_OUTPUT_WIDTH bound to: 14 - type: integer 
+	Parameter C_PHASE_ANGLE_WIDTH bound to: 12 - type: integer 
+	Parameter C_PHASE_INCREMENT bound to: 3 - type: integer 
+	Parameter C_PHASE_INCREMENT_VALUE bound to: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 - type: string 
+	Parameter C_RESYNC bound to: 0 - type: integer 
+	Parameter C_PHASE_OFFSET bound to: 0 - type: integer 
+	Parameter C_PHASE_OFFSET_VALUE bound to: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 - type: string 
+	Parameter C_OPTIMISE_GOAL bound to: 0 - type: integer 
+	Parameter C_USE_DSP48 bound to: 1 - type: integer 
+	Parameter C_POR_MODE bound to: 0 - type: integer 
+	Parameter C_AMPLITUDE bound to: 1 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 1 - type: integer 
+	Parameter C_HAS_ARESETN bound to: 1 - type: integer 
+	Parameter C_HAS_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_TREADY bound to: 0 - type: integer 
+	Parameter C_HAS_S_PHASE bound to: 1 - type: integer 
+	Parameter C_S_PHASE_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_S_PHASE_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_S_PHASE_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_S_CONFIG bound to: 0 - type: integer 
+	Parameter C_S_CONFIG_SYNC_MODE bound to: 0 - type: integer 
+	Parameter C_S_CONFIG_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_M_DATA bound to: 1 - type: integer 
+	Parameter C_M_DATA_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_M_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_M_PHASE bound to: 0 - type: integer 
+	Parameter C_M_PHASE_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_PHASE_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_PHASE_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_CHAN_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'dds_compiler_v6_0_23' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_dds_compiler_v6_0_i0/hdl/dds_compiler_v6_0_vh_rfs.vhd:46995' bound to instance 'U0' of component 'dds_compiler_v6_0_23' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_dds_compiler_v6_0_i0/synth/singenmc_dds_compiler_v6_0_i0.vhd:180]
+INFO: [Synth 8-256] done synthesizing module 'singenmc_dds_compiler_v6_0_i0' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_dds_compiler_v6_0_i0/synth/singenmc_dds_compiler_v6_0_i0.vhd:71]
+INFO: [Synth 8-256] done synthesizing module 'xldds_compiler_fff68277c7f6cf71cad056fa8277dafa' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:706]
+INFO: [Synth 8-638] synthesizing module 'singenmc_xldsamp' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:350]
+	Parameter width bound to: 32 - type: integer 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg_reg' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_reg.vhd:18' bound to instance 'latency_pipe' of component 'synth_reg_reg' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:474]
+INFO: [Synth 8-638] synthesizing module 'synth_reg_reg' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_reg.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'synth_reg_reg' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_reg.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'singenmc_xldsamp' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:350]
+INFO: [Synth 8-638] synthesizing module 'singenmc_xldsamp__parameterized0' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:350]
+	Parameter width bound to: 32 - type: integer 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg_reg' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_reg.vhd:18' bound to instance 'latency_pipe' of component 'synth_reg_reg' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:474]
+INFO: [Synth 8-256] done synthesizing module 'singenmc_xldsamp__parameterized0' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:350]
+INFO: [Synth 8-638] synthesizing module 'singenmc_xldsamp__parameterized1' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:350]
+	Parameter width bound to: 1 - type: integer 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg_reg' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_reg.vhd:18' bound to instance 'latency_pipe' of component 'synth_reg_reg' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:474]
+INFO: [Synth 8-638] synthesizing module 'synth_reg_reg__parameterized2' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_reg.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'synth_reg_reg__parameterized2' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg_reg.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'singenmc_xldsamp__parameterized1' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:350]
+INFO: [Synth 8-638] synthesizing module 'singenmc_xlmult' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:827]
+INFO: [Synth 8-3491] module 'singenmc_mult_gen_v12_0_i0' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_mult_gen_v12_0_i0/synth/singenmc_mult_gen_v12_0_i0.vhd:59' bound to instance 'core_instance0' of component 'singenmc_mult_gen_v12_0_i0' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:889]
+INFO: [Synth 8-638] synthesizing module 'singenmc_mult_gen_v12_0_i0' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_mult_gen_v12_0_i0/synth/singenmc_mult_gen_v12_0_i0.vhd:70]
+WARNING: [Synth 8-5640] Port 'zero_detect' is missing in component declaration [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_mult_gen_v12_0_i0/synth/singenmc_mult_gen_v12_0_i0.vhd:73]
+WARNING: [Synth 8-5640] Port 'pcasc' is missing in component declaration [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_mult_gen_v12_0_i0/synth/singenmc_mult_gen_v12_0_i0.vhd:73]
+WARNING: [Synth 8-5640] Port 'pcasc_ext' is missing in component declaration [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_mult_gen_v12_0_i0/synth/singenmc_mult_gen_v12_0_i0.vhd:73]
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_MODEL_TYPE bound to: 0 - type: integer 
+	Parameter C_OPTIMIZE_GOAL bound to: 1 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
+	Parameter C_HAS_CE bound to: 1 - type: integer 
+	Parameter C_HAS_SCLR bound to: 1 - type: integer 
+	Parameter C_LATENCY bound to: 2 - type: integer 
+	Parameter C_A_WIDTH bound to: 15 - type: integer 
+	Parameter C_A_TYPE bound to: 1 - type: integer 
+	Parameter C_B_WIDTH bound to: 14 - type: integer 
+	Parameter C_B_TYPE bound to: 0 - type: integer 
+	Parameter C_OUT_HIGH bound to: 28 - type: integer 
+	Parameter C_OUT_LOW bound to: 0 - type: integer 
+	Parameter C_MULT_TYPE bound to: 1 - type: integer 
+	Parameter C_CE_OVERRIDES_SCLR bound to: 1 - type: integer 
+	Parameter C_CCM_IMP bound to: 0 - type: integer 
+	Parameter C_B_VALUE bound to: 10000001 - type: string 
+	Parameter C_HAS_ZERO_DETECT bound to: 0 - type: integer 
+	Parameter C_ROUND_OUTPUT bound to: 0 - type: integer 
+	Parameter C_ROUND_PT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'mult_gen_v12_0_19' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_mult_gen_v12_0_i0/hdl/mult_gen_v12_0_vh_rfs.vhd:21510' bound to instance 'U0' of component 'mult_gen_v12_0_19' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_mult_gen_v12_0_i0/synth/singenmc_mult_gen_v12_0_i0.vhd:126]
+INFO: [Synth 8-256] done synthesizing module 'singenmc_mult_gen_v12_0_i0' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/singenmc_mult_gen_v12_0_i0/synth/singenmc_mult_gen_v12_0_i0.vhd:70]
+	Parameter width bound to: 32 - type: integer 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg.vhd:20' bound to instance 'reg' of component 'synth_reg' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:901]
+INFO: [Synth 8-638] synthesizing module 'synth_reg__parameterized3' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg.vhd:30]
+	Parameter width bound to: 32 - type: integer 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'srlc33e' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:22' bound to instance 'last_srlc33e' of component 'srlc33e' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'srlc33e__parameterized3' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:31]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-113] binding component instance 'u2' to cell 'FDE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:75]
+INFO: [Synth 8-256] done synthesizing module 'srlc33e__parameterized3' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/srl33e.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'synth_reg__parameterized3' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'singenmc_xlmult' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:827]
+INFO: [Synth 8-638] synthesizing module 'singenmc_xlusamp' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:557]
+INFO: [Synth 8-113] binding component instance 'sel_gen' to cell 'FDSE' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:600]
+	Parameter width bound to: 32 - type: integer 
+	Parameter latency bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'synth_reg' declared at '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/synth_reg.vhd:20' bound to instance 'sampled_d_reg2' of component 'synth_reg' [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:667]
+INFO: [Synth 8-256] done synthesizing module 'singenmc_xlusamp' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc_entity_declarations.vhd:557]
+INFO: [Synth 8-256] done synthesizing module 'singenmc_struct' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'singenmc' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/singenmc.vhd:309]
+INFO: [Synth 8-256] done synthesizing module 'singenmc_bd_singenmc_1_0' (0#1) [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/synth/singenmc_bd_singenmc_1_0.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element clk_num_reg was removed.  [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ipshared/cfb3/hdl/xlclockdriver_rd.vhd:212]
+WARNING: [Synth 8-7129] Port clr in module synth_reg__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dest_clk in module singenmc_xlusamp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dest_clr in module singenmc_xlusamp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLK in module delay_line is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CE in module delay_line is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module delay_line is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[47] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[46] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[45] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[44] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[43] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[42] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[41] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[40] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[39] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[38] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[37] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[36] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[35] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[34] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[33] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[32] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[31] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[30] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[29] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[28] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[27] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[26] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[25] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[24] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[23] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[22] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[21] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[20] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[19] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[18] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[17] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[16] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[15] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[14] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[13] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[12] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[11] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[10] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[9] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[8] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[7] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[6] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[5] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[4] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[3] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[2] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[1] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_PORT[0] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[24] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[23] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[22] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[21] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[20] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[19] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[18] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[17] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[16] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[15] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[14] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[13] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[12] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[11] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[10] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[9] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[8] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[7] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[6] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[5] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[4] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[3] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[2] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[1] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port D_PORT[0] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SUBTRACT in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CARRY_IN in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[47] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[46] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[45] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[44] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[43] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[42] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[41] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[40] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[39] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[38] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[37] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[36] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[35] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[34] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[33] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[32] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[31] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[30] in module dsp is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PCASC_IN[29] in module dsp is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2316.773 ; gain = 586.598 ; free physical = 127 ; free virtual = 23108
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2325.680 ; gain = 595.504 ; free physical = 127 ; free virtual = 23107
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2325.680 ; gain = 595.504 ; free physical = 127 ; free virtual = 23107
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2328.648 ; gain = 0.000 ; free physical = 126 ; free virtual = 23107
+INFO: [Netlist 29-17] Analyzing 106 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/constrs/singenmc.xdc] for cell 'U0'
+WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/constrs/singenmc.xdc:4]
+Finished Parsing XDC File [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/constrs/singenmc.xdc] for cell 'U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.gen/sources_1/bd/singenmc_bd/ip/singenmc_bd_singenmc_1_0/constrs/singenmc.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/singenmc_bd_singenmc_1_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/singenmc_bd_singenmc_1_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.runs/singenmc_bd_singenmc_1_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.runs/singenmc_bd_singenmc_1_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2358.598 ; gain = 0.000 ; free physical = 121 ; free virtual = 23102
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 106 instances were transformed.
+  BUF => LUT1: 1 instance 
+  DSP48E => DSP48E1: 2 instances
+  FDE => FDRE: 103 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2358.633 ; gain = 0.000 ; free physical = 120 ; free virtual = 23101
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2358.633 ; gain = 628.457 ; free physical = 144 ; free virtual = 23091
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z030sbg485-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2358.633 ; gain = 628.457 ; free physical = 144 ; free virtual = 23091
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  /xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.runs/singenmc_bd_singenmc_1_0_synth_1/dont_touch.xdc, line 15).
+Applied set_property KEEP_HIERARCHY = SOFT for U0/singenmc_struct/mult/\comp0.core_instance0 . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U0/singenmc_struct/dds_compiler_6_0/singenmc_dds_compiler_v6_0_i0_instance. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2358.633 ; gain = 628.457 ; free physical = 144 ; free virtual = 23090
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6040] Register i_rtl.i_quarter_table.i_has_sin.i_addr_mod_stage1.mod_sin_addr_reg driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2358.633 ; gain = 628.457 ; free physical = 142 ; free virtual = 23089
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 400 (col length:80)
+BRAMs: 530 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3332] Sequential element (singenmc_default_clock_driver/clockdriver_x0/clr_reg/latency_gt_0.fd_array[1].reg_comp/fd_prim_array[0].bit_is_0.fdre_comp) is unused and will be removed from module singenmc.
+WARNING: [Synth 8-3332] Sequential element (singenmc_default_clock_driver/clockdriver/pipelined_ce_logic.ce_logic_pipeline[5].ce_logic_reg/latency_gt_0.fd_array[1].reg_comp/fd_prim_array[0].bit_is_0.fdre_comp) is unused and will be removed from module singenmc.
+WARNING: [Synth 8-3332] Sequential element (singenmc_default_clock_driver/clockdriver/pipelined_ce_logic.ce_logic_pipeline[4].ce_logic_reg/latency_gt_0.fd_array[1].reg_comp/fd_prim_array[0].bit_is_0.fdre_comp) is unused and will be removed from module singenmc.
+WARNING: [Synth 8-3332] Sequential element (singenmc_default_clock_driver/clockdriver/pipelined_ce_logic.ce_logic_pipeline[3].ce_logic_reg/latency_gt_0.fd_array[1].reg_comp/fd_prim_array[0].bit_is_0.fdre_comp) is unused and will be removed from module singenmc.
+WARNING: [Synth 8-3332] Sequential element (singenmc_default_clock_driver/clockdriver/pipelined_ce_logic.ce_logic_pipeline[2].ce_logic_reg/latency_gt_0.fd_array[1].reg_comp/fd_prim_array[0].bit_is_0.fdre_comp) is unused and will be removed from module singenmc.
+WARNING: [Synth 8-3332] Sequential element (singenmc_default_clock_driver/clockdriver/pipelined_ce_logic.ce_logic_pipeline[1].ce_logic_reg/latency_gt_0.fd_array[1].reg_comp/fd_prim_array[0].bit_is_0.fdre_comp) is unused and will be removed from module singenmc.
+WARNING: [Synth 8-3332] Sequential element (singenmc_struct/convert1/latency_test.reg/partial_one.last_srlc33e/reg_array[14].fde_used.u2) is unused and will be removed from module singenmc.
+WARNING: [Synth 8-3332] Sequential element (singenmc_struct/up_sample/sel_gen) is unused and will be removed from module singenmc.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2366.605 ; gain = 636.430 ; free physical = 129 ; free virtual = 23078
+---------------------------------------------------------------------------------
+ Sort Area is  gDSP.gDSP_only.iDSP/inferred_dsp.reg_mult.m_reg_reg_0 : 0 0 : 3295 3295 : Used 1 time 100
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2366.605 ; gain = 636.430 ; free physical = 188 ; free virtual = 23137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2366.605 ; gain = 636.430 ; free physical = 188 ; free virtual = 23137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2366.605 ; gain = 636.430 ; free physical = 188 ; free virtual = 23137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 2366.605 ; gain = 636.430 ; free physical = 188 ; free virtual = 23137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 2366.605 ; gain = 636.430 ; free physical = 188 ; free virtual = 23137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 2366.605 ; gain = 636.430 ; free physical = 188 ; free virtual = 23137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 2366.605 ; gain = 636.430 ; free physical = 188 ; free virtual = 23137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 2366.605 ; gain = 636.430 ; free physical = 188 ; free virtual = 23137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 2366.605 ; gain = 636.430 ; free physical = 188 ; free virtual = 23137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|dsp         | (A'*B')'    | 14     | 18     | -      | -      | 29     | 1    | 1    | -    | -    | -     | 0    | 1    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |DSP48E        |         2|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |DSP48E_bbox |     2|
+|3     |BUF         |     1|
+|4     |DSP48E1     |     1|
+|5     |LUT1        |     3|
+|6     |LUT2        |    76|
+|7     |LUT3        |    15|
+|8     |LUT4        |    10|
+|9     |LUT5        |    32|
+|10    |LUT6        |    15|
+|11    |RAMB18E1    |     1|
+|12    |SRL16E      |     2|
+|13    |FDE         |   102|
+|14    |FDRE        |   182|
+|15    |FDSE        |     1|
++------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 2366.605 ; gain = 636.430 ; free physical = 188 ; free virtual = 23137
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 2366.605 ; gain = 603.477 ; free physical = 188 ; free virtual = 23137
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 2366.613 ; gain = 636.430 ; free physical = 188 ; free virtual = 23137
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2366.613 ; gain = 0.000 ; free physical = 188 ; free virtual = 23137
+INFO: [Netlist 29-17] Analyzing 107 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2366.613 ; gain = 0.000 ; free physical = 475 ; free virtual = 23424
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 104 instances were transformed.
+  DSP48E => DSP48E1: 2 instances
+  FDE => FDRE: 102 instances
+
+Synth Design complete | Checksum: 9841a98b
+INFO: [Common 17-83] Releasing license: Synthesis
+187 Infos, 123 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:44 . Memory (MB): peak = 2366.641 ; gain = 1005.871 ; free physical = 475 ; free virtual = 23424
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1921.374; main = 1592.410; forked = 347.140
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3399.625; main = 2366.609; forked = 1033.016
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2390.617 ; gain = 0.000 ; free physical = 475 ; free virtual = 23424
+INFO: [Common 17-1381] The checkpoint '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.runs/singenmc_bd_singenmc_1_0_synth_1/singenmc_bd_singenmc_1_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP singenmc_bd_singenmc_1_0, cache-ID = 747d86e0fbe4385c
+INFO: [Coretcl 2-1174] Renamed 65 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2390.617 ; gain = 0.000 ; free physical = 461 ; free virtual = 23412
+INFO: [Common 17-1381] The checkpoint '/xilinxworks/sysgen/singen_panda/netlist/ip/singenmc/src/ip_catalog/singenmc.runs/singenmc_bd_singenmc_1_0_synth_1/singenmc_bd_singenmc_1_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file singenmc_bd_singenmc_1_0_utilization_synth.rpt -pb singenmc_bd_singenmc_1_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 26 12:34:44 2024...

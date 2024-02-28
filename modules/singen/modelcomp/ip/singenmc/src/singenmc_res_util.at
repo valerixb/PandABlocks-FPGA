@@ -1,0 +1,169 @@
+# Vivado resource utilization data is represented in anytable format
+# The data will be consumed by Resource Utilization flow in SysGen.
+
+{
+   'Design_Information' => [
+     { 
+        'PART' => 'xc7z030sbg485-1',
+        'Vivado_Stage' => 'Post Synthesis',
+        'Top_Module' => 'singenmc',
+        'HDL_Language' => 'vhdl',
+        'Netlist_Crossprobe_File' => 'singenmc.vhd.at',
+     },
+   ],
+   'Device_Resources' => [
+     { 
+        'BRAMs' => '265',
+        'DSPs' => '400',
+        'Registers' => '157200',
+        'LUTs' => '78600',
+     },
+   ],
+   'Resource_Utilization_Data' => [
+     {
+          'File_Name' => 'singenmc.vhd',
+          'Line_Num' => 'Line_66',
+          'Hier_Name' => 'singenmc_bd_wrapper.singenmc_bd_i.singenmc_1.U0.singenmc_struct.convert',
+          'Cell_Name' => 'singenmc_bd_i/singenmc_1/U0/singenmc_struct/convert',
+          'Primitives' => [ 
+               {
+                    'FDRE' => 24,
+                    'Total_Registers' => 24,
+               },
+          ], 
+     },
+     {
+          'File_Name' => 'singenmc.vhd',
+          'Line_Num' => 'Line_87',
+          'Hier_Name' => 'singenmc_bd_wrapper.singenmc_bd_i.singenmc_1.U0.singenmc_struct.convert1',
+          'Cell_Name' => 'singenmc_bd_i/singenmc_1/U0/singenmc_struct/convert1',
+          'Primitives' => [ 
+               {
+                    'FDRE' => 14,
+                    'Total_Registers' => 14,
+               },
+          ], 
+     },
+     {
+          'File_Name' => 'singenmc.vhd',
+          'Line_Num' => 'Line_108',
+          'Hier_Name' => 'singenmc_bd_wrapper.singenmc_bd_i.singenmc_1.U0.singenmc_struct.dds_compiler_6_0',
+          'Cell_Name' => 'singenmc_bd_i/singenmc_1/U0/singenmc_struct/dds_compiler_6_0',
+          'Primitives' => [ 
+               {
+                    'LUT1' => 2,
+                    'FDRE' => 128,
+                    'LUT2' => 33,
+                    'DSP48E1' => 2,
+                    'LUT3' => 14,
+                    'SRL16E' => 2,
+                    'RAMB18E1' => 1,
+                    'LUT4' => 8,
+                    'LUT5' => 6,
+                    'LUT6' => 11,
+                    'FDSE' => 1,
+                    'Total_LUTs' => 76,
+                    'Total_Registers' => 129,
+                    'Total_DSPs' => 2,
+                    'Total_BRAMs' => 0.5,
+               },
+          ], 
+     },
+     {
+          'File_Name' => 'singenmc.vhd',
+          'Line_Num' => 'Line_118',
+          'Hier_Name' => 'singenmc_bd_wrapper.singenmc_bd_i.singenmc_1.U0.singenmc_struct.down_sample',
+          'Cell_Name' => 'singenmc_bd_i/singenmc_1/U0/singenmc_struct/down_sample',
+          'Primitives' => [ 
+               {
+                    'FDRE' => 15,
+                    'LUT2' => 14,
+                    'Total_Registers' => 15,
+                    'Total_LUTs' => 14,
+               },
+          ], 
+     },
+     {
+          'File_Name' => 'singenmc.vhd',
+          'Line_Num' => 'Line_142',
+          'Hier_Name' => 'singenmc_bd_wrapper.singenmc_bd_i.singenmc_1.U0.singenmc_struct.down_sample1',
+          'Cell_Name' => 'singenmc_bd_i/singenmc_1/U0/singenmc_struct/down_sample1',
+          'Primitives' => [ 
+               {
+                    'FDRE' => 25,
+                    'LUT2' => 24,
+                    'Total_Registers' => 25,
+                    'Total_LUTs' => 24,
+               },
+          ], 
+     },
+     {
+          'File_Name' => 'singenmc.vhd',
+          'Line_Num' => 'Line_166',
+          'Hier_Name' => 'singenmc_bd_wrapper.singenmc_bd_i.singenmc_1.U0.singenmc_struct.down_sample2',
+          'Cell_Name' => 'singenmc_bd_i/singenmc_1/U0/singenmc_struct/down_sample2',
+          'Primitives' => [ 
+               {
+                    'FDRE' => 1,
+                    'LUT2' => 1,
+                    'Total_Registers' => 1,
+                    'Total_LUTs' => 1,
+               },
+          ], 
+     },
+     {
+          'File_Name' => 'singenmc.vhd',
+          'Line_Num' => 'Line_190',
+          'Hier_Name' => 'singenmc_bd_wrapper.singenmc_bd_i.singenmc_1.U0.singenmc_struct.mult',
+          'Cell_Name' => 'singenmc_bd_i/singenmc_1/U0/singenmc_struct/mult',
+          'Primitives' => [ 
+               {
+                    'DSP48E1' => 1,
+                    'FDRE' => 32,
+                    'LUT4' => 1,
+                    'LUT5' => 25,
+                    'Total_DSPs' => 1,
+                    'Total_Registers' => 32,
+                    'Total_LUTs' => 26,
+               },
+          ], 
+     },
+     {
+          'File_Name' => 'singenmc.vhd',
+          'Line_Num' => 'Line_227',
+          'Hier_Name' => 'singenmc_bd_wrapper.singenmc_bd_i.singenmc_1.U0.singenmc_struct.up_sample',
+          'Cell_Name' => 'singenmc_bd_i/singenmc_1/U0/singenmc_struct/up_sample',
+          'Primitives' => [ 
+               {
+                    'FDRE' => 32,
+                    'Total_Registers' => 32,
+               },
+          ], 
+     },
+     { 
+          'File_Name' => 'singenmc.vhd',
+          'Line_Num' => 'Line_000',
+          'Hier_Name' => 'singenmc',
+          'Cell_Name' => 'singenmc',
+          'Primitives' => [ 
+               { 
+                    'FDRE' => 271,
+                    'LUT1' => 2,
+                    'LUT2' => 72,
+                    'DSP48E1' => 3,
+                    'LUT3' => 14,
+                    'SRL16E' => 2,
+                    'RAMB18E1' => 1,
+                    'LUT4' => 9,
+                    'LUT5' => 31,
+                    'LUT6' => 11,
+                    'FDSE' => 1,
+                    'Total_Registers' => 272,
+                    'Total_LUTs' => 141,
+                    'Total_DSPs' => 3,
+                    'Total_BRAMs' => 0.5,
+               },
+          ],
+     },
+   ],
+} 
