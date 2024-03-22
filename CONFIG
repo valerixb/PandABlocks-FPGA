@@ -41,11 +41,11 @@ PANDA_ROOTFS = /xilinxworks/pandabox/PandABlocks-rootfs
 # DEFAULT_TARGETS = zpkg
 
 # FPGA Application Name
-APP_NAME = PandABox-maxiv-test-fmc_acq427
+#APP_NAME = PandABox-maxiv-test-fmc_acq427
 #APP_NAME = PandABox-maxiv-4pcomp-fmc_acq427
 #APP_NAME = PandABox-maxiv-4pcomp-nofmc
 #APP_NAME = PandABox-maxiv-standard-fmc_acq427
-#APP_NAME = PandABox-maxiv-standard-nofmc
+APP_NAME = PandABox-maxiv-standard-nofmc
 #APP_NAME = PandABox-maxiv-standard-fmc_acq430
 
 # vim: set filetype=make:
