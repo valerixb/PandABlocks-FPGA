@@ -14,7 +14,7 @@
 export VIVADO = /tools/Xilinx/Vivado/\$(VIVADO_VER)/settings64.sh
 # Path to external IP repository (if required)
 #export EXT_IP_REPO = /xilinxworks/pandabox/PICXO_FRACXO_v40_rev6
-export EXT_IP_REPO = "{ /xilinxworks/pandabox/PICXO_FRACXO_v40_rev6 /xilinxworks/pandabox/Panda-PID/ip /xilinxworks/pandabox/Panda-singen/ip }"
+export EXT_IP_REPO = "{ /xilinxworks/pandabox/PICXO_FRACXO_v40_rev6 /xilinxworks/pandabox/Panda-PID/ip /xilinxworks/pandabox/Panda-singen/ip /xilinxworks/pandabox/Panda-BPM/ip }"
 
 # Specifiy licence server, if required
 # export LM_LICENSE_FILE =
@@ -41,7 +41,8 @@ PANDA_ROOTFS = /xilinxworks/pandabox/PandABlocks-rootfs
 # DEFAULT_TARGETS = zpkg
 
 # FPGA Application Name
-APP_NAME = PandABox-maxiv-test-fmc_acq427
+APP_NAME = PandABox-maxiv-bpm-fmc_acq427
+#APP_NAME = PandABox-maxiv-test-fmc_acq427
 #APP_NAME = PandABox-maxiv-4pcomp-fmc_acq427
 #APP_NAME = PandABox-maxiv-4pcomp-nofmc
 #APP_NAME = PandABox-maxiv-standard-fmc_acq427
