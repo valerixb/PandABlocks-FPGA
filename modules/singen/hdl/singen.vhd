@@ -7,7 +7,7 @@
 --------------------------------------------------------------------------------
 --
 --  Description : Sine wave generator
---  latest rev  : feb 7 2024
+--  latest rev  : apr 29 2024
 --
 --------------------------------------------------------------------------------
 
@@ -24,6 +24,7 @@ port (
     -- Block Input and Outputs
     amplitude             : in  std_logic_vector(31 downto 0); -- sfix32_En30
     frequency             : in  std_logic_vector(31 downto 0); -- sfix32_En31
+    deltaf_i              : in  std_logic_vector(31 downto 0); -- sfix32_En31
     out_o                 : out std_logic_vector(31 downto 0)  -- sfix32_En31
     );
 end singen;
@@ -40,6 +41,7 @@ architecture rtl of singen is
     signal singen_ce_out   : std_logic;
     signal wait_cntr       : natural range 0 to WAIT_CNTR_MAX :=0;
     signal singen_out      : std_logic_vector(31 downto 0);
+    signal totfreq         : std_logic_vector(31 downto 0);
 
     component singenmc_0
         port
@@ -59,7 +61,7 @@ begin
     the_singen: singenmc_0
         port map
             (
-            rational_freq  => frequency,
+            rational_freq  => totfreq,
             ampl           => amplitude,
             reset_n(0)     => singen_res_n,
             clk            => clk_i,
@@ -72,6 +74,7 @@ begin
     begin
         if rising_edge(clk_i) then
             if ENABLE_i = '0' then
+                totfreq <= (others => '0');
                 singen_res_n    <= '0';
                 if (singen_clr = '0') and (wait_cntr=WAIT_STATES) then
                     singen_clr <= '1';
@@ -79,6 +82,7 @@ begin
                     singen_clr <= singen_clr;
                 end if;
             else
+                totfreq <= std_logic_vector(to_signed(to_integer(signed(frequency)) + to_integer(signed(deltaf_i)),32));
                 singen_clr  <= '0';
                 if (singen_res_n = '0') and (singen_ce_out = '1') then
                     singen_res_n <= '1';
