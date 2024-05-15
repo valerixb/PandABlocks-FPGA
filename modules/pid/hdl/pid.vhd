@@ -8,8 +8,8 @@
 --
 --  Description : PID controller; 
 --                       - developed with model composer
---                       - floating point
---                       - fixed sampling frequency=1 MHz
+--                       - extended precision (64 bit) fixed point
+--                       - variable sampling frequency in [1 Hz, 1 MHz]
 --
 --  latest rev  : feb 2 2024
 --

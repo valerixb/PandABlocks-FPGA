@@ -14,7 +14,7 @@
 export VIVADO = /tools/Xilinx/Vivado/\$(VIVADO_VER)/settings64.sh
 # Path to external IP repository (if required)
 #export EXT_IP_REPO = /xilinxworks/pandabox/PICXO_FRACXO_v40_rev6
-export EXT_IP_REPO = "{ /xilinxworks/pandabox/PICXO_FRACXO_v40_rev6 /xilinxworks/pandabox/Panda-PID/ip /xilinxworks/pandabox/Panda-singen/ip /xilinxworks/pandabox/Panda-BPM/ip }"
+export EXT_IP_REPO = "{ /xilinxworks/pandabox/PICXO_FRACXO_v40_rev6 /xilinxworks/pandabox/Panda-PID/ip /xilinxworks/pandabox/Panda-singen/ip /xilinxworks/pandabox/Panda-BPM/ip /xilinxworks/pandabox/Panda-iir2/ip }"
 
 # Specifiy licence server, if required
 # export LM_LICENSE_FILE =
