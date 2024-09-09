@@ -4,6 +4,7 @@ use ieee.std_logic_1164.all;
 
 library work;
 use work.top_defines.all;
+use work.interface_types.all;
 
 library unisim;
 use unisim.vcomponents.all;
@@ -40,8 +41,7 @@ entity sfp_panda_sync_wrapper is
         write_data_i     : in  std_logic_vector(31 downto 0);
         write_ack_o      : out std_logic;
 
-        SFP_i            : in  SFP_input_interface;
-        SFP_o            : out SFP_output_interface
+        MGT              : view MGT_Module
         );
 end sfp_panda_sync_wrapper;
 
@@ -91,17 +91,17 @@ begin
 txnobuf : obuf
 port map (
     I => TXN,
-    O => SFP_o.TXN_OUT
+    O => MGT.TXN_OUT
 );
 
 txpobuf : obuf
 port map (
     I => TXP,
-    O => SFP_o.TXP_OUT
+    O => MGT.TXP_OUT
 );
 
-SFP_o.MGT_REC_CLK <= rxoutclk;
-SFP_o.LINK_UP <= LINKUP(0);
+MGT.MGT_REC_CLK <= rxoutclk;
+MGT.LINK_UP <= LINKUP(0);
 
 IN_BIT8_o(0) <= BITIN(7);
 IN_BIT7_o(0) <= BITIN(6);
@@ -120,7 +120,6 @@ sfp_panda_sync_transmitter_inst : entity work.sfp_panda_sync_transmit
     port map (
         sysclk_i          => clk_i,
         txoutclk_i        => txoutclk,
-        rst_sys_i         => reset_i,
         txcharisk_o       => txcharisk,
         txdata_o          => txdata,
         POSOUT1_i         => POSOUT1,
@@ -144,7 +143,6 @@ sfp_panda_sync_receiver_inst : entity work.sfp_panda_sync_receiver
         rxdata_i          => rxdata,
         rxnotintable_i    => rxnotintable,
         rx_link_ok_o      => rx_link_ok,
-        loss_lock_o       => open,
         rx_error_o        => rx_error,
         BITIN_o           => BITIN,
         POSIN1_o          => IN_POS1_o(0),
@@ -197,16 +195,13 @@ port map (
 sfp_panda_sync_mgt_interface_inst : entity work.sfp_panda_sync_mgt_interface
 
     port map(
-        GTREFCLK          => SFP_i.GTREFCLK,
+        GTREFCLK_i        => MGT.GTREFCLK,
         SYNC_RESET_i      => SYNC_RESET,
         sysclk_i          => clk_i,
-        rxp_i             => SFP_i.RXP_IN,
-        rxn_i             => SFP_i.RXN_IN,
+        rxp_i             => MGT.RXP_IN,
+        rxn_i             => MGT.RXN_IN,
         txp_o             => TXP,
         txn_o             => TXN,
-        rxbyteisaligned_o => open,
-        rxbyterealign_o   => open,
-        rxcommadet_o      => open,
         rxdata_o          => rxdata,
         rxoutclk_o        => rxoutclk,            -- RX recovered clock
         rxcharisk_o       => rxcharisk,
@@ -216,7 +211,6 @@ sfp_panda_sync_mgt_interface_inst : entity work.sfp_panda_sync_mgt_interface
         txoutclk_o        => txoutclk,            -- TX reference clock
         txdata_i          => txdata,
         txcharisk_i       => txcharisk,
-        cpll_lock_o       => open,
         rx_link_ok_i      => rx_link_ok
         );
 
